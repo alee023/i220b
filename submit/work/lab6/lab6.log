@@ -1226,4 +1226,172 @@ Changes not staged for commit:
 	[31mdeleted:    ../../lab4/files/ex4/Makefile[m
 	[31mdeleted:    ../../lab4/files/ex4/negeq.c[m
 	[31mdeleted:    ../../lab4/files/ex5/ex5.py[m
-	[31mdeleted:    ../../lab4/fil
+	[31mdeleted:    ../../lab4/files/ex6/.gitignore[m
+	[31mdeleted:    ../../lab4/files/ex6/0.1.c[m
+	[31mdeleted:    ../../lab4/files/ex6/Makefile[m
+	[31mdeleted:    ../../lab4/files/ex7/.gitignore[m
+	[31mdeleted:    ../../lab4/files/ex7/Makefile[m
+	[31mdeleted:    ../../lab4/files/ex7/nan.c[m
+	[31mdeleted:    ../../lab4/files/ex8/.gitignore[m
+	[31mdeleted:    ../../lab4/files/ex8/Makefile[m
+	[31mdeleted:    ../../lab4/files/ex8/ulp-lg.gp[m
+	[31mdeleted:    ../../lab4/files/ex8/ulp.c[m
+	[31mdeleted:    ../../lab4/files/ex8/ulp.data[m
+	[31mdeleted:    ../../lab4/files/ex8/ulp.gp[m
+	[31mdeleted:    ../../lab4/files/ex9/.gitignore[m
+	[31mdeleted:    ../../lab4/files/ex9/Makefile[m
+	[31mdeleted:    ../../lab4/files/ex9/loop.c[m
+	[31mdeleted:    ../../lab4/lab4.html[m
+	[31mdeleted:    ../../lab4/lab4.pdf[m
+	[31mdeleted:    ../../lab4/lab4.umt[m
+	[31mdeleted:    ../../lab4/lab4_output.txt[m
+	[31mdeleted:    ../../lab5/Makefile[m
+	[31mdeleted:    ../../lab5/files/ex1/.gitignore[m
+	[31mdeleted:    ../../lab5/files/ex1/Makefile[m
+	[31mdeleted:    ../../lab5/files/ex1/pointers.c[m
+	[31mdeleted:    ../../lab5/files/ex2/.gitignore[m
+	[31mdeleted:    ../../lab5/files/ex2/Makefile[m
+	[31mdeleted:    ../../lab5/files/ex2/in-pointers.c[m
+	[31mdeleted:    ../../lab5/files/ex3/.gitignore[m
+	[31mdeleted:    ../../lab5/files/ex3/Makefile[m
+	[31mdeleted:    ../../lab5/files/ex3/bad-types.c[m
+	[31mdeleted:    ../../lab5/files/ex4/.gitignore[m
+	[31mdeleted:    ../../lab5/files/ex4/Makefile[m
+	[31mdeleted:    ../../lab5/files/ex4/cast-types.c[m
+	[31mdeleted:    ../../lab5/files/ex5/.gitignore[m
+	[31mdeleted:    ../../lab5/files/ex5/Makefile[m
+	[31mdeleted:    ../../lab5/files/ex5/void-pointers.c[m
+	[31mdeleted:    ../../lab5/files/ex6/.gitignore[m
+	[31mdeleted:    ../../lab5/files/ex6/Makefile[m
+	[31mdeleted:    ../../lab5/files/ex6/in-voids.c[m
+	[31mdeleted:    ../../lab5/lab5.html[m
+	[31mdeleted:    ../../lab5/lab5.log[m
+	[31mdeleted:    ../../lab5/lab5.pdf[m
+	[31mdeleted:    ../../lab5/lab5.umt[m
+	[31mdeleted:    ../../lab5/lab5/hl-fine_blue.css[m
+	[31mdeleted:    ../../lab5/lab5/hl-fine_blue.sty[m
+	[31mdeleted:    ../../lab5/lab5_output.txt[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m../[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+alee889@g7-31:/import/linux/home1/alee889/git-repos/i220b/submit/work/lab6$ git  add .
+alee889@g7-31:/import/linux/home1/alee889/git-repos/i220b/submit/work/lab6$ git  commit am -"lab6 [K"[C[1P"lab6"[1@-
+[master baad47d] lab6
+ Committer: Alison Lee <alee889@cs.binghamton.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 116 files changed, 2184 insertions(+), 2448 deletions(-)
+ delete mode 100644 submit/lab2/Makefile
+ delete mode 100755 submit/lab2/ex1/hello
+ delete mode 100644 submit/lab2/ex1/hello.c
+ delete mode 100644 submit/lab2/ex2/Makefile
+ delete mode 100644 submit/lab2/ex3/Makefile
+ delete mode 100644 submit/lab2/ex3/README
+ delete mode 100644 submit/lab2/ex3/main.c
+ delete mode 100755 submit/lab2/ex3/quadr
+ delete mode 100644 submit/lab2/ex3/quadr.c
+ delete mode 100644 submit/lab2/ex3/quadr.h
+ delete mode 100644 submit/lab2/ex3/quadr.tar.gz
+ delete mode 100644 submit/lab2/ex3/temp/Makefile
+ delete mode 100644 submit/lab2/ex3/temp/README
+ delete mode 100644 submit/lab2/ex3/temp/main.c
+ delete mode 100755 submit/lab2/ex3/temp/quadr
+ delete mode 100644 submit/lab2/ex3/temp/quadr.c
+ delete mode 100644 submit/lab2/ex3/temp/quadr.h
+ delete mode 100644 submit/lab2/ex3/temp/test.data
+ delete mode 100644 submit/lab2/ex3/test.data
+ delete mode 100644 submit/lab2/ex4/Makefile
+ delete mode 100644 submit/lab2/ex4/README
+ delete mode 100644 submit/lab2/ex4/key-value.c
+ delete mode 100644 submit/lab2/ex4/key-value.h
+ delete mode 100644 submit/lab2/ex4/main.c
+ delete mode 100644 submit/lab2/ex4/process-file.c
+ delete mode 100644 submit/lab2/ex4/process-file.h
+ delete mode 100755 submit/lab2/ex4/quadr
+ delete mode 100755 submit/lab3/Makefile
+ delete mode 100644 submit/lab3/files/.gitignore
+ delete mode 100644 submit/lab3/files/Makefile
+ delete mode 100644 submit/lab3/files/ex1/.gitignore
+ delete mode 100644 submit/lab3/files/ex1/Makefile
+ delete mode 100644 submit/lab3/files/ex1/README
+ delete mode 100644 submit/lab3/files/ex1/hello.c
+ delete mode 100644 submit/lab3/files/ex2/Makefile
+ delete mode 100644 submit/lab3/files/ex2/README
+ delete mode 100644 submit/lab3/files/ex2/hello.c
+ delete mode 100644 submit/lab3/lab3.html
+ delete mode 100644 submit/lab3/lab3.pdf
+ delete mode 100644 submit/lab3/lab3.umt
+ delete mode 100644 submit/lab3/term.gif
+ delete mode 100644 submit/lab3/term.png
+ delete mode 100755 submit/lab4/Makefile
+ delete mode 100644 submit/lab4/files/ex1/.gitignore
+ delete mode 100644 submit/lab4/files/ex1/Makefile
+ delete mode 100644 submit/lab4/files/ex1/uints.c
+ delete mode 100644 submit/lab4/files/ex2/.gitignore
+ delete mode 100644 submit/lab4/files/ex2/Makefile
+ delete mode 100644 submit/lab4/files/ex2/ints.c
+ delete mode 100644 submit/lab4/files/ex3/.gitignore
+ delete mode 100644 submit/lab4/files/ex3/Makefile
+ delete mode 100644 submit/lab4/files/ex3/identify.c
+ delete mode 100644 submit/lab4/files/ex3/mystery.h
+ delete mode 100644 submit/lab4/files/ex4/.gitignore
+ delete mode 100644 submit/lab4/files/ex4/Makefile
+ delete mode 100644 submit/lab4/files/ex4/negeq.c
+ delete mode 100644 submit/lab4/files/ex5/ex5.py
+ delete mode 100644 submit/lab4/files/ex6/.gitignore
+ delete mode 100644 submit/lab4/files/ex6/0.1.c
+ delete mode 100644 submit/lab4/files/ex6/Makefile
+ delete mode 100644 submit/lab4/files/ex7/.gitignore
+ delete mode 100644 submit/lab4/files/ex7/Makefile
+ delete mode 100644 submit/lab4/files/ex7/nan.c
+ delete mode 100644 submit/lab4/files/ex8/.gitignore
+ delete mode 100644 submit/lab4/files/ex8/Makefile
+ delete mode 100644 submit/lab4/files/ex8/ulp-lg.gp
+ delete mode 100644 submit/lab4/files/ex8/ulp.c
+ delete mode 100644 submit/lab4/files/ex8/ulp.data
+ delete mode 100644 submit/lab4/files/ex8/ulp.gp
+ delete mode 100644 submit/lab4/files/ex9/.gitignore
+ delete mode 100644 submit/lab4/files/ex9/Makefile
+ delete mode 100644 submit/lab4/files/ex9/loop.c
+ delete mode 100644 submit/lab4/lab4.html
+ delete mode 100644 submit/lab4/lab4.umt
+ delete mode 100644 submit/lab4/lab4_output.txt
+ delete mode 100644 submit/lab5/files/ex1/.gitignore
+ delete mode 100644 submit/lab5/files/ex1/Makefile
+ delete mode 100644 submit/lab5/files/ex1/pointers.c
+ delete mode 100644 submit/lab5/files/ex2/.gitignore
+ delete mode 100644 submit/lab5/files/ex2/Makefile
+ delete mode 100644 submit/lab5/files/ex2/in-pointers.c
+ delete mode 100644 submit/lab5/files/ex3/.gitignore
+ delete mode 100644 submit/lab5/files/ex3/Makefile
+ delete mode 100644 submit/lab5/files/ex3/bad-types.c
+ delete mode 100644 submit/lab5/files/ex4/.gitignore
+ delete mode 100644 submit/lab5/files/ex4/Makefile
+ delete mode 100644 submit/lab5/files/ex4/cast-types.c
+ delete mode 100644 submit/lab5/files/ex5/.gitignore
+ delete mode 100644 submit/lab5/files/ex5/Makefile
+ delete mode 100644 submit/lab5/files/ex5/void-pointers.c
+ delete mode 100644 submit/lab5/files/ex6/.gitignore
+ delete mode 100644 submit/lab5/files/ex6/Makefile
+ delete mode 100644 submit/lab5/files/ex6/in-voids.c
+ delete mode 100644 submit/lab5/lab5.html
+ delete mode 100644 submit/lab5/lab5.log
+ delete mode 100644 submit/lab5/lab5.pdf
+ delete mode 100644 submit/lab5/lab5.umt
+ delete mode 100644 submit/lab5/lab5/hl-fine_blue.css
+ delete mode 100644 submit/lab5/lab5/hl-fine_blue.sty
+ delete mode 100644 submit/lab5/lab
