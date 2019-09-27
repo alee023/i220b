@@ -41,7 +41,9 @@ free_key_values(struct KeyValue *keyValues)
 {
   //go thru chain of keyValues
   for (struct KeyValue *p = keyValues; p != NULL; p = p->succ) {
-    free(p); //free KeyValue struct
+    keyValues = keyValues->succ;
+    free((char *)p->key); //free KeyValue Key
+    free(p); //free KeyValue struct  
   }
 }
 

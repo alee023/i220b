@@ -1,0 +1,12 @@
+EXERCISE 3
+upper limit, inclusive: 0x7fffff or 8388607. Lowest 23 bits
+
+EXERCISE 4
+80000000 (hex for -2147483648)
+==> -2147483648 == --2147483648
+
+EXERCISE 7
+0 because it cannot be divided by itself
+
+EXERCISE 9
+1.71799e+10
