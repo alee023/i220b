@@ -1,0 +1,75 @@
+Script started on 2019-10-03 15:02:47-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+alee889@g7-30:/import/linux/home1/alee889/i220b/submit/lab7$ cd filse[K[K[Kles/log10/\[K
+alee889@g7-30:/import/linux/home1/alee889/i220b/submit/lab7/files/log10$ gedit l a[Kog10.c %[K&
+[1] 21410
+alee889@g7-30:/import/linux/home1/alee889/i220b/submit/lab7/files/log10$ make
+cc -g -Wall -std=c11   -c -o log10.o log10.c
+cc   log10.o   -o log10
+/usr/bin/ld: log10.o: in function `main':
+/import/linux/home1/alee889/i220b/submit/lab7/files/log10/log10.c:9: undefined reference to `log10'
+collect2: error: ld returned 1 exit status
+make: *** [<builtin>: log10] Error 1
+[1]+  Done                    gedit log10.c
+alee889@g7-30:/import/linux/home1/alee889/i220b/submit/lab7/files/log10$ man log 10.[K
+[?1049h[22;0;0t[?1h=LOG10(3)                   Linux Programmer's Manual                  LOG10(3)[m
+[m
+[1mNAME[0m[m
+       log10, log10f, log10l -  base-10 logarithmic function[m
+[m
+[1mSYNOPSIS[0m[m
+       [1m#include[0m [1m<math.h>[0m[m
+[m
+       [1mdouble[0m [1mlog10(double[0m [4mx[24m[1m);[0m[m
+       [1mfloat[0m [1mlog10f(float[0m [4mx[24m[1m);[0m[m
+       [1mlong[0m [1mdouble[0m [1mlog10l(long[0m [1mdouble[0m [4mx[24m[1m);[0m[m
+[m
+       Link with [4m-lm[24m.[m
+[m
+   Feature Test Macro Requirements for glibc (see [1mfeature_test_macros[0m(7)):[m
+[m
+       [1mlog10f[0m(), [1mlog10l[0m():[m
+           _ISOC99_SOURCE || _POSIX_C_SOURCE >= 200112L[m
+               || /* Since glibc 2.19: */ _DEFAULT_SOURCE[m
+               || /* Glibc versions <= 2.19: */ _BSD_SOURCE || _SVID_SOURCE[m
+[m
+[1mDESCRIPTION[0m[m
+       These functions return the base 10 logarithm of [4mx[24m.[m
+[7m Manual page log10(3) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page log10(3) line 2 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mRETURN[0m [1mVALUE[0m[m
+[7m Manual page log10(3) line 3 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       On success, these functions return the base 10 logarithm of [4mx[24m.[m
+[7m Manual page log10(3) line 4 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page log10(3) line 5 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       For  special  cases,  including where [4mx[24m is 0, 1, negative, infinity, or[m
+[7m Manual page log10(3) line 6 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       NaN, see [1mlog[0m(3).[m
+[7m Manual page log10(3) line 7 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page log10(3) line 8 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mERRORS[0m[m
+[7m Manual page log10(3) line 9 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       See [1mmath_error[0m(7) for information on how to determine whether an  error[m
+[7m Manual page log10(3) line 10 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       has occurred when calling these functions.[m
+[7m Manual page log10(3) line 11 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page log10(3) line 12 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       For  a discussion of the errors that can occur for these functions, see[m
+[7m Manual page log10(3) line 13 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mlog[0m(3).[m
+[7m Manual page log10(3) line 14 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page log10(3) line 15 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mATTRIBUTES[0m[m
+[7m Manual page log10(3) line 16 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       For an  explanation  of  the  terms  used  in  this  section,  see  [1mat‐[0m[m
+[7m Manual page log10(3) line 17 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mtributes[0m(7).[m
+[7m Manual page log10(3) line 18 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page log10(3) line 19 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       ┌─────────────────────────────┬───────────────┬─────────┐[m
+[7m Manual page log10(3) line 20 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       │[1mInterface[0m                    │ [1mAttribute[0m     │ [1mValue[0m   │[m
+[7m Manual page log10(3) line 21 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       ├─────────────────────────────┼───────────────┼─────────┤[m
+[7m Manual page log10(3) line 22 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       │[1mlog10[0m(), [1mlog10f[0m(), [1mlog10l[0m()  │ Thread safety │ MT-Safe │[m
+[7m Manual page log10(3) line 23 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       └─────────────────────────────┴───────────────┴─────────┘[m
+[7m Manual page log10(3) line 24 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mCONFORMING[0m [1mTO[0m[m
+[7m Manual page log10(3) line 25 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       C99, POSIX.1-2001, POSIX.1-2008.[m
+[7m Manual page log10(3) line 26 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page log10(3) line 27 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       The variant returning [4mdouble[24m also conforms to SVr4, 4.3BSD, C89.[m
+[7m Manual page log10(3) line 28 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page log10(3) line 29 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mSEE[0m [1mALSO[0m[m
+[7m Manual page log10(3) line 30 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mcbrt[0m(3), [1mclog10[0m(3), [1mexp10[0m(3), [1mlog[0m(3), [1mlog2[0m(3), [1msqrt[0m(3)[m
+[7m Manual page log10(3) line 31 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page log10(3) line 32 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mCOLOPHON[0m[m
+[7m Manual page log10(3) line 33 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       This  page  is  part of release 4.16 of the Linux [4mman-pages[24m project.  A[m
+[7m Manual page log10(3) line 34 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       description of the project, information about reporting bugs,  and  the[m
+[7m Manual page log10(3) line 35 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       latest     version     of     this    page,    can    be    found    at[m
+[7m Manual page log10(3) line 36 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       https://www.kernel.org/doc/man-pages/.[m
+[7m Manual page log10(3) line 37 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page log10(3) line 38 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                                  2017-09-15                          LOG10(3)[m
+[7m Manual page log10(3) line 39 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page log10(3) line 39/61 (END) (press h for h

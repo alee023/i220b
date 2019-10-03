@@ -1,0 +1,9 @@
+ex1 correction:
+nm /usr/lib/x86_64-linux-gnu/libm-2.28.a
+>libm.nm 2>/dev/null
+
+ex3:
+why change of y will affect x?
+
+ex6:
+address of main(), addvec(), multvec() for testvec-static and testvec-dynamic
