@@ -3,7 +3,7 @@ nm /usr/lib/x86_64-linux-gnu/libm-2.28.a
 >libm.nm 2>/dev/null
 
 ex3:
-why change of y will affect x?
+x was originally declared as a double, but in main.c, is treated as an int. Doubles are 8 bytes, which is bigger than integers (4 bytes). This causes an overflow in memory to y, changing y's value.
 
 ex6:
 address of main(), addvec(), multvec() for testvec-static and testvec-dynamic
