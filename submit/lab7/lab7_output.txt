@@ -1,9 +1,16 @@
-ex1 correction:
-nm /usr/lib/x86_64-linux-gnu/libm-2.28.a
->libm.nm 2>/dev/null
+Exercise 3:
+x was originally declared as a double, but in main.c, is treated as an int. Doubles are 8 bytes, which are bigger than integers 
+(4 bytes). This causes an overflow in memory to y since they are stored consecutively, changing y's value.
 
-ex3:
-x was originally declared as a double, but in main.c, is treated as an int. Doubles are 8 bytes, which is bigger than integers (4 bytes). This causes an overflow in memory to y, changing y's value.
 
-ex6:
-address of main(), addvec(), multvec() for testvec-static and testvec-dynamic
+Exercise 6:
+
+testvec-static:
+main: 0x401bf6 
+addvec: 0x401f1f 
+multvec: 0x401f8e 
+
+testvec-dynamic:
+main: 0x5555555551ee 
+addvec: 0x7ffff7fca0f5 
+multvec: 0x7ffff7fca164 

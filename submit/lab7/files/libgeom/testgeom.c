@@ -1,4 +1,6 @@
 #include "geom.h"
+#include "circ.c"
+#include "rect.c"
 
 #include <errno.h>
 #include <stdio.h>
