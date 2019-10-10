@@ -1,0 +1,654 @@
+Script started on 2019-10-10 14:53:52-04:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="80" LINES="24"]
+alee889@g7-27:/import/linux/home1/alee889/i220b/work$ cd../..
+bash: cd../..: No such file or directory
+alee889@g7-27:/import/linux/home1/alee889/i220b/work$ cd ,,[K[K../..
+alee889@g7-27:/import/linux/home1/alee889$ cd git-repos/
+alee889@g7-27:/import/linux/home1/alee889/git-repos$ mkdir lab8.git
+alee889@g7-27:/import/linux/home1/alee889/git-repos$ cd lab8.git/
+alee889@g7-27:/import/linux/home1/alee889/git-repos/lab8.git$ git init --bare
+Initialized empty Git repository in /import/linux/home1/alee889/git-repos/lab8.git/
+alee889@g7-27:/import/linux/home1/alee889/git-repos/lab8.git$ mkdir -p/[K ~/temp[K[K[Kmp
+alee889@g7-27:/import/linux/home1/alee889/git-repos/lab8.git$ cd ~/tmp/
+alee889@g7-27:~/tmp$ git clone \ ssg://[K[K[K[Kh://akee889@reni[K[Kmote[K[K[K[K[K[K[K[K[K[K[K[K[Klee889@remote.cs.binghamton.edu/home/ale e889/git-repos/lab8.git
+Cloning into 'lab8'...
+fatal: protocol ' ssh' is not supported
+alee889@g7-27:~/tmp$ git clone \ ssh://alee889@remote.cs.binghamton.edu/home/alee889/git-repos/lab8.git[C[Acd ~/tmp/[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit clone \ ssh://alee889@remote.cs.binghamton.edu/home/alee889/git-repos/lab8.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cssh://alee889@remote.cs.binghamton.edu/home/alee8[C[1P9/git-repos/lab8.git[A[C[C[C[C[C[C[C[C[C[C
+
+Cloning into 'lab8'...
+alee889@remote.cs.binghamton.edu's password: 
+warning: You appear to have cloned an empty repository.
+alee889@g7-27:~/tmp$ clear
+[H[2J[3Jalee889@g7-27:~/tmp$ cd lab8/
+alee889@g7-27:~/tmp/lab8$ git remote -v 
+origin	ssh://alee889@remote.cs.binghamton.edu/home/alee889/git-repos/lab8.git (fetch)
+origin	ssh://alee889@remote.cs.binghamton.edu/home/alee889/git-repos/lab8.git (push)
+alee889@g7-27:~/tmp/lab8$ ls -a
+.  ..  .git
+alee889@g7-27:~/tmp/lab8$ mkdir -p work/lab8
+alee889@g7-27:~/tmp/lab8$ cd work/lab8/
+alee889@g7-27:~/tmp/lab8/work/lab8$ cp ~/cs220/labs/lab8/files/README.md 
+cp: missing destination file operand after '/home/alee889/cs220/labs/lab8/files/README.md'
+Try 'cp --help' for more information.
+alee889@g7-27:~/tmp/lab8/work/lab8$ cp ~/cs220/labs/lab8/files/README.md .
+alee889@g7-27:~/tmp/lab8/work/lab8$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m../[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+alee889@g7-27:~/tmp/lab8/work/lab8$ git add Re[KEADME.md 
+alee889@g7-27:~/tmp/lab8/work/lab8$ git status --short
+[32mA[m  README.md
+alee889@g7-27:~/tmp/lab8/work/lab8$ git commit -m 'added Rr[KEADME'
+[master (root-commit) 26a41a6] added README
+ Committer: Alison Lee <alee889@cs.binghamton.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 4 insertions(+)
+ create mode 100644 work/lab8/README.md
+alee889@g7-27:~/tmp/lab8/work/lab8$ GIT BR[K[K[K[K[K[Kbit[K[K[Kgit branc [Kh 0[K-l 
+[?1h=* [32mmaster[m[m
+[K[?1l>alee889@g7-27:~/tmp/lab8/work/lab8$ git push --set-upstream orgin[K[K[Kigin master
+Warning: Permanently added the ECDSA host key for IP address '128.226.114.203' to the list of known hosts.
+alee889@remote.cs.binghamton.edu's password: 
+IamacoPermission denied, please try again.
+alee889@remote.cs.binghamton.edu's password: 
+Permission denied, please try again.
+alee889@remote.cs.binghamton.edu's password: 
+Enumerating objects: 5, done.
+Counting objects:  20% (1/5)   Counting objects:  40% (2/5)   Counting objects:  60% (3/5)   Counting objects:  80% (4/5)   Counting objects: 100% (5/5)   Counting objects: 100% (5/5), done.
+Writing objects:  20% (1/5)   Writing objects:  40% (2/5)   Writing objects:  60% (3/5)   Writing objects:  80% (4/5)   Writing objects: 100% (5/5)   Writing objects: 100% (5/5), 337 bytes | 168.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To ssh://remote.cs.binghamton.edu/home/alee889/git-repos/lab8.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+alee889@g7-27:~/tmp/lab8/work/lab8$ clear
+[H[2J[3Jalee889@g7-27:~/tmp/lab8/work/lab8$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+alee889@g7-27:~/tmp/lab8/work/lab8$ cp ~.[K/cs220/labs/lab8/files/Make [Kfile .
+alee889@g7-27:~/tmp/lab8/work/lab8$ cp ~/cs220/labs/lab8/files/Makefile .[K[K[K[K[K[K[K[K[K[Khello-one.c hello .c
+alee889@g7-27:~/tmp/lab8/work/lab8$ make
+cc -g -Wall -std=c11    hello.c   -o hello
+[01m[Khello.c:[m[K In function ‘[01m[Kmain[m[K’:
+[01m[Khello.c:5:5:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[Kprintf[m[K’ [[01;35m[K-Wimplicit-function-declaration[m[K]
+     [01;35m[Kprintf[m[K("usage: %s NAME\n", argv[0]);
+     [01;35m[K^~~~~~[m[K
+[01m[Khello.c:5:5:[m[K [01;35m[Kwarning: [m[Kincompatible implicit declaration of built-in function ‘[01m[Kprintf[m[K’
+[01m[Khello.c:5:5:[m[K [01;36m[Knote: [m[Kinclude ‘[01m[K<stdio.h>[m[K’ or provide a declaration of ‘[01m[Kprintf[m[K’
+[01m[Khello.c:1:1:[m[K
++[32m[K#include <stdio.h>[m[K
+ int
+[01m[Khello.c:5:5:[m[K
+     [01;36m[Kprintf[m[K("usage: %s NAME\n", argv[0]);
+     [01;36m[K^~~~~~[m[K
+[01m[Khello.c:6:5:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[Kexit[m[K’ [[01;35m[K-Wimplicit-function-declaration[m[K]
+     [01;35m[Kexit[m[K(1);
+     [01;35m[K^~~~[m[K
+[01m[Khello.c:6:5:[m[K [01;35m[Kwarning: [m[Kincompatible implicit declaration of built-in function ‘[01m[Kexit[m[K’
+[01m[Khello.c:6:5:[m[K [01;36m[Knote: [m[Kinclude ‘[01m[K<stdlib.h>[m[K’ or provide a declaration of ‘[01m[Kexit[m[K’
+[01m[Khello.c:1:1:[m[K
++[32m[K#include <stdlib.h>[m[K
+ int
+[01m[Khello.c:6:5:[m[K
+     [01;36m[Kexit[m[K(1);
+     [01;36m[K^~~~[m[K
+[01m[Khello.c:8:3:[m[K [01;35m[Kwarning: [m[Kincompatible implicit declaration of built-in function ‘[01m[Kprintf[m[K’
+   [01;35m[Kprintf[m[K("hello %s\n", argv[1]);
+   [01;35m[K^~~~~~[m[K
+[01m[Khello.c:8:3:[m[K [01;36m[Knote: [m[Kinclude ‘[01m[K<stdio.h>[m[K’ or provide a declaration of ‘[01m[Kprintf[m[K’
+alee889@g7-27:~/tmp/lab8/work/lab8$ ./hello
+usage: ./hello NAME
+alee889@g7-27:~/tmp/lab8/work/lab8$ ./hello john
+hello john
+alee889@g7-27:~/tmp/lab8/work/lab8$ git status -s 
+[31m??[m Makefile
+[31m??[m hello
+[31m??[m hello.c
+alee889@g7-27:~/tmp/lab8/work/lab8$ cp ~/cs220/labs//[Klab8/files/.gitignore .
+alee889@g7-27:~/tmp/lab8/work/lab8$ gut [K[K[Kit status -s
+[31m??[m .gitignore
+[31m??[m Makefile
+[31m??[m hello.c
+alee889@g7-27:~/tmp/lab8/work/lab8$ git add .
+alee889@g7-27:~/tmp/lab8/work/lab8$ git status -s
+[32mA[m  .gitignore
+[32mA[m  Makefile
+[32mA[m  hello.c
+alee889@g7-27:~/tmp/lab8/work/lab8$ git commit -m
+error: switch `m' requires a value
+alee889@g7-27:~/tmp/lab8/work/lab8$ git commit -m 'wrj[K[Korj[Kkig[Kng with warm[Knings';[K
+[master 95f77f3] working with warnings
+ Committer: Alison Lee <alee889@cs.binghamton.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 3 files changed, 22 insertions(+)
+ create mode 100644 work/lab8/.gitignore
+ create mode 100644 work/lab8/Makefile
+ create mode 100644 work/lab8/hello.c
+alee889@g7-27:~/tmp/lab8/work/lab8$ git status -s
+alee889@g7-27:~/tmp/lab8/work/lab8$ git push
+Warning: Permanently added the ECDSA host key for IP address '128.226.114.206' to the list of known hosts.
+alee889@remote.cs.binghamton.edu's password: 
+Enumerating objects: 10, done.
+Counting objects:  10% (1/10)   Counting objects:  20% (2/10)   Counting objects:  30% (3/10)   Counting objects:  40% (4/10)   Counting objects:  50% (5/10)   Counting objects:  60% (6/10)   Counting objects:  70% (7/10)   Counting objects:  80% (8/10)   Counting objects:  90% (9/10)   Counting objects: 100% (10/10)   Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
+Compressing objects:  25% (1/4)   Compressing objects:  50% (2/4)   Compressing objects:  75% (3/4)   Compressing objects: 100% (4/4)   Compressing objects: 100% (4/4), done.
+Writing objects:  14% (1/7)   Writing objects:  28% (2/7)   Writing objects:  42% (3/7)   Writing objects:  57% (4/7)   Writing objects:  71% (5/7)   Writing objects:  85% (6/7)   Writing objects: 100% (7/7)   Writing objects: 100% (7/7), 669 bytes | 334.00 KiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0)
+To ssh://remote.cs.binghamton.edu/home/alee889/git-repos/lab8.git
+   26a41a6..95f77f3  master -> master
+alee889@g7-27:~/tmp/lab8/work/lab8$ git log
+[?1h=[33mcommit 95f77f3e0832274d2539b8f91afb8e6cdd5a717b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m[m
+Author: Alison Lee <alee889@cs.binghamton.edu>[m
+Date:   Thu Oct 10 15:02:13 2019 -0400[m
+[m
+    working with warnings[m
+[m
+[33mcommit 26a41a61c756b7d87fd77fc63e58cf165ca80731[m[m
+Author: Alison Lee <alee889@cs.binghamton.edu>[m
+Date:   Thu Oct 10 14:58:56 2019 -0400[m
+[m
+    added README[m
+[K[?1l>alee889@g7-27:~/tmp/lab8/work/lab8$ clear
+[H[2J[3Jalee889@g7-27:~/tmp/lab8/work/lab8$ dir
+hello  hello.c	Makefile  README.md
+alee889@g7-27:~/tmp/lab8/work/lab8$ gedit hello.c &
+[1] 6172
+alee889@g7-27:~/tmp/lab8/work/lab8$ 
+(gedit:6172): Gtk-[1;33mWARNING[0m **: [34m15:03:10.605[0m: Calling org.xfce.Session.Manager.Inhibit failed: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: Method "Inhibit" with signature "susu" on interface "org.xfce.Session.Manager" doesn't exist
+
+
+[1]+  Done                    gedit hello.c
+alee889@g7-27:~/tmp/lab8/work/lab8$ make
+cc -g -Wall -std=c11    hello.c   -o hello
+alee889@g7-27:~/tmp/lab8/work/lab8$ ./hello sue
+hello sue
+alee889@g7-27:~/tmp/lab8/work/lab8$ git status -s
+ [31mM[m hello.c
+alee889@g7-27:~/tmp/lab8/work/lab8$ git commit -am "[K"workingL [K[K: clean comp[Kile"[K[K[K[Kpile"
+[master 74893d3] working: clean compile
+ Committer: Alison Lee <alee889@cs.binghamton.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 3 insertions(+)
+alee889@g7-27:~/tmp/lab8/work/lab8$ git push
+alee889@remote.cs.binghamton.edu's password: 
+Enumerating objects: 9, done.
+Counting objects:  11% (1/9)   Counting objects:  22% (2/9)   Counting objects:  33% (3/9)   Counting objects:  44% (4/9)   Counting objects:  55% (5/9)   Counting objects:  66% (6/9)   Counting objects:  77% (7/9)   Counting objects:  88% (8/9)   Counting objects: 100% (9/9)   Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
+Writing objects:  20% (1/5)   Writing objects:  40% (2/5)   Writing objects:  60% (3/5)   Writing objects:  80% (4/5)   Writing objects: 100% (5/5)   Writing objects: 100% (5/5), 401 bytes | 401.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+To ssh://remote.cs.binghamton.edu/home/alee889/git-repos/lab8.git
+   95f77f3..74893d3  master -> master
+alee889@g7-27:~/tmp/lab8/work/lab8$ git log -l hello.c
+[?1h=[33mcommit 74893d3207833b0f7727ffa6a689ab61c2e679ec[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m[m
+Author: Alison Lee <alee889@cs.binghamton.edu>[m
+Date:   Thu Oct 10 15:04:23 2019 -0400[m
+[m
+    working: clean compile[m
+[m
+[33mcommit 95f77f3e0832274d2539b8f91afb8e6cdd5a717b[m[m
+Author: Alison Lee <alee889@cs.binghamton.edu>[m
+Date:   Thu Oct 10 15:02:13 2019 -0400[m
+[m
+    working with warnings[m
+[m
+[33mcommit 26a41a61c756b7d87fd77fc63e58cf165ca80731[m[m
+Author: Alison Lee <alee889@cs.binghamton.edu>[m
+Date:   Thu Oct 10 14:58:56 2019 -0400[m
+[m
+    added README[m
+[K[?1l>alee889@g7-27:~/tmp/lab8/work/lab8$ dir
+hello  hello.c	Makefile  README.md
+alee889@g7-27:~/tmp/lab8/work/lab8$ gey[Kdit Makefile &
+[1] 6464
+alee889@g7-27:~/tmp/lab8/work/lab8$ get[Kdit H[Khello.c &
+[2] 6486
+[1]   Done                    gedit Makefile
+alee889@g7-27:~/tmp/lab8/work/lab8$ 
+(gedit:6486): Gtk-[1;33mWARNING[0m **: [34m15:05:51.399[0m: Calling org.xfce.Session.Manager.Inhibit failed: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: Method "Inhibit" with signature "susu" on interface "org.xfce.Session.Manager" doesn't exist
+
+
+[2]+  Done                    gedit hello.c
+alee889@g7-27:~/tmp/lab8/work/lab8$ make
+cc -g -Wall -std=c11    hello.c   -o hello
+alee889@g7-27:~/tmp/lab8/work/lab8$ ./hello
+usage: ./hello NAME
+alee889@g7-27:~/tmp/lab8/work/lab8$ ./hello >/dev/null
+usage: ./hello NAME
+alee889@g7-27:~/tmp/lab8/work/lab8$ git diff[K[K[K[K[K[K[K[K./hello alison
+hello alison
+alee889@g7-27:~/tmp/lab8/work/lab8$ git diff
+[?1h=[1mdiff --git a/work/lab8/hello.c b/work/lab8/hello.c[m[m
+[1mindex 14e4e73..707ef29 100644[m[m
+[1m--- a/work/lab8/hello.c[m[m
+[1m+++ b/work/lab8/hello.c[m[m
+[36m@@ -5,7 +5,7 @@[m [mint[m[m
+ main(int argc, const char *argv[])[m[m
+ {[m[m
+   if (argc != 2) {[m[m
+[31m-    printf("usage: %s NAME\n", argv[0]);[m[m
+[32m+[m[32m    fprintf(stderr, "usage: %s NAME\n", argv[0]);[m[m
+     exit(1);[m[m
+   }[m[m
+   printf("hello %s\n", argv[1]);[m[m
+[K[?1l>alee889@g7-27:~/tmp/lab8/work/lab8$ git commit -am "send usage mesa[Ksage to stderr "
+[master ba2df67] send usage message to stderr
+ Committer: Alison Lee <alee889@cs.binghamton.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+alee889@g7-27:~/tmp/lab8/work/lab8$ gitp[K push
+alee889@remote.cs.binghamton.edu's password: 
+Enumerating objects: 9, done.
+Counting objects:  11% (1/9)   Counting objects:  22% (2/9)   Counting objects:  33% (3/9)   Counting objects:  44% (4/9)   Counting objects:  55% (5/9)   Counting objects:  66% (6/9)   Counting objects:  77% (7/9)   Counting objects:  88% (8/9)   Counting objects: 100% (9/9)   Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
+Writing objects:  20% (1/5)   Writing objects:  40% (2/5)   Writing objects:  60% (3/5)   Writing objects:  80% (4/5)   Writing objects: 100% (5/5)   Writing objects: 100% (5/5), 396 bytes | 396.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+To ssh://remote.cs.binghamton.edu/home/alee889/git-repos/lab8.git
+   74893d3..ba2df67  master -> master
+alee889@g7-27:~/tmp/lab8/work/lab8$ git shortlog
+[?1h=Alison Lee (4):[m
+      added README[m
+      working with warnings[m
+      working: clean compile[m
+      send usage message to stderr[m
+[m
+[K[?1l>alee889@g7-27:~/tmp/lab8/work/lab8$ clear
+[H[2J[3Jalee889@g7-27:~/tmp/lab8/work/lab8$ git checkout -b hello-multi
+Switched to a new branch 'hello-multi'
+alee889@g7-27:~/tmp/lab8/work/lab8$ git branch 0[K-l
+[?1h=* [32mhello-multi[m[m
+  master[m[m
+[K[?1l>alee889@g7-27:~/tmp/lab8/work/lab8$ cp ~/cs220/labs/lab8/files/hello-multi.c hel lo.c
+alee889@g7-27:~/tmp/lab8/work/lab8$ make
+cc -g -Wall -std=c11    hello.c   -o hello
+alee889@g7-27:~/tmp/lab8/work/lab8$ ./hello john sue
+hello john
+hello sue
+alee889@g7-27:~/tmp/lab8/work/lab8$ git commit -am "allo w[K[Kw gretting multiple name s"
+[hello-multi d5eef2c] allow gretting multiple names
+ Committer: Alison Lee <alee889@cs.binghamton.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+alee889@g7-27:~/tmp/lab8/work/lab8$ git pu[K[K[K[Kt push 08[K[K-u origin heloo[K[Klo-multi
+alee889@remote.cs.binghamton.edu's password: 
+Enumerating objects: 9, done.
+Counting objects:  11% (1/9)   Counting objects:  22% (2/9)   Counting objects:  33% (3/9)   Counting objects:  44% (4/9)   Counting objects:  55% (5/9)   Counting objects:  66% (6/9)   Counting objects:  77% (7/9)   Counting objects:  88% (8/9)   Counting objects: 100% (9/9)   Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
+Writing objects:  20% (1/5)   Writing objects:  40% (2/5)   Writing objects:  60% (3/5)   Writing objects:  80% (4/5)   Writing objects: 100% (5/5)   Writing objects: 100% (5/5), 457 bytes | 457.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+To ssh://remote.cs.binghamton.edu/home/alee889/git-repos/lab8.git
+ * [new branch]      hello-multi -> hello-multi
+Branch 'hello-multi' set up to track remote branch 'hello-multi' from 'origin'.
+alee889@g7-27:~/tmp/lab8/work/lab8$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+alee889@g7-27:~/tmp/lab8/work/lab8$ make
+cc -g -Wall -std=c11    hello.c   -o hello
+alee889@g7-27:~/tmp/lab8/work/lab8$ ./hello john sue
+usage: ./hello NAME
+alee889@g7-27:~/tmp/lab8/work/lab8$ tail 0[K-3 hello.c 
+  }
+  printf("hello %s\n", argv[1]);
+}
+alee889@g7-27:~/tmp/lab8/work/lab8$ tail -3 hello.c
+  }
+  printf("hello %s\n", argv[1]);
+}
+alee889@g7-27:~/tmp/lab8/work/lab8$ tail -3 hello.c printf("hello %s\n".[K, argv[1] ); return 0 ; }
+bash: syntax error near unexpected token `('
+alee889@g7-27:~/tmp/lab8/work/lab8$ clear
+[H[2J[3Jalee889@g7-27:~/tmp/lab8/work/lab8$ gedit hello.c &
+[1] 7803
+alee889@g7-27:~/tmp/lab8/work/lab8$ 
+(gedit:7803): Gtk-[1;33mWARNING[0m **: [34m15:14:50.616[0m: Calling org.xfce.Session.Manager.Inhibit failed: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: Method "Inhibit" with signature "susu" on interface "org.xfce.Session.Manager" doesn't exist
+
+
+[1]+  Done                    gedit hello.c
+alee889@g7-27:~/tmp/lab8/work/lab8$ ,ale
+bash: ,ale: command not found
+alee889@g7-27:~/tmp/lab8/work/lab8$ /[Kmake
+cc -g -Wall -std=c11    hello.c   -o hello
+alee889@g7-27:~/tmp/lab8/work/lab8$ ./hello
+usage: ./hello NAME
+alee889@g7-27:~/tmp/lab8/work/lab8$ ./hello sue
+hello sue
+alee889@g7-27:~/tmp/lab8/work/lab8$ ./hello mary sue
+usage: ./hello NAME
+alee889@g7-27:~/tmp/lab8/work/lab8$ git commit -am "added return at end of main( )"
+[master 7c3a9dd] added return at end of main()
+ Committer: Alison Lee <alee889@cs.binghamton.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 2 insertions(+)
+alee889@g7-27:~/tmp/lab8/work/lab8$ git push
+alee889@remote.cs.binghamton.edu's password: 
+Enumerating objects: 9, done.
+Counting objects:  11% (1/9)   Counting objects:  22% (2/9)   Counting objects:  33% (3/9)   Counting objects:  44% (4/9)   Counting objects:  55% (5/9)   Counting objects:  66% (6/9)   Counting objects:  77% (7/9)   Counting objects:  88% (8/9)   Counting objects: 100% (9/9)   Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
+Writing objects:  20% (1/5)   Writing objects:  40% (2/5)   Writing objects:  60% (3/5)   Writing objects:  80% (4/5)   Writing objects: 100% (5/5)   Writing objects: 100% (5/5), 396 bytes | 396.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+To ssh://remote.cs.binghamton.edu/home/alee889/git-repos/lab8.git
+   ba2df67..7c3a9dd  master -> master
+alee889@g7-27:~/tmp/lab8/work/lab8$ clear
+[H[2J[3Jalee889@g7-27:~/tmp/lab8/work/lab8$ git checou[K[Kkout m[Khello-multi
+Switched to branch 'hello-multi'
+Your branch is up to date with 'origin/hello-multi'.
+alee889@g7-27:~/tmp/lab8/work/lab8$ git merge master
+Auto-merging work/lab8/hello.c
+CONFLICT (content): Merge conflict in work/lab8/hello.c
+Automatic merge failed; fix conflicts and then commit the result.
+alee889@g7-27:~/tmp/lab8/work/lab8$ gedit hello.c &
+[1] 8071
+alee889@g7-27:~/tmp/lab8/work/lab8$ 
+(gedit:8071): Gtk-[1;33mWARNING[0m **: [34m15:16:56.611[0m: Calling org.xfce.Session.Manager.Inhibit failed: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: Method "Inhibit" with signature "susu" on interface "org.xfce.Session.Manager" doesn't exist
+
+
+[1]+  Done                    gedit hello.c
+alee889@g7-27:~/tmp/lab8/work/lab8$ make
+cc -g -Wall -std=c11    hello.c   -o hello
+alee889@g7-27:~/tmp/lab8/work/lab8$ ./hello john sue
+hello john
+hello sue
+alee889@g7-27:~/tmp/lab8/work/lab8$ git commit -am "merged master"
+[hello-multi 61624cf] merged master
+ Committer: Alison Lee <alee889@cs.binghamton.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+alee889@g7-27:~/tmp/lab8/work/lab8$ git push
+alee889@remote.cs.binghamton.edu's password: 
+Enumerating objects: 13, done.
+Counting objects:   7% (1/13)   Counting objects:  15% (2/13)   Counting objects:  23% (3/13)   Counting objects:  30% (4/13)   Counting objects:  38% (5/13)   Counting objects:  46% (6/13)   Counting objects:  53% (7/13)   Counting objects:  61% (8/13)   Counting objects:  69% (9/13)   Counting objects:  76% (10/13)   Counting objects:  84% (11/13)   Counting objects:  92% (12/13)   Counting objects: 100% (13/13)   Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
+Writing objects:  20% (1/5)   Writing objects:  40% (2/5)   Writing objects:  60% (3/5)   Writing objects:  80% (4/5)   Writing objects: 100% (5/5)   Writing objects: 100% (5/5), 410 bytes | 410.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+To ssh://remote.cs.binghamton.edu/home/alee889/git-repos/lab8.git
+   d5eef2c..61624cf  hello-multi -> hello-multi
+alee889@g7-27:~/tmp/lab8/work/lab8$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+alee889@g7-27:~/tmp/lab8/work/lab8$ git merge hello-multi
+Updating 7c3a9dd..61624cf
+Fast-forward
+ work/lab8/hello.c | 8 [32m+++++[m[31m---[m
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+alee889@g7-27:~/tmp/lab8/work/lab8$ make
+cc -g -Wall -std=c11    hello.c   -o hello
+alee889@g7-27:~/tmp/lab8/work/lab8$ ./hello john sue
+hello john
+hello sue
+alee889@g7-27:~/tmp/lab8/work/lab8$ git branch -l
+[?1h=  hello-multi[m[m
+* [32mmaster[m[m
+[K[?1l>alee889@g7-27:~/tmp/lab8/work/lab8$ git shortlog hello.c
+[?1h=Alison Lee (6):[m
+      working with warnings[m
+      working: clean compile[m
+      send usage message to stderr[m
+      allow gretting multiple names[m
+      added return at end of main()[m
+      merged master[m
+[m
+[K[?1l>alee889@g7-27:~/tmp/lab8/work/lab8$ git commit "am [K[K[K[K-am "merged hello-multi"
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+alee889@g7-27:~/tmp/lab8/work/lab8$ git push
+alee889@remote.cs.binghamton.edu's password: 
+Total 0 (delta 0), reused 0 (delta 0)
+To ssh://remote.cs.binghamton.edu/home/alee889/git-repos/lab8.git
+   7c3a9dd..61624cf  master -> master
+alee889@g7-27:~/tmp/lab8/work/lab8$ cd ~/i220b
+alee889@g7-27:~/i220b$ git remote add lab 8 \shh[K[Ksh://alee889@remote.cs.binghamton. edu/home/alee889/git-repos.[K/lab8.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+alee889@g7-27:~/i220b$ git pull -al[K[K-la[K[Kallow [K-unrelated-history[Kies lab8 master
+fatal: 'lab8' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+alee889@g7-27:~/i220b$ git pull --allow-unrelated-histories lab8 master[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cremote add lab 8 \ssh://alee889@remote.cs.binghamton.edu/home/alee889/git-repos/lab8.git[Acd ~/i220b[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit remote add lab 8 \ssh://alee889@remote.cs.binghamton.edu/home/alee889/git-repos/lab8.git[A[9Ppull --allow-unrelated-histories lab8 master
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cremote add lab 8 \ssh://alee889@remote.cs.binghamton.edu/home/alee889/git-repos/lab8.git[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C8 \ssh://alee889@remote.cs.binghamton.ed[1Pu/home/alee889/git-repos/lab8.git[A[C[C[C[C[C[C[C
+
+alee889@g7-27:~/i220b$ git pull --allow [K-unrelated-histories lab9[K8 master
+alee889@remote.cs.binghamton.edu's password: 
+warning: no common commits
+remote: Enumerating objects: 37, done.[K
+remote: Counting objects:   2% (1/37)   [Kremote: Counting objects:   5% (2/37)   [Kremote: Counting objects:   8% (3/37)   [Kremote: Counting objects:  10% (4/37)   [Kremote: Counting objects:  13% (5/37)   [Kremote: Counting objects:  16% (6/37)   [Kremote: Counting objects:  18% (7/37)   [Kremote: Counting objects:  21% (8/37)   [Kremote: Counting objects:  24% (9/37)   [Kremote: Counting objects:  27% (10/37)   [Kremote: Counting objects:  29% (11/37)   [Kremote: Counting objects:  32% (12/37)   [Kremote: Counting objects:  35% (13/37)   [Kremote: Counting objects:  37% (14/37)   [Kremote: Counting objects:  40% (15/37)   [Kremote: Counting objects:  43% (16/37)   [Kremote: Counting objects:  45% (17/37)   [Kremote: Counting objects:  48% (18/37)   [Kremote: Counting objects:  51% (19/37)   [Kremote: Counting objects:  54% (20/37)   [Kremote: Counting objects:  56% (21/37)   [Kremote: Counting objects:  59% (22/37)   [Kremote: Counting objects:  62% (23/37)   [Kremote: Counting objects:  64% (24/37)   [Kremote: Counting objects:  67% (25/37)   [Kremote: Counting objects:  70% (26/37)   [Kremote: Counting objects:  72% (27/37)   [Kremote: Counting objects:  75% (28/37)   [Kremote: Counting objects:  78% (29/37)   [Kremote: Counting objects:  81% (30/37)   [Kremote: Counting objects:  83% (31/37)   [Kremote: Counting objects:  86% (32/37)   [Kremote: Counting objects:  89% (33/37)   [Kremote: Counting objects:  91% (34/37)   [Kremote: Counting objects:  94% (35/37)   [Kremote: Counting objects:  97% (36/37)   [Kremote: Counting objects: 100% (37/37)   [Kremote: Counting objects: 100% (37/37), done.[K
+remote: Compressing objects:   5% (1/20)   [Kremote: Compressing objects:  10% (2/20)   [Kremote: Compressing objects:  15% (3/20)   [Kremote: Compressing objects:  20% (4/20)   [Kremote: Compressing objects:  25% (5/20)   [Kremote: Compressing objects:  30% (6/20)   [Kremote: Compressing objects:  35% (7/20)   [Kremote: Compressing objects:  40% (8/20)   [Kremote: Compressing objects:  45% (9/20)   [Kremote: Compressing objects:  50% (10/20)   [Kremote: Compressing objects:  55% (11/20)   [Kremote: Compressing objects:  60% (12/20)   [Kremote: Compressing objects:  65% (13/20)   [Kremote: Compressing objects:  70% (14/20)   [Kremote: Compressing objects:  75% (15/20)   [Kremote: Compressing objects:  80% (16/20)   [Kremote: Compressing objects:  85% (17/20)   [Kremote: Compressing objects:  90% (18/20)   [Kremote: Compressing objects:  95% (19/20)   [Kremote: Compressing objects: 100% (20/20)   [Kremote: Compressing objects: 100% (20/20), done.[K
+remote: Total 37 (delta 11), reused 0 (delta 0)[K
+Unpacking objects:   2% (1/37)   Unpacking objects:   5% (2/37)   Unpacking objects:   8% (3/37)   Unpacking objects:  10% (4/37)   Unpacking objects:  13% (5/37)   Unpacking objects:  16% (6/37)   Unpacking objects:  18% (7/37)   Unpacking objects:  21% (8/37)   Unpacking objects:  24% (9/37)   Unpacking objects:  27% (10/37)   Unpacking objects:  29% (11/37)   Unpacking objects:  32% (12/37)   Unpacking objects:  35% (13/37)   Unpacking objects:  37% (14/37)   Unpacking objects:  40% (15/37)   Unpacking objects:  43% (16/37)   Unpacking objects:  45% (17/37)   Unpacking objects:  48% (18/37)   Unpacking objects:  51% (19/37)   Unpacking objects:  54% (20/37)   Unpacking objects:  56% (21/37)   Unpacking objects:  59% (22/37)   Unpacking objects:  62% (23/37)   Unpacking objects:  64% (24/37)   Unpacking objects:  67% (25/37)   Unpacking objects:  70% (26/37)   Unpacking objects:  72% (27/37)   Unpacking objects:  75% (28/37)   Unpacking objects:  78% (29/37)   Unpacking objects:  81% (30/37)   Unpacking objects:  83% (31/37)   Unpacking objects:  86% (32/37)   Unpacking objects:  89% (33/37)   Unpacking objects:  91% (34/37)   Unpacking objects:  94% (35/37)   Unpacking objects:  97% (36/37)   Unpacking objects: 100% (37/37)   Unpacking objects: 100% (37/37), done.
+From ssh://remote.cs.binghamton.edu/home/alee889/git-repos/lab8
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> lab8/master
+hint: Waiting for your editor to close the file... [?1000h[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;24r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[24;1H"~/git-repos/i220b/.git/MERGE_MSG" 7L, 311C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[38;5;130mMerge branch 'master' of ssh://remote.cs.binghamto[mn.edu/home/alee889/git-repos/ll[2;1Hab8
+
+[34m# Please enter a commit message to explain why this merge is necessary,
+# especially if it merges an updated upstream into a topic branch.
+#
+# Lines starting with '#' will be ignored, and an empty message aborts
+# the commit.[m
+[94m~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [m[24;63H1,1[11CAll]2;MERGE_MSG (~/git-repos/i220b/.git) - VIM]1;MERGE_MSG[1;1H[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?1000l[?1006h[?1002h[?1006l[?1002l[?1006h[?1002h[27m[23m[29m[m[H[2J[?25l[1;1H[93mMerge branch 'master' of ssh://remote.cs.binghamto[mn.edu/home/alee889/git-repos/ll[2;1Hab8
+
+[96m# Please enter a commit message to explain why this merge is necessary,
+# especially if it merges an updated upstream into a topic branch.
+#
+# Lines starting with '#' will be ignored, and an empty message aborts
+# the commit.[m
+[94m~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [m[24;63H1,1[11CAll"~/git-repos/i220b/.git/MERGE_MSG" 7L, 311C[1;1H[?25h[?25l[24;53H~@k[1;1H[24;53H   [3;1H[24;63H2,0-1[3;1H[?25h[?25l[24;53H~@k[3;1H[24;53H   [4;1H[24;63H3,1  [4;1H[?25h[?25l[24;53H~@k[4;1H[24;53H   [5;1H[24;63H4[5;1H[?25h[?25l[24;53H~@k[5;1H[24;53H   [6;1H[24;63H5[6;1H[?25h[?25l[24;53H~@k[6;1H[24;53H   [7;1H[24;63H6[7;1H[?25h[?25l[24;53H~@k[7;1H[24;53H   [8;1H[24;63H7[8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H`[8;1H[?25h[?25l[24;54H~@k[8;1H[24;1H[97m[41mE78: Unknown mark[m[24;18H[K[8;1H[24;63H7,1[11CAll[8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;1H[?25h[?25l[24;53H`[8;1H[?25h[?25l[24;54H~@k[8;1H[24;53H[K[8;1H[24;63H7,1[11CAll[8;1H[?25h[?25l[24;53H~@k[8;1H[24;53H   [8;2H[24;65H2[8;2H[?25h[?25l[24;53H~@k[8;2H[24;53H   [7;2H[24;63H6[7;2H[?25h[?25l[24;53H~@k[7;2H[24;53H   [6;1H[24;63H5,1[6;1H[?25h[?25l[24;53H~@k[6;1H[24;53H   [5;2H[24;63H4,2[5;2H[?25h[?25l[24;53H~@k[5;2H[24;53H   [4;2H[24;63H3[4;2H[?25h[?25l[24;53H~@k[4;2H[24;53H   [3;1H[24;63H2,0-1[3;1H[?25h[?25l[24;53H~@k[3;1H[24;53H   [1;2H[24;63H1,2  [1;2H[?25h[?25l[24;53H~@k[1;2H[24;53H   [3;1H[24;63H2,0-1[3;1H[?25h[?25l[24;53H~@k[3;1H[24;53H   [4;2H[24;63H3,2  [4;2H[?25h[?25l[24;53Hd[4;2H[?25h[?25l[24;54Hf[4;2H[?25h[?25l[24;55Hd[4;2H[24;53H   [4;2H[?25h[?25l[24;53Hf[4;2H[?25h[?25l[24;54Hf[4;2H[24;53H  [4;2H[?25h[?25l[24;53H~@k[4;2H[24;53H   [5;2H[24;63H4[5;2H[?25h[?25l[24;53H~@k[5;2H[24;53H   [6;1H[24;63H5,1[6;1H[?25h[?25l[24;53H~@k[6;1H[24;53H   [7;2H[24;63H6,2[7;2H[?25h[?25l[24;53H~@k[7;2H[24;53H   [8;2H[24;63H7[8;2H[?25h[?25l[24;53H~@k[8;2H[24;53H   [8;2H[?25h[?25l[24;53H~@k[8;2H[24;53H   [8;2H[?25h[?25l[24;53H~@k[8;2H[24;53H   [8;2H[?25h[?25l[24;53H^M[8;2H[24;53H  [8;2H[?25h[?25l[24;1HType  :qa!  and press <E...all changes and exit Vim[24;63H[K[24;63H7,2[11CAll[8;2H[?25h[?25l[24;53H:[8;2H[24;1H[K[24;1H:[?2004h[?25hq[?25l[?25hA[?25l[?25h![?25l[?25h[?25l[97m[41mE492: Not an editor command: qA![8;2H[m[24;63H7,2[11CAll[8;2H[?25h[?25l[24;53H^M[8;2H[24;53H  [8;2H[?25h[?25l[24;1HType  :qa!  and press <E...all changes and exit Vim[24;63H[K[24;63H7,2[11CAll[8;2H[?25h[?25l[24;53H:[8;2H[24;1H[K[24;1H:[?2004h[?25hq[?25l[?25ha[?25l[?25h![?25l[?25h[?25l[?1006l[?1002l[?2004l]2;Terminal - ]1;Terminal - [23;2t[23;1t[22;2t[22;1t[23;2t[23;1t[24;1H[K[24;1H[?2004l[?1l>[?25h[?1049l[23;0;0t[KMerge made by the 'recursive' strategy.
+ work/lab8/.gitignore |  3 [32m+++[m
+ work/lab8/Makefile   | 10 [32m++++++++++[m
+ work/lab8/README.md  |  4 [32m++++[m
+ work/lab8/hello.c    | 16 [32m++++++++++++++++[m
+ 4 files changed, 33 insertions(+)
+ create mode 100644 work/lab8/.gitignore
+ create mode 100644 work/lab8/Makefile
+ create mode 100644 work/lab8/README.md
+ create mode 100644 work/lab8/hello.c
+alee889@g7-27:~/i220b$ cd work/lab8
+alee889@g7-27:~/i220b/work/lab8$ ls
+hello.c  Makefile  README.md
+alee889@g7-27:~/i220b/work/lab8$ log log hel[K[K[K[K[K[K[K[K[K[K[Kgit log hello.c
+[?1h=[33mcommit 61624cfadafc58e3568a9474f115c97fd775ad2f[m[33m ([m[1;31mlab8/master[m[33m)[m[m
+Merge: d5eef2c 7c3a9dd[m
+Author: Alison Lee <alee889@cs.binghamton.edu>[m
+Date:   Thu Oct 10 15:17:37 2019 -0400[m
+[m
+    merged master[m
+[m
+[33mcommit 7c3a9dde8ee11f7d103114d88ae1184e9d238dbd[m[m
+Author: Alison Lee <alee889@cs.binghamton.edu>[m
+Date:   Thu Oct 10 15:15:48 2019 -0400[m
+[m
+    added return at end of main()[m
+[m
+[33mcommit d5eef2c70ddcd35a1cf0a796725683e5fe9110b8[m[m
+Author: Alison Lee <alee889@cs.binghamton.edu>[m
+Date:   Thu Oct 10 15:12:49 2019 -0400[m
+[m
+    allow gretting multiple names[m
+[m
+[33mcommit ba2df672bf7ba93d9c16ea422b2481beeb414450[m[m
+Author: Alison Lee <alee889@cs.binghamton.edu>[m
+Date:   Thu Oct 10 15:06:59 2019 -0400[m
+[m
+:[K[K    send usage message to stderr[m
+[m
+[33mcommit 74893d3207833b0f7727ffa6a689ab61c2e679ec[m[m
+Author: Alison Lee <alee889@cs.binghamton.edu>[m
+Date:   Thu Oct 10 15:04:23 2019 -0400[m
+[m
+    working: clean compile[m
+[m
+[33mcommit 95f77f3e0832274d2539b8f91afb8e6cdd5a717b[m[m
+Author: Alison Lee <alee889@cs.binghamton.edu>[m
+Date:   Thu Oct 10 15:02:13 2019 -0400[m
+[m
+:[K[K    working with warnings[m
+[7m(END)[27m[K[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[24;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    added return at end of main()[m
+[24;1H[K:[K[K [KESCESC[KOO[KBB[K[m
+:[K[K [KESCESC[KOO[KBB[K    working with warnings[m
+[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[24;1H[K:[K[K    working with warnings[m
+[7m(END)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[24;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    added return at end of main()[m
+[24;1H[K:[K[K [KESCESC[KOO[KBB[K[m
+:[K[K [KESCESC[KOO[KBB[K    working with warnings[m
+[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[HM[m
+[HM    added return at end of main()[m
+[HM[m
+[HMDate:   Thu Oct 10 15:15:48 2019 -0400[m
+[HMAuthor: Alison Lee <alee889@cs.binghamton.edu>[m
+[HM[33mcommit 7c3a9dde8ee11f7d103114d88ae1184e9d238dbd[m[m
+[HM[m
+[HM    merged master[m
+[HM[m
+[HMDate:   Thu Oct 10 15:17:37 2019 -0400[m
+[HMAuthor: Alison Lee <alee889@cs.binghamton.edu>[m
+[HMMerge: d5eef2c 7c3a9dd[m
+[HM[33mcommit 61624cfadafc58e3568a9474f115c97fd775ad2f[m[33m ([m[1;31mlab8/master[m[33m)[m[m
+[24;1H[K:[K[K:[K[K[7mNo next tag  (press RETURN)[27m[24;1H[K[K:[K[K    send usage message to stderr[m
+:[K[K[m
+:[K[K[33mcommit 74893d3207833b0f7727ffa6a689ab61c2e679ec[m[m
+:[K[KAuthor: Alison Lee <alee889@cs.binghamton.edu>[m
+:[K[KDate:   Thu Oct 10 15:04:23 2019 -0400[m
+:[K[K[m
+:[K[K    working: clean compile[m
+:[K[K[m
+:[K[K[33mcommit 95f77f3e0832274d2539b8f91afb8e6cdd5a717b[m[m
+:[K[KAuthor: Alison Lee <alee889@cs.binghamton.edu>[m
+:[K[KDate:   Thu Oct 10 15:02:13 2019 -0400[m
+:[K[K[m
+:[K[K    working with warnings[m
+[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[24;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    added return at end of main()[m
+[24;1H[K:[K[K [KESCESC[KOO[KAA[K[HM[m
+[24;1H[K:[K[K [KESCESC[KOO[KAA[K[HMDate:   Thu Oct 10 15:15:48 2019 -0400[m
+[24;1H[K:[K[K [KESCESC[KOO[KAA[K[HMAuthor: Alison Lee <alee889@cs.binghamton.edu>[m
+[24;1H[K:[K[K [KESCESC[KOO[KAA[K[HM[33mcommit 7c3a9dde8ee11f7d103114d88ae1184e9d238dbd[m[m
+[24;1H[K:[K[K [KESCESC[KOO[KAA[K[HM[m
+[24;1H[K:[K[K [KESCESC[KOO[KAA[K[HM    merged master[m
+[24;1H[K:[K[K [KESCESC[KOO[KAA[K[HM[m
+[24;1H[K:[K[K [KESCESC[KOO[KAA[K[HMDate:   Thu Oct 10 15:17:37 2019 -0400[m
+[24;1H[K:[K[K [KESCESC[KOO[KAA[K[HMAuthor: Alison Lee <alee889@cs.binghamton.edu>[m
+[24;1H[K:[K[K [KESCESC[KOO[KAA[K[HMMerge: d5eef2c 7c3a9dd[m
+[24;1H[K:[K[K [KESCESC[KOO[KAA[K[HM[33mcommit 61624cfadafc58e3568a9474f115c97fd775ad2f[m[33m ([m[1;31mlab8/master[m[33m)[m[m
+[24;1H[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KAA[K[K:[K[K [KESCESC[KOO[KBB[K    send usage message to stderr[m
+:[K[K [KESCESC[KOO[KBB[K[m
+:[K[K [KESCESC[KOO[KBB[K[33mcommit 74893d3207833b0f7727ffa6a689ab61c2e679ec[m[m
+:[K[K [KESCESC[KOO[KBB[KAuthor: Alison Lee <alee889@cs.binghamton.edu>[m
+:[K[K [KESCESC[KOO[KBB[KDate:   Thu Oct 10 15:04:23 2019 -0400[m
+:[K[K [KESCESC[KOO[KBB[K[m
+:[K[K [KESCESC[KOO[KBB[K    working: clean compile[m
+:[K[K [KESCESC[KOO[KBB[K[m
+:[K[K [KESCESC[KOO[KBB[K[33mcommit 95f77f3e0832274d2539b8f91afb8e6cdd5a717b[m[m
+:[K[K [KESCESC[KOO[KBB[KAuthor: Alison Lee <alee889@cs.binghamton.edu>[m
+:[K[K [KESCESC[KOO[KBB[KDate:   Thu Oct 10 15:02:13 2019 -0400[m
+:[K[K [KESCESC[KOO[KBB[K[m
+:[K[K:[K[K [KESCESC[KOO[KBB[K    working with warnings[m
+[7m(END)[27m[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K[7m(END)[27m[K[K [KESCESC[KOO[KAA[K[HM[m
+[24;1H[K:[K[K [KESCESC[KOO[KBB[K    working with warnings[m
+[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K [KESCESC[KOO[KBB[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[K[7m(END)[27m[K[K[?1l>
+alee889@g7-27:~/i220b/work/lab8$ exit
+
+Script done on 2019-10-10 15:26:53-04:00 [COMMAND_EXIT_CODE="130"]
