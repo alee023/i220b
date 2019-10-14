@@ -8,7 +8,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <ctype.h>
-
+#include <stdio.h>
 
 /** Provide concrete definition for struct BigBits to flesh out
  *  abstract BigBits data type.
@@ -53,29 +53,25 @@ freeBigBits(BigBits *bigBits)
 /** Returns a lowercase hex string from a string (arr)
 */
 const char * hexBB( const char *str ) {
-	bool isZero = 1 ;
-	// start of actual characters after all leading 0s
-	int startIndex = 0 ;
-	char *retHexStr ;
-	
-	// stops once reaches nonzero char or end of array -- if never reaches nonzero char
-	for( int i = 0; isZero && str[ i ]; i++ ) { //stops before '\0'
-		if( str[ i ] != '0' ) {
-			isZero = 0 ;
-			startIndex = i ;
+	int sig = 0 ;
+	int index = 0 ;
+	char *retBB ;
+
+	for( int i = 0; str[ i ]; i++ ) {
+		if( sig == 0 && str[ i ] != '0' ) {
+			sig = 1;
+			retBB = malloc( strlen( str ) - i + 1 ) ;
+		}
+		if( sig == 1 ) {
+			retBB[ index ] = tolower( str[ i ]) ;
+			index++ ;
 		}
 	}
-	retHexStr = malloc( strlen( str ) + 1 - startIndex ) ;
-	
-	if( !isZero ) return "0" ;
-	
-	for( int i = startIndex; str[ i ]; i++ ) {
-		retHexStr[ i ] = tolower( str[ i ]) ;
-	}
-	
-	retHexStr[ strlen( retHexStr )] = '\0' ;
-	
-	return retHexStr ;
+
+	retBB[ index ] = '\0' ;
+	if( index == 0 ) retBB = "0" ;
+
+	return retBB ;
 }
 
 /** Return a lower-case hex string representing bigBits. Returned
@@ -113,15 +109,20 @@ andBigBits(const BigBits *bigBits1, const BigBits *bigBits2)
 {
 	int len1 = strlen( bigBits1->arr ) ;
 	int len2 = strlen( bigBits2-> arr ) ;
+	int longerLen = longerBB( bigBits1, bigBits2 ) ;
 	int shorterLen = shorterBB( bigBits1, bigBits2 ) ;
 	
-	char *retBB = malloc( shorterLen ) + 1 ;
+	char *retBB = malloc( longerLen ) + 1 ;
 	
 	int a, b ;
 	
+	for( int i = 0; i < longerLen - shorterLen; i++ ) {
+		retBB[ i ] = '0' ;
+	}
+
 	for( int i = 0; i < shorterLen; i++ ) {
-		a = charToHexet( bigBits1->arr[ len1 - i - 1 ] ) ;
-		b = charToHexet( bigBits2->arr[ len2 - i ] ) ;
+		a = charToHexet( bigBits1->arr[ len1 - i - 1 ]) ;
+		b = charToHexet( bigBits2->arr[ len2 - i ]) ;
 		
 		retBB[ shorterLen - i - 2 ] = hexetToChar( a & b ) ;
 	}
@@ -137,9 +138,10 @@ orBigBits(const BigBits *bigBits1, const BigBits *bigBits2)
 {
 	int len1 = strlen( bigBits1->arr ) ;
 	int len2 = strlen( bigBits2-> arr ) ;
-	int newLen = longerBB( bigBits1, bigBits2 ) + 1 ;
+	int longerLen = longerBB( bigBits1, bigBits2 ) ;
 	int shorterLen = shorterBB( bigBits1, bigBits2 ) ;
-	int diffLen = newLen - shorterBB( bigBits1, bigBits2 ) ;
+	int newLen = longerLen + 1 ;
+	int diffLen = longerLen - shorterLen ;
 	
 	char *retBB = malloc( newLen ) + 1 ;
 	
@@ -174,9 +176,10 @@ xorBigBits(const BigBits *bigBits1, const BigBits *bigBits2)
 {
 	int len1 = strlen( bigBits1->arr ) ;
 	int len2 = strlen( bigBits2-> arr ) ;
-	int newLen = longerBB( bigBits1, bigBits2 ) + 1 ;
-	int diffLen = newLen - shorterBB( bigBits1, bigBits2 ) ;
+	int longerLen = longerBB( bigBits1, bigBits2 ) ;
 	int shorterLen = shorterBB( bigBits1, bigBits2 ) ;
+	int newLen = longerLen + 1 ;
+	int diffLen = longerLen - shorterLen ;
 	
 	char *retBB = malloc( newLen ) + 1 ;
 	
