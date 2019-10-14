@@ -43,8 +43,7 @@
  *  function should return with *isEof set to true.
  */
 
-BitsValue
-bits_to_ints(FILE *inFile, const char *inName, int nBits, bool *isEof)
+BitsValue bits_to_ints(FILE *inFile, const char *inName, int nBits, bool *isEof)
 {
   //nBits value should make sense
   assert(0 < nBits && nBits <= CHAR_BIT*sizeof(BitsValue));
@@ -64,8 +63,8 @@ bits_to_ints(FILE *inFile, const char *inName, int nBits, bool *isEof)
                   // EOF at end of file or in middle of file
                   printf( "Encountered EOF parsing file %s.\n", inName ) ;
                   completed = true ;
+                  pos = 8 ;
                   return 0 ;
-                  break ;
               }
               if ( isspace( c )) {
                   // ignore whitespace
