@@ -23,6 +23,8 @@ ok
 
 >> done <<
 
+
+
 Exercise 6:
 cs[] is at 0xffe8d44b; is[] is at 0xffe8d434
 enter pointer to is[2]: 0xffe8d43c
