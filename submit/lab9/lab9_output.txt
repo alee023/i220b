@@ -1,0 +1,14 @@
+Exercise 2: discover the mask and explain
+
+The mask is 0x7fffff -- which takes the lowest 23 bits of the variable. The mask was found by doing objdump. I found the line "and    $0x7fffff,%eax" near the bottom
+
+
+
+Exercise 4: how to print out the value of the argument
+
+Instead of typing 'p who', I can also type in 
+	p *(const char ***)($rbp - 16)
+which outputs 0x7fffffffea9f, same as when typing p who
+This was found using the line 
+	0x0000555555555151 <+12>:	mov    %rsi,-0x10(%rbp)
+

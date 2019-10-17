@@ -82,7 +82,7 @@ const char * hexBB( const char *str ) {
 const char *
 stringBigBits(const BigBits *bigBits)
 {
-	return hexBB( bigBits-> arr ) ;
+	return hexBB( bigBits->arr ) ;
 }
 
 /**	Return the length of the longer BigBits
@@ -96,7 +96,7 @@ int longerBB( const BigBits *bb1, const BigBits *bb2 ) {
 
 int shorterBB( const BigBits *bb1, const BigBits *bb2 ) {
 	int len1 = strlen( bb1->arr ) ;
-	int len2 = strlen( bb2-> arr ) ;
+	int len2 = strlen( bb2->arr ) ;
 	
 	return( len1 <= len2 ? len1 : len2 ) ;
 }
@@ -108,23 +108,32 @@ const BigBits *
 andBigBits(const BigBits *bigBits1, const BigBits *bigBits2)
 {
 	int len1 = strlen( bigBits1->arr ) ;
-	int len2 = strlen( bigBits2-> arr ) ;
+	int len2 = strlen( bigBits2->arr ) ;
 	int longerLen = longerBB( bigBits1, bigBits2 ) ;
 	int shorterLen = shorterBB( bigBits1, bigBits2 ) ;
+	int diffLen = longerLen - shorterLen ;
 	
 	char *retBB = malloc( longerLen ) + 1 ;
 	
 	int a, b ;
-	
-	for( int i = 0; i < longerLen - shorterLen; i++ ) {
-		retBB[ i ] = '0' ;
-	}
 
 	for( int i = 0; i < shorterLen; i++ ) {
 		a = charToHexet( bigBits1->arr[ len1 - i - 1 ]) ;
+		if( a < 0 ) {
+			errno = EINVAL ;
+			return NULL ;
+		}
 		b = charToHexet( bigBits2->arr[ len2 - i ]) ;
+		if( b < 0 ) {
+			errno = EINVAL ;
+			return NULL ;
+		}
 		
 		retBB[ shorterLen - i - 2 ] = hexetToChar( a & b ) ;
+	}
+	
+	for( int i = 0; i < diffLen; i++ ) {
+		retBB[ i ] = hexetToChar( 0 ) ;
 	}
 	
 	return newBigBits( hexBB( retBB )) ;
