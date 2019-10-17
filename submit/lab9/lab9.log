@@ -508,4 +508,158 @@ alee889@g7-30:/import/linux/home1/alee889/i220b/submit/lab9/files$ gdb hello r j
 [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
 GNU gdb (Debian 8.2.1-2) 8.2.1
 Copyright (C) 2018 Free Software Foundation, Inc.
-License 
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from hello...done.
+(gdb) start joe
+Temporary breakpoint 1 at 0x1183: file hello.c, line 16.
+Starting program: /import/linux/home1/alee889/git-repos/i220b/submit/lab9/files/hello joe
+
+Temporary breakpoint 1, main (argc=2, argv=0x7fffffffe778) at hello.c:16
+16	  if (argc == 1) {
+(gdb) disass /m
+Dump of assembler code for function main:
+15	{
+   0x0000555555555174 <+0>:	push   %rbp
+   0x0000555555555175 <+1>:	mov    %rsp,%rbp
+   0x0000555555555178 <+4>:	sub    $0x20,%rsp
+   0x000055555555517c <+8>:	mov    %edi,-0x14(%rbp)
+   0x000055555555517f <+11>:	mov    %rsi,-0x20(%rbp)
+
+16	  if (argc == 1) {
+=> 0x0000555555555183 <+15>:	cmpl   $0x1,-0x14(%rbp)
+   0x0000555555555187 <+19>:	jne    0x5555555551b5 <main+65>
+
+17	    fprintf(stderr, "usage: %s NAME...\n", argv[0]);
+   0x0000555555555189 <+21>:	mov    -0x20(%rbp),%rax
+   0x000055555555518d <+25>:	mov    (%rax),%rdx
+   0x0000555555555190 <+28>:	mov    0x2ec9(%rip),%rax        # 0x555555558060 <stderr@@GLIBC_2.2.5>
+   0x0000555555555197 <+35>:	lea    0xe70(%rip),%rsi        # 0x55555555600e
+   0x000055555555519e <+42>:	mov    %rax,%rdi
+   0x00005555555551a1 <+45>:	mov    $0x0,%eax
+   0x00005555555551a6 <+50>:	callq  0x555555555030 <fprintf@plt>
+
+18	    exit(0xdeadbeef);
+--Type <RET> for more, q to quit, c to continue without paging--ni
+   0x00005555555551ab <+55>:	mov    $0xdeadbeef,%edi
+   0x00005555555551b0 <+60>:	callq  0x555555555040 <exit@plt>
+
+19	  }
+20	  for (int i = 1; i < argc; i++) {
+   0x00005555555551b5 <+65>:	movl   $0x1,-0x4(%rbp)
+   0x00005555555551bc <+72>:	jmp    0x5555555551eb <main+119>
+   0x00005555555551e7 <+115>:	addl   $0x1,-0x4(%rbp)
+   0x00005555555551eb <+119>:	mov    -0x4(%rbp),%eax
+   0x00005555555551ee <+122>:	cmp    -0x14(%rbp),%eax
+   0x00005555555551f1 <+125>:	jl     0x5555555551be <main+74>
+
+21	    hello(stdout, argv[i]);
+   0x00005555555551be <+74>:	mov    -0x4(%rbp),%eax
+   0x00005555555551c1 <+77>:	cltq   
+   0x00005555555551c3 <+79>:	lea    0x0(,%rax,8),%rdx
+   0x00005555555551cb <+87>:	mov    -0x20(%rbp),%rax
+   0x00005555555551cf <+91>:	add    %rdx,%rax
+   0x00005555555551d2 <+94>:	mov    (%rax),%rdx
+   0x00005555555551d5 <+97>:	mov    0x2e64(%rip),%rax        # 0x555555558040 <stdout@@GLIBC_2.2.5>
+   0x00005555555551dc <+104>:	mov    %rdx,%rsi
+   0x00005555555551df <+107>:	mov    %rax,%rdi
+--Type <RET> for more, q to quit, c to continue without paging--b *0x14
+   0x00005555555551e2 <+110>:	callq  0x555555555145 <hello>
+
+22	  }
+23	  return 0;
+   0x00005555555551f3 <+127>:	mov    $0x0,%eax
+
+24	}
+   0x00005555555551f8 <+132>:	leaveq 
+   0x00005555555551f9 <+133>:	retq   
+
+End of assembler dump.
+(gdb) c
+Continuing.
+hello joe
+[Inferior 1 (process 3935) exited normally]
+(gdb) p i
+No symbol "i" in current context.
+(gdb) c
+The program is not being run.
+(gdb) 
+The program is not being run.
+(gdb) set $eax = $eax-1
+No registers.
+(gdb) sets[K $rbp = $rbp-1
+No registers.
+(gdb) q
+alee889@g7-30:/import/linux/home1/alee889/i220b/submit/lab9/files$ cd ,,[K[K..
+alee889@g7-30:/import/linux/home1/alee889/i220b/submit/lab9$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   ../prj2-sol/big-bits.c[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m./[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+alee889@g7-30:/import/linux/home1/alee889/i220b/submit/lab9$ gii[Kt add .
+alee889@g7-30:/import/linux/home1/alee889/i220b/submit/lab9$ git commit -am "sub mitted lab9"
+[master 11cdcc6] submitted lab9
+ Committer: Alison Lee <alee889@cs.binghamton.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 11 files changed, 2094 insertions(+), 7 deletions(-)
+ create mode 100755 submit/lab9/Makefile
+ create mode 100644 submit/lab9/files/.gitignore
+ create mode 100644 submit/lab9/files/Makefile
+ create mode 100644 submit/lab9/files/hello.c
+ create mode 100644 submit/lab9/files/hello.s
+ create mode 100644 submit/lab9/lab9.html
+ create mode 100644 submit/lab9/lab9.log
+ create mode 100644 submit/lab9/lab9.pdf
+ create mode 100644 submit/lab9/lab9.umt
+ create mode 100644 submit/lab9/lab9_output.txt
+alee889@g7-30:/import/linux/home1/alee889/i220b/submit/lab9$ git push
+To github.com:alee023/i220b.git
+ [31m! [rejected]       [m master -> master (fetch first)
+[31merror: failed to push some refs to 'git@github.com:alee023/i220b.git'
+[m[33mhint: Updates were rejected because the remote contains work that you do[m
+[33mhint: not have locally. This is usually caused by another repository pushing[m
+[33mhint: to the same ref. You may want to first integrate the remote changes[m
+[33mhint: (e.g., 'git pull ...') before pushing again.[m
+[33mhint: See the 'Note about fast-forwards' in 'git push --help' for details.[m
+alee889@g7-30:/import/linux/home1/alee889/i220b/submit/lab9$ git pull
+remote: Enumerating objects: 16, done.[K
+remote: Counting objects:   6% (1/16)[Kremote: Counting objects:  12% (2/16)[Kremote: Counting objects:  18% (3/16)[Kremote: Counting objects:  25% (4/16)[Kremote: Counting objects:  31% (5/16)[Kremote: Counting objects:  37% (6/16)[Kremote: Counting objects:  43% (7/16)[Kremote: Counting objects:  50% (8/16)[Kremote: Counting objects:  56% (9/16)[Kremote: Counting objects:  62% (10/16)[Kremote: Counting objects:  68% (11/16)[Kremote: Counting objects:  75% (12/16)[Kremote: Counting objects:  81% (13/16)[Kremote: Counting objects:  87% (14/16)[Kremote: Counting objects:  93% (15/16)[Kremote: Counting objects: 100% (16/16)[Kremote: Counting objects: 100% (16/16), done.[K
+remote: Compressing objects:   8% (1/12)[Kremote: Compressing objects:  16% (2/12)[Kremote: Compressing objects:  25% (3/12)[Kremote: Compressing objects:  33% (4/12)[Kremote: Compressing objects:  41% (5/12)[Kremote: Compressing objects:  50% (6/12)[Kremote: Compressing objects:  58% (7/12)[Kremote: Compressing objects:  66% (8/12)[Kremote: Compressing objects:  75% (9/12)[Kremote: Compressing objects:  83% (10/12)[Kremote: Compressing objects:  91% (11/12)[Kremote: Compressing objects: 100% (12/12)[Kremote: Compressing objects: 100% (12/12), done.[K
+remote: Total 12 (delta 7), reused 0 (delta 0), pack-reused 0[K
+Unpacking objects:   8% (1/12)   Unpacking objects:  16% (2/12)   Unpacking objects:  25% (3/12)   Unpacking objects:  33% (4/12)   Unpacking objects:  41% (5/12)   Unpacking objects:  50% (6/12)   Unpacking objects:  58% (7/12)   Unpacking objects:  66% (8/12)   Unpacking objects:  75% (9/12)   Unpacking objects:  83% (10/12)   Unpacking objects:  91% (11/12)   Unpacking objects: 100% (12/12)   Unpacking objects: 100% (12/12), done.
+From github.com:alee023/i220b
+   d8cced5..d602df8  master     -> origin/master
+hint: Waiting for your editor to close the file... [?1000h[?2004h[?1
