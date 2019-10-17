@@ -1,16 +1,48 @@
 Exercise 2:
-is[] is at 0xff8b041c
-enter pointer to is[1]:		0xff8b0420
-... to is[3] is:		0xff8b0428
-... to is[2] is:		0xff8b0424
-... to is[4] is: 		0xff8b042c
-... to is[0] is:		0xff8b041c
+is[] is at 0xfff391fc
+enter pointer to is[1]:		0xfff39200
+ok
+is[] is at 0xfff391fc
+enter pointer to is[3]:		0xfff39208
+ok
+is[] is at 0xfff391fc
+enter pointer to is[2]:		0xfff39204
+ok
+is[] is at 0xfff391fc
+enter pointer to is[4]:		0xfff3920b
+not ok
+is[] is at 0xfff391fc
+enter pointer to is[4]:		0xfff3920c
+ok
+is[] is at 0xfff391fc
+enter pointer to is[0]:		0xfff391fc
+ok
+is[] is at 0xfff391fc
+enter pointer to is[3]:		0xfff39208
+ok
+
+>> done <<
+
+
 
 Exercise 6:
-is[] is at 0xffdd4904
-pointer to is[2] is:		0xffdd490c
-... to cs[3] is:		0xffdd491e
-... to is[4] is:		0xffdd4914
-... to cs[1] is:		0xffdd491c
-... to cs[4] is:		0xffdd491f
-... to is[1] is:		0xffdd4908
+cs[] is at 0xffe8d44b; is[] is at 0xffe8d434
+enter pointer to is[2]: 0xffe8d43c
+ok
+cs[] is at 0xffe8d44b; is[] is at 0xffe8d434
+enter pointer to cs[3]: 0xffe8d44e
+ok
+cs[] is at 0xffe8d44b; is[] is at 0xffe8d434
+enter pointer to is[4]: 0xffe8d444
+ok
+cs[] is at 0xffe8d44b; is[] is at 0xffe8d434
+enter pointer to cs[1]: 0xffe8d44c
+ok
+cs[] is at 0xffe8d44b; is[] is at 0xffe8d434
+enter pointer to cs[4]: 0xffe8d44f
+ok
+cs[] is at 0xffe8d44b; is[] is at 0xffe8d434
+enter pointer to is[1]: 0xffe8d438
+ok
+
+>> done <<
