@@ -662,4 +662,43 @@ remote: Total 12 (delta 7), reused 0 (delta 0), pack-reused 0[K
 Unpacking objects:   8% (1/12)   Unpacking objects:  16% (2/12)   Unpacking objects:  25% (3/12)   Unpacking objects:  33% (4/12)   Unpacking objects:  41% (5/12)   Unpacking objects:  50% (6/12)   Unpacking objects:  58% (7/12)   Unpacking objects:  66% (8/12)   Unpacking objects:  75% (9/12)   Unpacking objects:  83% (10/12)   Unpacking objects:  91% (11/12)   Unpacking objects: 100% (12/12)   Unpacking objects: 100% (12/12), done.
 From github.com:alee023/i220b
    d8cced5..d602df8  master     -> origin/master
-hint: Waiting for your editor to close the file... [?1000h[?2004h[?1
+hint: Waiting for your editor to close the file... [?1000h[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;24r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[24;1H"~/git-repos/i220b/.git/MERGE_MSG" 7L, 277C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[38;5;130mMerge branch 'master' of github.com:alee023/i220b[m
+
+[34m# Please enter a commit message to explain why this merge is necessary,
+# especially if it merges an updated upstream into a topic branch.
+#
+# Lines starting with '#' will be ignored, and an empty message aborts
+# the commit.[m
+[94m~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [m[24;63H1,1[11CAll]2;MERGE_MSG (~/git-repos/i220b/.git) - VIM]1;MERGE_MSG[1;1H[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?1000l[?1006h[?1002h[?1006l[?1002l[?1006h[?1002h[27m[23m[29m[m[H[2J[?25l[1;1H[93mMerge branch 'master' of github.com:alee023/i220b[m
+
+[96m# Please enter a commit message to explain why this merge is necessary,
+# especially if it merges an updated upstream into a topic branch.
+#
+# Lines starting with '#' will be ignored, and an empty message aborts
+# the commit.[m
+[94m~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [m[24;63H1,1[11CAll"~/git-repos/i220b/.git/MERGE_MSG" 7L, 277C[1;1H[?25h[?25l[24;53H^M[1;1H[24;53H  [2;1H[24;63H2,0-1[2;1H[?25h[?25l[24;53H`[2;1H[?25h[?25l[24;54H`[2;1H[24;53H  [1;1H[24;63H1,1  [1;1H[?25h[?25l[24;1HType  :qa!  and press <E...all changes and exit Vim[24;63H[K[24;63H1,1[11CAll[1;1H[?25h[?25l[24;53H:[1;1H[24;1H[K[24;1H:[?2004h[?25hq[?25l[?25ha[?25l[?25h![?25l[?25h[?25l[?1006l[?1002l[?2004l]2;Terminal - ]1;Terminal - [23;2t[23;1t[22;2t[22;1t[23;2t[23;1t[24;1H[K[24;1H[?2004l[?1l>[?25h[?1049l[23;0;0t[KMerge made by the 'recursive' strategy.
+ submit/lab5/lab5_output.txt | 58 [32m+++++++++++++++++++++++++++++++++++[m[31m----------[m
+ 1 file changed, 45 insertions(+), 13 deletions(-)
+alee889@g7-30:/import/linux/home1/alee889/i220b/submit/lab9$ git add .
+alee889@g7-30:/import/linux/home1/alee889/i220b/submit/lab9$ git commit a[K-am "c[Ksub mitted lab9"
+[master 6863847] submitted lab9
+ Committer: Alison Lee <alee889@cs.binghamton.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 155 insertions(+), 1 deletion(-)
+alee889@g7-30:/import/linux/home1/alee889/i220b/submit/lab9$ git push
+Enumerating objects: 33, done.
+Counting objects:   3% (1/31)   Counting objects:   6% (2/31)   Counting objects:   9% (3/31)   Counting objects:  12% (4/31)   Counting objects:  16% (5/31)   Counting objects:  19% (6/31)   Counting objects:  22% (7/31)   Counting objects:  25% (8/31)   Counting objects:  29% (9/31)   Counting objects:  32% (10/31)   Counting objects:  35% (11/31)   Counting objects:  38% (12/31)   Counting objects:  41% (13/31)   Counting objects:  45% (14/31)   Counting objects:  48% (15/31)   Counting objects:  51% (16/31)   Counting objects:  54% (17/31)   Counting objects:  58% (18/31)   Counting objects:  61% (19/31)   Counting objects:  64% (20/31)   Counting objects:  67% (21/31)   Counting objects:  70% (22/31)   Counting objects:  74% (23/31)   Counting objects:  77% (24/31)   Counting objects:  80% (25/31)   Counting objects:  83% (26/31)   Counting objects:  87% (27/31)   Counting objects:  90% (28/31)   Counting objects:  93% (29/31)   Counting objects:  96% (30/31)   Counting objects: 100% (31/31)   Counting objects: 100% (31/31), done.
+Delta compression using up to 8 threads
+Compressing objects:   4% (1/24)   Compressing objects:   8% (2/24)   Compressing objects:  12% (3/24)   Compressing objects:  16% (4/24)   Compressing objects:  20% (5/24)   Compressing objects:  25% (6/24)   Compressing objects:  29% (7/24)   Compressing objects:  33% (8/24)   Compressing objects:  37% (9/24)   Compressing objects:  41% (10/24)   Compressing objects:  45% (11/24)   Compressing objects:  50% (12/24)   Compressing objects:  54% (13/24)   Compressing objects:  58% (14/24)   Compressing objects:  62% (15/24)   Compressing objects:  66% (16/24)   Compressing objects:  70% (17/24)   Compressing objects:  75% (18/24)   Compressing objects:  79% (19/24)   Compressing objects:  83% (20/24)   Compressing objects:  87% (21/24)   Compressing objects:  91% (22/24)   Compressing objects:  95% (23/24)   Compressing objects: 100% (24/24)   Compressing objects: 100% (24/24), done.
+Writing objects:   4% (1/25)   Writing objects:   8% (2/25)   Writing objects:  12% (3/25)   Writing objects:  16% (4/25)   Writing objects:  20% (5/25)   Writing objects:  24% (6/25)   Writing objects:  28% (7/25)   Writing objects:  32% (8/25)   Writing objects:  36% (9/25)   Writing objects:  40% (10/25)   Writing objects:  44% (11/25)   Writing objects:  48% (12/25)   Writing objects:  52% (13/25)   Writing objects:  56% (14/25)   Writing objects:  60% (15/25)   Writing objects:  64% (16/25)   Writing objects:  68% (17/25)   Writing objects:  72% (18/25)   Writing objects:  76% (19/25)   Writing objects:  
