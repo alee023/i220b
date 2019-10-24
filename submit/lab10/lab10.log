@@ -1,0 +1,141 @@
+Script started on 2019-10-24 15:00:37-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10$ cd roat[K[K[K[Kfiles/rotate/
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/rotate$ gedit  roat[K[Ktate.c &
+[1] 24621
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/rotate$ c .[K[Kd .. /
+[1]+  Done                    gedit rotate.c  (wd: /import/linux/home1/alee889/i220b/submit/lab10/files/rotate)
+(wd now: /import/linux/home1/alee889/i220b/submit/lab10/files)
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files$ gedut kav19[K[K[K[K[Kkav[K[K[K[K[K[Kut [K[K[Kit lav[Kb10. [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C_ output.txt &
+[1] 25034
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files$ cd ria[K[Kotate/
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/rotate$ clear [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kr
+[H[2J[3Jalee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/rotate$ make  [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K 
+cc -S -Wall -Og -std=c11 rotate.c
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/rotate$ ls
+Makefile  rotate.c  rotate.s
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/rotate$ gedit  [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[Kgedit  m[KMakefile &
+[2] 25121
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/rotate$ gedit Makefile &[K[K[K[K[K[K[K[K[K[Krotate.s
+[2]+  Done                    gedit Makefile
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/rotate$ cd ,, [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K.. /cup[K[Kpuid 
+bash: cd: ../cpuid: No such file or directory
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/rotate$ cd ,c u[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K .. /cpuid
+bash: cd: ../cpuid: No such file or directory
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/rotate$ c d.. [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[Kd .. [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K.
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files$ dur
+bash: dur: command not found
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files$ d[Kdir
+cpuid1	cpuid2	parity	rip  rotate  rsp
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files$ cd up[K[Kcpi[Kup[Kid1cle [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid1$ clear [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kr
+[H[2J[3Jalee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid1$ gedit  get_c[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[Kdu[Kir
+cpuid.s  main.c  Makefile
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid1$ makcd  [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[Kcd cu [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cp uid.s *[K&
+[2] 26987
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid1$ bash: cd: cpuid.s: Not a directory
+cd cpuid.s &[K[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[Kgedt[Kit  cpuid.s [K[K &
+[3] 27065
+[2]   Exit 1                  cd cpuid.s
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid1$ dir
+cpuid.s  main.c  Makefile
+[3]+  Done                    gedit cpuid.
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid1$ gedit  cpuid.s &
+[2] 27097
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid1$ 
+(gedit:25034): Gtk-[1;33mWARNING[0m **: [34m15:22:16.287[0m: Calling org.xfce.Session.Manager.Inhibit failed: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: Method "Inhibit" with signature "susu" on interface "org.xfce.Session.Manager" doesn't exist
+
+make
+cc -g -Wall -std=c11 -Og   -c -o main.o main.c
+cc -c -g -Wall -std=c11 -Og cpuid.s -o cpuid.o
+cc main.o cpuid.o -o cpuid
+[2]+  Done                    gedit cpuid.s
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid1$ ./cpu id 
+cpuid: eax = 0xd; ebx = 0x756e6547; edx = 0x49656e69; ecx = 0x6c65746e
+vendor: GenuineIntel
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid1$ ./cpuid 
+cpuid: eax = 0xd; ebx = 0x756e6547; edx = 0x49656e69; ecx = 0x6c65746e
+vendor: GenuineIntel
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid1$ ./cpuid [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pmake
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgedit cpuid.s &
+[2] 27525
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid1$ cd./[K[K .. /g[Kcpuid2
+[2]+  Done                    gedit cpuid.s  (wd: /import/linux/home1/alee889/i220b/submit/lab10/files/cpuid1)
+(wd now: /import/linux/home1/alee889/i220b/submit/lab10/files/cpuid2)
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid2$ clear [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kr
+[H[2J[3Jalee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid2$ gedit  main.c ^
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid2$ make
+cc -g -Wall -std=c11    -c -o main.o main.c
+cc -c -g -Wall -std=c11  cpuid.s -o cpuid.o
+cc main.o cpuid.o -o cpuid
+[1]+  Done                    gedit lab10_output.txt  (wd: /import/linux/home1/alee889/i220b/submit/lab10/files)
+(wd now: /import/linux/home1/alee889/i220b/submit/lab10/files/cpuid2)
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid2$ dir
+cpuid  cpuid.o	cpuid.s  main.c  main.o  Makefile
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid2$ ,.[K[K,.[K[K./cu[Kpuid 
+usage: ./cpuid CPUID_OP
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid2$ ./cpuid +
+Segmentation fault
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid2$ clear [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kr
+[H[2J[3Jalee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid2$ git a dd .
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid2$ git c ommit -am "lab10[K0 work"
+[master 2676e23] lab10 work
+ Committer: Alison Lee <alee889@cs.binghamton.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 5 files changed, 118 insertions(+), 1 deletion(-)
+ create mode 100644 submit/lab10/files/cpuid2/.gitignore
+ create mode 100644 submit/lab10/files/cpuid2/Makefile
+ create mode 100644 submit/lab10/files/cpuid2/cpuid.s
+ create mode 100644 submit/lab10/files/cpuid2/main.c
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid2$ git p ush
+Enumerating objects: 16, done.
+Counting objects:   6% (1/16)   Counting objects:  12% (2/16)   Counting objects:  18% (3/16)   Counting objects:  25% (4/16)   Counting objects:  31% (5/16)   Counting objects:  37% (6/16)   Counting objects:  43% (7/16)   Counting objects:  50% (8/16)   Counting objects:  56% (9/16)   Counting objects:  62% (10/16)   Counting objects:  68% (11/16)   Counting objects:  75% (12/16)   Counting objects:  81% (13/16)   Counting objects:  87% (14/16)   Counting objects:  93% (15/16)   Counting objects: 100% (16/16)   Counting objects: 100% (16/16), done.
+Delta compression using up to 8 threads
+Compressing objects:  11% (1/9)   Compressing objects:  22% (2/9)   Compressing objects:  33% (3/9)   Compressing objects:  44% (4/9)   Compressing objects:  55% (5/9)   Compressing objects:  66% (6/9)   Compressing objects:  77% (7/9)   Compressing objects:  88% (8/9)   Compressing objects: 100% (9/9)   Compressing objects: 100% (9/9), done.
+Writing objects:   8% (1/12)   Writing objects:  16% (2/12)   Writing objects:  25% (3/12)   Writing objects:  33% (4/12)   Writing objects:  41% (5/12)   Writing objects:  50% (6/12)   Writing objects:  58% (7/12)   Writing objects:  66% (8/12)   Writing objects:  75% (9/12)   Writing objects:  83% (10/12)   Writing objects:  91% (11/12)   Writing objects: 100% (12/12)   Writing objects: 100% (12/12), 3.17 KiB | 541.00 KiB/s, done.
+Total 12 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/4)[Kremote: Resolving deltas:  25% (1/4)[Kremote: Resolving deltas:  50% (2/4)[Kremote: Resolving deltas:  75% (3/4)[Kremote: Resolving deltas: 100% (4/4)[Kremote: Resolving deltas: 100% (4/4), completed with 4 local objects.[K
+To github.com:alee023/i220b.git
+   6863847..2676e23  master -> master
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid2$ git s tatus
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m../../Makefile[m
+	[31m../cpuid1/[m
+	[31m../lab10_output.txt[m
+	[31m../parity/[m
+	[31m../rip/[m
+	[31m../rotate/[m
+	[31m../rsp/[m
+	[31m../../lab10.html[m
+	[31m../../lab10.log[m
+	[31m../../lab10.pdf[m
+	[31m../../lab10.umt[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+alee889@g7-31:/import/linux/home1/alee889/i220b/submit/lab10/files/cpuid2$ gut a [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C

@@ -1,0 +1,6 @@
+notes:
+arguments passing: rdi, rsi, rdx, rcx, r8, r9
+return register: rax
+
+foo( a, b, c, d, e, f, g, h )
+stack [ h, g, f, ... ] FILO -- last arg, top of stack?
