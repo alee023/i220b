@@ -4,3 +4,11 @@ return register: rax
 
 foo( a, b, c, d, e, f, g, h )
 stack [ h, g, f, ... ] FILO -- last arg, top of stack?
+
+
+EXERCISE 1:
+
+The computer seems to have replaced rot1 and rotr with roll and ror1, 
+respectively, in the assembly code. Both rot1 + rotr and roll + rorl 
+are one line each. ROL and ROR in assembly means "rotate left" and 
+"rotate right".

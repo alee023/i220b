@@ -7,8 +7,9 @@ get_parity:
 	testl %eax, %eax
 	jpe even
 	movl $0, %eax
-	ret
-	
+	ret	
 even: 
 	movl $1, %eax
-	ret	
+	ret
+
+
