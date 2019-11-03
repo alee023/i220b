@@ -1,0 +1,122 @@
+>> EXERCISE 2:
+
+time ./parity-c 10
+3
+
+real    0m0.002s
+user    0m0.001s
+sys     0m0.000s
+
+time ./parity-s 10
+3
+
+real    0m0.002s
+user    0m0.001s
+sys     0m0.000s
+
+ time ./parity-c 10000000
+5000346
+
+real    0m0.346s
+user    0m0.341s
+sys     0m0.004s
+
+time ./parity-s 10000000
+5000131
+
+real    0m0.169s
+user    0m0.164s
+sys     0m0.004s
+
+
+>> EXERCISE 3:
+
+./simple-matmul 4 1
+2.22116e+17 7.02729e+17 9.76657e+17 2.08306e+17
+2.17616e+18 2.16772e+18 3.40213e+18 1.2273e+18
+4.86494e+18 4.48803e+18 7.27046e+18 2.8719e+18
+7.68709e+18 2.14813e+18 5.99903e+18 4.12269e+18
+
+./transpose-matmul 4 1
+2.22116e+17 7.02729e+17 9.76657e+17 2.08306e+17
+2.17616e+18 2.16772e+18 3.40213e+18 1.2273e+18
+4.86494e+18 4.48803e+18 7.27046e+18 2.8719e+18
+7.68709e+18 2.14813e+18 5.99903e+18 4.12269e+18
+
+
+time ./simple-matmul 1500 1
+
+real    0m14.232s
+user    0m14.219s
+sys     0m0.012s
+
+time ./transpose-matmul 1500 1
+
+real    0m12.656s
+user    0m12.643s
+sys     0m0.012s
+
+
+for s in 'seq 1000 500 2500';\
+> do \
+>  echo -n "*** Size $s: simple"; time ./simple-matmul $s 1 ; echo ; \
+>  echo -n "*** Size $s: transpose"; time ./transpose-matmul $s 1 ; echo ; \
+> done
+
+*** Size 1000: simple
+real    0m3.769s
+user    0m3.768s
+sys     0m0.000s
+
+*** Size 1000: transpose
+real    0m3.727s
+user    0m3.706s
+sys     0m0.020s
+
+*** Size 1500: simple
+real    0m13.284s
+user    0m13.263s
+sys     0m0.020s
+
+*** Size 1500: transpose
+real    0m12.650s
+user    0m12.633s
+sys     0m0.012s
+
+*** Size 2000: simple
+real    0m36.954s
+user    0m36.928s
+sys     0m0.024s
+
+*** Size 2000: transpose
+real    0m30.160s
+user    0m30.062s
+sys     0m0.096s
+
+*** Size 2500: simple
+real    1m13.526s
+user    1m13.500s
+sys     0m0.024s
+
+*** Size 2500: transpose
+real    0m58.973s
+user    0m58.938s
+sys     0m0.032s
+
+
+>> EXERCISE 4:
+
+time ./linear-search 2000 2000
+
+real    0m7.698s
+user    0m7.684s
+sys     0m0.012s
+
+time ./binary-search 2000 2000
+
+real    0m0.467s
+user    0m0.462s
+sys     0m0.004s
+
+
+>> EXERCISE 5:
