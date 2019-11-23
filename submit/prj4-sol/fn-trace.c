@@ -23,7 +23,6 @@ static inline bool is_ret(unsigned op) {
     op == RET_FAR_OP || op == RET_FAR_WITH_POP_OP;
 }
 
-<<<<<<< HEAD
 typedef struct { 
 	int index ;
 	int size ;
@@ -114,8 +113,6 @@ FnsData* fn_trace( void *addr, FnsData* fnsData ) {
 	
 	return fnsData ;
 }
-=======
->>>>>>> 7638a0de690cb1bd0c52aa538078a9c3b4c26de4
 
 /** Return pointer to opaque data structure containing collection of
  *  FnInfo's for functions which are callable directly or indirectly
@@ -126,7 +123,6 @@ new_fns_data(void *rootFn)
 {
   //verify assumption used when decoding call address
   assert(sizeof(int) == 4);
-<<<<<<< HEAD
   FnsData *ret = mallocChk( sizeof( FnsData ) + sizeof( FnInfo )) ;
   ret->index = 0 ;
   ret->size = 1 ;
@@ -134,10 +130,6 @@ new_fns_data(void *rootFn)
   qsort( ret->instrs, ret->index, sizeof( FnInfo ), compare ) ;
   
   return ret ;
-=======
-  //@TODO
-  return NULL;
->>>>>>> 7638a0de690cb1bd0c52aa538078a9c3b4c26de4
 }
 
 /** Free all resources occupied by fnsData. fnsData must have been
@@ -147,15 +139,11 @@ new_fns_data(void *rootFn)
 void
 free_fns_data(FnsData *fnsData)
 {
-<<<<<<< HEAD
   for( int i = 0; i < fnsData->size; i++ ) {
 	  free( fnsData->instrs[ i ] ) ;
 	  free( fnsData->instrs ) ;
 	  free( fnsData ) ;
   }
-=======
-  //@TODO
->>>>>>> 7638a0de690cb1bd0c52aa538078a9c3b4c26de4
 }
 
 /** Iterate over all FnInfo's in fnsData.  Make initial call with NULL
@@ -174,7 +162,7 @@ free_fns_data(FnsData *fnsData)
 const FnInfo *
 next_fn_info(const FnsData *fnsData, const FnInfo *lastFnInfo)
 {
-<<<<<<< HEAD
+
 	if( fnsData->size == 0 ) return NULL ;
 	if( lastFnInfo == NULL ) {
 		return &( fnsData->instrs[ 0 ] ) ;
@@ -190,8 +178,4 @@ next_fn_info(const FnsData *fnsData, const FnInfo *lastFnInfo)
 	return fnsData->instrs[ i + 1 ] ;
 	
 	return NULL ;
-=======
-  //@TODO
-  return NULL;
->>>>>>> 7638a0de690cb1bd0c52aa538078a9c3b4c26de4
 }
