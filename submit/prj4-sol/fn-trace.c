@@ -98,7 +98,7 @@ FnsData* fn_trace( void *addr, FnsData* fnsData ) {
 			
 			int ind = isInFnsData( address, fnsData ) ; 
 			if( ind != -1 ) { 
-				result->instrs[ ind ].nInCalls ++ ;
+				fnsData->instrs[ ind ].nInCalls ++ ;
 			}
 			else { 
 				// if address not in fnsData, call fn_trace recursively
@@ -108,7 +108,7 @@ FnsData* fn_trace( void *addr, FnsData* fnsData ) {
 		
 		current += get_op_length( current ) ;
 	}
-	fnsData->instrs[ index ].length = fnLen + 1 ;
+	fnsData->instrs[ retIndex ].length = fnLen + 1 ;
 	
 	return fnsData ;
 }
@@ -139,7 +139,6 @@ void
 free_fns_data(FnsData *fnsData)
 {
   for( int i = 0; i < fnsData->size; i++ ) {
-	  free( fnsData->instrs[ i ] ) ;
 	  free( fnsData->instrs ) ;
 	  free( fnsData ) ;
   }
@@ -169,12 +168,12 @@ next_fn_info(const FnsData *fnsData, const FnInfo *lastFnInfo)
 	
 	int i ;
 	for( i = 0; i < fnsData->index - 1; i++ ) {
-		if( fnsData->instrs[ i ]->address == lastFnInfo->address ) {
+		if( fnsData->instrs[ i ].address == lastFnInfo->address ) {
 			break ;
 		}
 	}
 	
-	return fnsData->instrs[ i + 1 ] ;
+	return &fnsData->instrs[ i + 1 ] ;
 	
 	return NULL ;
 }
