@@ -1,0 +1,524 @@
+Script started on 2019-10-31 16:49:27-04:00 [TERM="xterm" TTY="/dev/pts/2" COLUMNS="80" LINES="24"]
+alee889@remote04:~/i220b/submit/lab11$ time ls ~/cs220/labs/lab11/files/
+coverage  int-search  matmul-cache  parity
+
+real	0m0.005s
+user	0m0.001s
+sys	0m0.002s
+alee889@remote04:~/i220b/submit/lab11$ time sleep 5
+
+real	0m5.003s
+user	0m0.000s
+sys	0m0.001s
+alee889@remote04:~/i220b/submit/lab11$ time wc -l `find /etc -type f 2>/dev/null ` 2>/dev/null | tail
+     34 /etc/logrotate.conf.dpkg-old
+    618 /etc/matplotlibrc2
+     15 /etc/nftables.conf
+     56 /etc/ntp.conf.dpkg-old
+      3 /etc/sbclrc
+     40 /etc/usb_modeswitch.conf
+      1 /etc/video_format
+     21 /etc/xattr.conf
+     23 /etc/sysfs.conf
+ 166652 total
+
+real	0m1.807s
+user	0m0.049s
+sys	0m0.217s
+alee889@remote04:~/i220b/submit/lab11$ time wc -l `find /etc -type f 2>/dev/null` 2>/dev/null | tail
+     34 /etc/logrotate.conf.dpkg-old
+    618 /etc/matplotlibrc2
+     15 /etc/nftables.conf
+     56 /etc/ntp.conf.dpkg-old
+      3 /etc/sbclrc
+     40 /etc/usb_modeswitch.conf
+      1 /etc/video_format
+     21 /etc/xattr.conf
+     23 /etc/sysfs.conf
+ 166652 total
+
+real	0m1.015s
+user	0m0.015s
+sys	0m0.219s
+alee889@remote04:~/i220b/submit/lab11$ time l[K[K[K[K[K[Kcd .[Kpari[K[K[K[Kfiles.[K/parity
+alee889@remote04:~/i220b/submit/lab11/files/parity$ cat main.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define DEBUG_OPT  "-d"
+
+int parity_tests(int nTests, int doDebug);
+
+int 
+main(int argc, const char *argv[])
+{
+  int nTests = -1;
+  if (argc == 1 || argc > 3 || 
+      (argc == 3 && strcmp(argv[1], DEBUG_OPT) != 0) ||
+      ((nTests = atoi(argv[argc - 1])) <= 0)) {
+    fprintf(stderr, "usage: %s [%s] NUM_TESTS\n", argv[0], DEBUG_OPT);
+    exit(1);
+  }
+  printf("%d\n", parity_tests(nTests, argc == 3));
+  return 0;
+}	
+alee889@remote04:~/i220b/submit/lab11/files/parity$ cat parity-c.c 
+#include <stdio.h>
+#include <stdlib.h>
+
+int 
+parity_tests(int nTests, int doDebug)
+{
+  int sum = 0;
+  for (int i = 0; i < nTests; i++) {
+    int value = rand() & (doDebug ? 0xFF : ~0);
+    //open code count-1s routine
+    int v = value;
+    int nOnes = 0;
+    while (v != 0) {
+      v &= (v - 1);
+      nOnes++;
+    }
+    int isEvenParity = (nOnes & 1) == 0;
+    if (doDebug) {
+      fprintf(stderr, "%x: %d\n", value, isEvenParity);
+    }
+    sum += isEvenParity;
+  }
+  return sum;
+}
+alee889@remote04:~/i220b/submit/lab11/files/parity$ cat parity-s.c 
+#include <stdio.h>
+#include <stdlib.h>
+
+int 
+parity_tests(int nTests, int doDebug)
+{
+  int sum = 0;
+  for (int i = 0; i < nTests; i++) {
+    int value = rand() & (doDebug ? 0xFF : ~0);
+    int isEvenParity = 0;
+    __asm__("testl %1, %1; jpo 1f; movl $1, %0; 1:":
+	    "=r"(isEvenParity):"r"(value),"0"(isEvenParity));
+    if (doDebug) {
+      fprintf(stderr, "%x: %d\n", value, isEvenParity);
+    }
+    sum += isEvenParity;
+  }
+  return sum;
+}
+alee889@remote04:~/i220b/submit/lab11/files/parity$ make
+cc -g -Wall -std=c11 -O1   -c -o parity-c.o parity-c.c
+cc -g -Wall -std=c11 -O1   -c -o main.o main.c
+cc   parity-c.o main.o   -o parity-c
+cc -g -Wall -std=c11 -O1   -c -o parity-s.o parity-s.c
+cc   parity-s.o main.o   -o parity-s
+alee889@remote04:~/i220b/submit/lab11/files/parity$ ./ parity-c -d 10
+bash: ./: Is a directory
+alee889@remote04:~/i220b/submit/lab11/files/parity$ ./ parity-c -d 10[1P
+67: 0
+c6: 1
+69: 1
+73: 0
+51: 0
+ff: 1
+4a: 0
+ec: 0
+29: 0
+cd: 0
+3
+alee889@remote04:~/i220b/submit/lab11/files/parity$ ./parity-s -d 10
+67: 0
+c6: 1
+69: 1
+73: 0
+51: 0
+ff: 1
+4a: 0
+ec: 0
+29: 0
+cd: 0
+3
+alee889@remote04:~/i220b/submit/lab11/files/parity$ ./parity-s -d 10c[C[C[C[C[C[C[1P 10[1P 10[1P10
+3
+alee889@remote04:~/i220b/submit/lab11/files/parity$ ./parity-c 10000000000000000 00000
+usage: ./parity-c [-d] NUM_TESTS
+alee889@remote04:~/i220b/submit/lab11/files/parity$ ./parity-c 1000000000000000000000[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K0000000
+5000346
+alee889@remote04:~/i220b/submit/lab11/files/parity$ ./parity-c 10000000[1P 10000000d 10000000
+bash: ./parity-d: No such file or directory
+alee889@remote04:~/i220b/submit/lab11/files/parity$ ./parity-d 10000000[C[C[1P 10000000s 10000000
+5000131
+alee889@remote04:~/i220b/submit/lab11/files/parity$ time ./parity-c 10
+3
+
+real	0m0.002s
+user	0m0.001s
+sys	0m0.000s
+alee889@remote04:~/i220b/submit/lab11/files/parity$ time ./parity-c 10[1P 10s 10
+3
+
+real	0m0.002s
+user	0m0.001s
+sys	0m0.000s
+alee889@remote04:~/i220b/submit/lab11/files/parity$ time ./parity-c 10
+3
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.001s
+alee889@remote04:~/i220b/submit/lab11/files/parity$ 3
+bash: 3: command not found
+alee889@remote04:~/i220b/submit/lab11/files/parity$ 
+alee889@remote04:~/i220b/submit/lab11/files/parity$ real    0m0.002s
+bash: real: command not found
+alee889@remote04:~/i220b/submit/lab11/files/parity$ user    0m0.001s
+bash: user: command not found
+alee889@remote04:~/i220b/submit/lab11/files/parity$ sys     0m0.000s
+bash: sys: command not found
+alee889@remote04:~/i220b/submit/lab11/files/parity$ alee889@remote04:~/i220b/submit/lab11/files/parity$ time ./parity-s 10
+bash: alee889@remote04:~/i220b/submit/lab11/files/parity$: No such file or directory
+alee889@remote04:~/i220b/submit/lab11/files/parity$ 3
+bash: 3: command not found
+alee889@remote04:~/i220b/submit/lab11/files/parity$ 
+alee889@remote04:~/i220b/submit/lab11/files/parity$ real    0m0.002s
+bash: real: command not found
+alee889@remote04:~/i220b/submit/lab11/files/parity$ user    0m0.001s
+bash: user: command not found
+alee889@remote04:~/i220b/submit/lab11/files/parity$ sys     0m0.000s
+bash: sys: command not found
+alee889@remote04:~/i220b/submit/lab11/files/parity$ sys     0m0.000suser    0m0.001sreal    0m0.002s3[Kalee889@remote04:~/i220b/submit/lab11/files/parity$ time ./parity-s 10[A[C[C[C[C[C[C[C[C[C[C[12Psys     0m0.000s
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Calee889@remote04:~/i220b/submit/lab11/files/parity$ time ./parity-s 10[A[C[C[C[C[C[C[C[C[C[C3[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Calee889@remote04:~/i220b/submit/lab11/files/parity$ time ./parity-s 10[A[C[C[C[C[C[C[C[C[C[C[12Psys     0m0.000s
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cuser    0m0.001sreal    0m0.002s3[Ktime ./parity-c 10s[C[C[Cc[C[C[C./parity-s 10000000d[C[C[C[C[C[C[C[C[C[1@t[1@i[1@m[1@e[1@ [C[C[C[C[C[C[C[C[C[C[1P 10000000c 10000000
+5000346
+
+real	0m0.346s
+user	0m0.341s
+sys	0m0.004s
+alee889@remote04:~/i220b/submit/lab11/files/parity$ time ./parity-s 10000000
+5000131
+
+real	0m0.169s
+user	0m0.164s
+sys	0m0.004s
+alee889@remote04:~/i220b/submit/lab11/files/parity$ ^C
+alee889@remote04:~/i220b/submit/lab11/files/parity$  time ./parity-c 10000000
+5000346
+
+real	0m0.345s
+user	0m0.344s
+sys	0m0.000s
+alee889@remote04:~/i220b/submit/lab11/files/parity$ 5000346
+bash: 5000346: command not found
+alee889@remote04:~/i220b/submit/lab11/files/parity$ 
+alee889@remote04:~/i220b/submit/lab11/files/parity$ real    0m0.346s
+bash: real: command not found
+alee889@remote04:~/i220b/submit/lab11/files/parity$ user    0m0.341s
+bash: user: command not found
+alee889@remote04:~/i220b/submit/lab11/files/parity$ sys     0m0.004s
+bash: sys: command not found
+alee889@remote04:~/i220b/submit/lab11/files/parity$ alee889@remote04:~/i220b/submit/lab11/files/parity$ time ./parity-s 10000000
+bash: alee889@remote04:~/i220b/submit/lab11/files/parity$: No such file or directory
+alee889@remote04:~/i220b/submit/lab11/files/parity$ 5000131
+bash: 5000131: command not found
+alee889@remote04:~/i220b/submit/lab11/files/parity$ 
+alee889@remote04:~/i220b/submit/lab11/files/parity$ real    0m0.169s
+bash: real: command not found
+alee889@remote04:~/i220b/submit/lab11/files/parity$ user    0m0.164s
+bash: user: command not found
+alee889@remote04:~/i220b/submit/lab11/files/parity$ sys     0m0.004s
+bash: sys: command not found
+alee889@remote04:~/i220b/submit/lab11/files/parity$ cd ../matmul-cache/
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ cat main.c
+#define _XOPEN_SOURCE 1
+
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "matmul.h"
+
+static void
+initMatrix(int n, double matrix[][n])
+{
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      matrix[i][j] = lrand48();
+    }
+  }
+}
+
+static void
+out_matrix(int n, double a[][n])
+{
+  FILE *out = stdout;
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      fprintf(out, "%8g ", a[i][j]);
+    }
+    fprintf(out, "\n");
+  }
+}
+
+enum { MAX_TEST_MATRIX_SIZE = 6 };
+
+int
+main(int argc, const char *argv[])
+{
+  int matrixSize = -1;
+  int numTests = -1;
+  if (argc != 3 || (matrixSize = atoi(argv[1])) <= 0 ||
+      (numTests = atoi(argv[2])) <= 0) {
+    fprintf(stderr, "usage: %s MATRIX_SIZE N_TRIALS\n", argv[0]);
+    exit(1);
+  }
+  int n = matrixSize;
+  double (*a)[n] = malloc(sizeof(double[n][n]));
+  double (*b)[n] = malloc(sizeof(double[n][n]));
+  double (*c)[n] = malloc(sizeof(double[n][n]));
+  if (!a || !b || !c) {
+    fprintf(stderr, "could not malloc matrices: %s\n", strerror(errno));
+    exit(1);
+  }
+  initMatrix(n, a); initMatrix(n, b);
+  for (int t = 0; t < numTests; t++) {
+    matrix_multiply(n, a, b, c);
+  }
+  if (matrixSize <= MAX_TEST_MATRIX_SIZE) out_matrix(n, c);
+  return 0;
+}
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ cat simple-matmul.c 
+#include "matmul.h"
+
+void
+matrix_multiply(int n, double a[][n], double b[][n], double c[][n])
+{
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      c[i][j] = 0;
+      for (int k = 0; k < n; k++) {
+	c[i][j] += a[i][k]*b[k][j];
+      }
+    }
+  }
+}
+
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ cat transpose-matmul.c 
+#include "matmul.h"
+
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/** Fill in matrix t[n][n] as the transpose of matrix a[n][n].  That is,
+ *  for all i, j set t[i][j] to a[j][i].
+ */
+static void
+matrix_transpose(int n, double a[][n], double t[][n])
+{
+  //@TODO add your code here
+}
+
+
+void
+matrix_multiply(int n, double a[][n], double b[][n], double c[][n])
+{
+  double (*tmp)[n] = malloc(sizeof(double[n][n]));
+  if (!tmp) {
+    fprintf(stderr, "could not malloc transpose matrix: %s\n",
+            strerror(errno));
+    exit(1);
+  }
+  matrix_transpose(n, b, tmp);
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      c[i][j] = 0;
+      for (int k = 0; k < n; k++) {
+        c[i][j] += a[i][k]*tmp[j][k];
+      }
+    }
+  }
+}
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ make
+cc -g -Wall -std=c11 -O1   -c -o main.o main.c
+cc -g -Wall -std=c11 -O1   -c -o simple-matmul.o simple-matmul.c
+cc main.o simple-matmul.o  -o simple-matmul
+cc -g -Wall -std=c11 -O1   -c -o transpose-matmul.o transpose-matmul.c
+cc main.o transpose-matmul.o  -o transpose-matmul
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ ./simple-matmul 4 1
+2.22116e+17 7.02729e+17 9.76657e+17 2.08306e+17 
+2.17616e+18 2.16772e+18 3.40213e+18 1.2273e+18 
+4.86494e+18 4.48803e+18 7.27046e+18 2.8719e+18 
+7.68709e+18 2.14813e+18 5.99903e+18 4.12269e+18 
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ ./transpose-matmul 4 1 [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K1
+2.22116e+17 7.02729e+17 9.76657e+17 2.08306e+17 
+2.17616e+18 2.16772e+18 3.40213e+18 1.2273e+18 
+4.86494e+18 4.48803e+18 7.27046e+18 2.8719e+18 
+7.68709e+18 2.14813e+18 5.99903e+18 4.12269e+18 
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ ./simple-matmul 4 1
+2.22116e+17 7.02729e+17 9.76657e+17 2.08306e+17
+2.17616e+18 2.16772e+18 3.40213e+18 1.2273e+18
+4.86494e+18 4.48803e+18 7.27046e+18 2.8719e+18
+7.68709e+18 2.14813e+18 5.99903e+18 4.12269e+18
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ ./transpose-matmul 4 1
+2.22116e+17 7.02729e+17 9.76657e+17 2.08306e+17
+2.17616e+18 2.16772e+18 3.40213e+18 1.2273e+18
+4.86494e+18 4.48803e+18 7.27046e+18 2.8719e+18
+7.68709e+18 2.14813e+18 5.99903e+18 4.12269e+18
+2.22116e+17 7.02729e+17 9.76657e+17 2.08306e+17 
+2.17616e+18 2.16772e+18 3.40213e+18 1.2273e+18 
+4.86494e+18 4.48803e+18 7.27046e+18 2.8719e+18 
+7.68709e+18 2.14813e+18 5.99903e+18 4.12269e+18 
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ 2.22116e+17 7.02729e+17 9.76657e+17 2.08306e+17
+bash: 2.22116e+17: command not found
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ 2.17616e+18 2.16772e+18 3.40213e+18 1.2273e+18
+bash: 2.17616e+18: command not found
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ 4.86494e+18 4.48803e+18 7.27046e+18 2.8719e+18
+bash: 4.86494e+18: command not found
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ 7.68709e+18 2.14813e+18 5.99903e+18 4.12269e+18
+bash: 7.68709e+18: command not found
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ ./transpose-matmul 4 1
+bash: alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$: No such file or directory
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ 2.22116e+17 7.02729e+17 9.76657e+17 2.08306e+17
+bash: 2.22116e+17: command not found
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ 2.17616e+18 2.16772e+18 3.40213e+18 1.2273e+18
+bash: 2.17616e+18: command not found
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ 4.86494e+18 4.48803e+18 7.27046e+18 2.8719e+18
+bash: 4.86494e+18: command not found
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ 7.68709e+18 2.14813e+18 5.99903e+18 4.12269e+18
+bash: 7.68709e+18: command not found
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ time ./simple-matmul 1 500 1
+
+real	0m14.232s
+user	0m14.219s
+sys	0m0.012s
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$  time ./simple-matmul 1500 1
+
+real	0m14.303s
+user	0m14.285s
+sys	0m0.016s
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ 
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ real    0m14.232s
+bash: real: command not found
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ user    0m14.219s
+bash: user: command not found
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ sys     0m0.012s
+bash: sys: command not found
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ sys     0m0.012s[Ktime ./simple-matmul [K[K[K[K[K[K[K[K[K[K[K[K[K[Ktranspose-matmul 1500 1
+
+real	0m12.656s
+user	0m12.643s
+sys	0m0.012s
+alee889@remote04:~/i220b/submit/lab11/files/matmul-cache$ time ./transpose-matmul 1500 1
+
+real	0m12Script started on 2019-11-01 14:36:48-04:00 [TERM="xterm" TTY="/dev/pts/5" COLUMNS="80" LINES="24"]
+alee889@remote03:~/i220b/submit/lab11$ c [Kd int[K[K[Kfiles/int-search/
+alee889@remote03:~/i220b/submit/lab11/files/int-search$ make
+cc -g -Wall -std=c11 -O1   -c -o linear-search.o linear-search.c
+[01m[Klinear-search.c:[m[K In function ‘[01m[Ksearch_for_element[m[K’:
+[01m[Klinear-search.c:6:27:[m[K [01;31m[Kerror: [m[K‘[01m[Kreuturn[m[K’ undeclared (first use in this function)
+   if( a[ i ] == element ) [01;31m[Kreuturn[m[K i ;
+                           [01;31m[K^~~~~~~[m[K
+[01m[Klinear-search.c:6:27:[m[K [01;36m[Knote: [m[Keach undeclared identifier is reported only once for each function it appears in
+[01m[Klinear-search.c:6:34:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Ki[m[K’
+   if( a[ i ] == element ) reuturn[01;31m[K [m[K[32m[Ki[m[K ;
+                                  [01;31m[K^[m[K[32m[K~[m[K
+                                  [32m[K;[m[K
+make: *** [<builtin>: linear-search.o] Error 1
+alee889@remote03:~/i220b/submit/lab11/files/int-search$ make
+cc -g -Wall -std=c11 -O1   -c -o linear-search.o linear-search.c
+cc -g -Wall -std=c11 -O1   -c -o main.o main.c
+cc -g -Wall -std=c11 -O1   -c -o int_compare.o int_compare.c
+cc   linear-search.o main.o int_compare.o   -o linear-search
+cc -g -Wall -std=c11 -O1   -c -o binary-search.o binary-search.c
+cc   binary-search.o main.o int_compare.o   -o binary-search
+alee889@remote03:~/i220b/submit/lab11/files/int-search$ ./linear [K-search 100 1
+alee889@remote03:~/i220b/submit/lab11/files/int-search$ time ./linear-search 200 0 2000
+
+real	0m7.698s
+user	0m7.684s
+sys	0m0.012s
+alee889@remote03:~/i220b/submit/lab11/files/int-search$ time ./binary-search 200 0 2000
+
+real	0m0.467s
+user	0m0.462s
+sys	0m0.004s
+alee889@remote03:~/i220b/submit/lab11/files/int-search$ time ./linear-search 2000 2000
+
+real	0m7.694s
+user	0m7.689s
+sys	0m0.004s
+alee889@remote03:~/i220b/submit/lab11/files/int-search$ 
+alee889@remote03:~/i220b/submit/lab11/files/int-search$ real    0m7.698s
+bash: real: command not found
+alee889@remote03:~/i220b/submit/lab11/files/int-search$ user    0m7.684s
+bash: user: command not found
+alee889@remote03:~/i220b/submit/lab11/files/int-search$ sys     0m0.012s
+bash: sys: command not found
+alee889@remote03:~/i220b/submit/lab11/files/int-search$ alee889@remote03:~/i220b/submit/lab11/files/int-search$ time ./binary-search 2000 2000
+bash: alee889@remote03:~/i220b/submit/lab11/files/int-search$: No such file or directory
+alee889@remote03:~/i220b/submit/lab11/files/int-search$ 
+alee889@remote03:~/i220b/submit/lab11/files/int-search$ real    0m0.467s
+bash: real: command not found
+alee889@remote03:~/i220b/submit/lab11/files/int-search$ user    0m0.462s
+bash: user: command not found
+alee889@remote03:~/i220b/submit/lab11/files/int-search$ sys     0m0.004s
+bash: sys: command not found
+alee889@remote03:~/i220b/submit/lab11/files/int-search$ c d[K[Kd ../coverage/
+alee889@remote03:~/i220b/submit/lab11/files/coverage$ clear
+[H[2J[3Jalee889@remote03:~/i220b/submit/lab11/files/coverage$ mae[Kke
+cc -g -Wall -std=c11 -fprofile-arcs -ftest-coverage    coverage.c   -o coverage
+alee889@remote03:~/i220b/submit/lab11/files/coverage$ cat M[K[K[K[K[K./coverage 200 2000 2999
+alee889@remote03:~/i220b/submit/lab11/files/coverage$ dir
+coverage  coverage.c  coverage.gcda  coverage.gcno  Makefile
+alee889@remote03:~/i220b/submit/lab11/files/coverage$ gcov coverage.gcda[Ka 
+File 'coverage.c'
+Lines executed:12.50% of 24
+Creating 'coverage.c.gcov'
+
+alee889@remote03:~/i220b/submit/lab11/files/coverage$ exit
+
+Script done on 2019-11-01 14:56:30-04:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2019-11-03 16:46:35-05:00 [TERM="xterm" TTY="/dev/pts/5" COLUMNS="80" LINES="24"]
+alee889@remote04:~/i220b/submit/lab11$ cd files/coverage/
+alee889@remote04:~/i220b/submit/lab11/files/coverage$ co[K[K./coverage
+250 300 250
+compute(250, 300, 250) = 1549
+250 250 3 300
+compute(250, 250, 300) = 1549
+^[[A    250 300 350
+compute(250, 300, 350) = 1549
+250 400       250 400 1000
+compute(250, 400, 1000) = 971
+400 400 400
+compute(400, 400, 400) = 1320
+400 500 400
+compute(400, 500, 400) = 730
+300 400 500
+compute(300, 400, 500) = 971
+300 200 100
+compute(300, 200, 100) = 1549
+300 450 500
+compute(300, 450, 500) = 971
+350 400 450
+compute(350, 400, 450) = 1320
+400 4 500 600
+compute(400, 500, 600) = 730
+400 600 1000
+compute(400, 600, 1000) = 730
+400 200 900
+compute(400, 200, 900) = 1320
+alee889@remote04:~/i220b/submit/lab11/files/coverage$ go[Kcov coverage.c[Kgcda 
+File 'coverage.c'
+Lines executed:83.33% of 24
+Creating 'coverage.c.gcov'
+
+alee889@remote04:~/i220b/submit/lab11/files/coverage$ exit
+exit
+
+Script done on 2019-11-03 16:50:23-05:00 [COMMAND_EXIT_CODE="0"]
