@@ -1,0 +1,1173 @@
+Script started on 2019-11-15 14:50:39-05:00 [TERM="xterm" TTY="/dev/pts/17" COLUMNS="80" LINES="24"]
+alee889@remote00:~/i220b/submit/lab13$ cd files/stdin-char-count/
+alee889@remote00:~/i220b/submit/lab13/files/stdin-char-count$ cat stdin-char-count.c 
+#include <stdio.h>
+
+int
+main(int argc, const char *argv[])
+{
+  printf("EOF = %d\n", EOF);
+  char c;
+  int count = 0;
+  while ((c = getchar()) != EOF) count++;
+  printf("%d\n", count);
+  return 0;
+}
+alee889@remote00:~/i220b/submit/lab13/files/stdin-char-count$ cat Makefile 
+CC = gcc
+CFLAGS = -g -Wall -std=c11 -funsigned-char
+
+TARGETS = stdin-char-count
+
+$(TARGETS):
+
+
+clean:
+		rm -f $(TARGETS) *.o *~
+alee889@remote00:~/i220b/submit/lab13/files/stdin-char-count$ ./ sctd[K[K[K[K[Kstdin[Kn-char-count  <stdin-char-count.c 
+bash: ./stdin-char-count: No such file or directory
+alee889@remote00:~/i220b/submit/lab13/files/stdin-char-count$ make
+gcc -g -Wall -std=c11 -funsigned-char    stdin-char-count.c   -o stdin-char-count
+alee889@remote00:~/i220b/submit/lab13/files/stdin-char-count$ make./stdin-char-count <stdin-char-count.c 
+EOF = -1
+^C
+alee889@remote00:~/i220b/submit/lab13/files/stdin-char-count$ nano stdin-char-count
+[?1049h[22;0;0t[1;24r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[22;33H(B[0;7m[ Reading File ](B[m[22;18H(B[0;7m[ Read 20 lines (Converted from Mac format) ](B[m[H(B[0;7m  GNU nano 3.2                    stdin-char-count                              [1;79H(B[m[23d(B[0;7m^G(B[m Get Help  (B[0;7m^O(B[m Write Out (B[0;7m^W(B[m Where Is  (B[0;7m^K(B[m Cut Text  (B[0;7m^J(B[m Justify   (B[0;7m^C(B[m Cur Pos[24d(B[0;7m^X(B[m Exit[14G(B[0;7m^R(B[m Read File (B[0;7m^\(B[m Replace   (B[0;7m^U(B[m Uncut Text(B[0;7m^T(B[m To Spell  (B[0;7m^_(B[m Go To Line[22d[3d[39;49m(B[m^?ELF^B^A^A^@^@^@^@^@^@^@^@^@^C^@>^@^A^@^@^@`^P^@^@^@^@^@^@@^@^@^@^@^@^@^@8B^@^$[4;1H^S^A^@^@H�=�^@^@^@�^UV/^@^@�^O^_D^@^@H�=�/^@^@H�^E�/^@^@H9�t^UH�^E./^@^@H��t   $[5;1H^@^@^@^A^[^C;<^@^@^@^F^@^@^@^P����^@^@^@@����^@^@^@P���X^@^@^@5����^@^@^@�����^$[6;1H^F^@^@^@^@^@^@^@D^@^@^@|^@^@^@����]^@^@^@^@B^N^P�^BE^N^X�^CE^N �^DE^N(�^EH^N0�^$[7;1H^@^@^@^@^@^@^@�^Q^@^@^@^@^@^@^Y^@^@^@^@^@^@^@�=^@^@^@^@^@^@^[^@^@^@^@^@^@^@^H^@$[8;1H^@^@^@^@^@^@^@�^@^@^@^@^@^@^@^K^@^@^@^@^@^@^@^X^@^@^@^@^@^@^@^U^@^@^@^@^@^@^@^@$[9;1H^B^@^@^DA[17G�^@^@^@P[9;33H+^@^@^@^DB[49G�^@^@^@X[9;65Hk^@^@^@^DD^V=^B$[10;1H^?^@^@^@�[17G�^A^@^@^D[^Wd^B^@^@�    �^A^@^@^D\^Yo^B^@^@�    �^A^@^@^D]^TC^B$[11;1H-^@^@^@�[11;17H(^B^@^@^D`^Ge^@^@^@�    t^A^@^@^Db^Hu^B^@^@�^@^B8^A^@^@^E^G^Y�^$[12;1Hh^B^@^@^D+^N^KP^A^@^@^F^H8^B^@^@^F^H�^@^@^@^L�^@^@^@Y^B^@^@[13d9^@^@^@^@^@^F^H0^B^@^@^K�^A^@^@^F^H_^B^@^@^K�^A^@^@^F^Hj^B^@^@^L�^@^@^@�^B^@^@[14d9^@^@^@^S^@^N^Z^B^@^@^F�^N�^B^@^@^F^H$^B^@^@^Na^B^@^@^F�^N�^B^@^@^N�^@^@^@^F�^N$[15;1He^@^@^@^B�\^P/^A^@^@^A^D^\^L^C^@^@^B�P^Qc^@^A^G^H�^@^@^@^B�k^R�^@^@^@^A^H^Ge^@^$[16;1H^@^C^N:^K;^K9^KI^S8^K^@^@[17d^V^@^C^N:^K;^K9^K^@^@^K^S^@^C^N<^Y^@^@^L^A^AI^S^A^S^@^@[18d!^@I^S/^K^@^@^N4^@^C^N:^K;^K9^KI^S?^Y<^Y^@^@^O.^A?^Y^C^N:^K;^K9^K'^YI^S^Q^A^R^G$[19;1H^@^A^A^A^A^@^@^@^A^@^@^A/usr/lib/gcc/x86_64-linux-gnu/8/include^@/usr/include/x$[20;1H^@^B^D^AX^B^E^@^A^A_IO_buf_end^@stdin-char-count.c^@_old_offset^@_IO_save_end^@$[21;1H^@p^E^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^C^@^K^@^@^P^@^@^@^@^@^@^@^@^@^@^@^@^@$[3;1H[?12l[?25h[?25l[22d[J[24;80H[?12l[?25h[24;1H[?1049l[23;0;0t[?1l>alee889@remote00:~/i220b/submit/lab13/files/stdin-char-count$ nano stdin-char-count.c
+[?1049h[22;0;0t[1;24r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[22;33H(B[0;7m[ Reading File ](B[m[22;32H(B[0;7m[ Read 12 lines ](B[m[H(B[0;7m  GNU nano 3.2                   stdin-char-count.c                             [1;79H(B[m[23d(B[0;7m^G(B[m Get Help  (B[0;7m^O(B[m Write Out (B[0;7m^W(B[m Where Is  (B[0;7m^K(B[m Cut Text  (B[0;7m^J(B[m Justify   (B[0;7m^C(B[m Cur Pos[24d(B[0;7m^X(B[m Exit[14G(B[0;7m^R(B[m Read File (B[0;7m^\(B[m Replace   (B[0;7m^U(B[m Uncut Text(B[0;7m^T(B[m To Spell  (B[0;7m^_(B[m Go To Line[22d[3d(B[0;1m[36m#include[39m(B[m (B[0;1m[33m<stdio.h>[5d(B[0m[32mint[6d[39m(B[mmain([32mint[39m(B[m argc, [32mconst[39m(B[m [32mchar[39m(B[m *argv[])[7d{[8d printf((B[0;1m[33m"EOF = %d\n"[39m(B[m, (B[0;1m[31mEOF[39m(B[m);[9;3H[32mchar[39m(B[m c;[10;3H[32mint[39m(B[m count = 0;[11;3H(B[0;1m[33mwhile[39m(B[m ((c = getchar()) != (B[0;1m[31mEOF[39m(B[m) count++;[12;3Hprintf((B[0;1m[33m"%d\n"[39m(B[m, count);[13;3H[35mreturn[39m(B[m 0;[14d}[3d[?12l[?25h[?25l[4d[?12l[?25h[?25l[5d[?12l[?25h[?25l[6d[?12l[?25h[?25l[7d[?12l[?25h[?25l[8d[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lp[?12l[?25h[?25l[9d[?12l[?25h[?25l[?12l[?25h[?25l[1;71H(B[0;7mModified(B[m[9;3Hschar c;  s[?12l[?25h[?25lichar c;[5G[?12l[?25h[?25lgchar c;[6G[?12l[?25h[?25lnchar c;[7G[?12l[?25h[?25lechar c;[8G[?12l[?25h[?25ldchar c;[9G[?12l[?25h[?25l  [32msigned[39m(B[m [32mchar[39m(B[m c;[10G[?12l[?25h[?25l[22d(B[0;7mSave modified buffer?  (Answering "No" will DISCARD changes.)                   [23;1H Y(B[m Yes[K[24d(B[0;7m N(B[m No  [14G   (B[0;7m^C(B[m Cancel[K[22;63H[?12l[?25h[?25l[23d(B[0;7m^G(B[m Get Help[23;21H(B[0;7mM-D(B[m DOS Format[41G(B[0;7mM-A(B[m Append[23;61H(B[0;7mM-B(B[m Backup File[24d(B[0;7m^C(B[m Cancel[17G    (B[0;7mM-M(B[m Mac Format[41G(B[0;7mM-P(B[m Prepend[24;61H(B[0;7m^T(B[m To Files[22d(B[0;7mFile Name to Write: stdin-char-count.c                       (B[m[22;39H[?12l[?25h[?25l[K[1;79H[1;71H(B[0;7m        (B[m[22;32H(B[0;7m[ Wrote 12 lines ](B[m[J[24;80H[?12l[?25h[24;1H[?1049l[23;0;0t[?1l>alee889@remote00:~/i220b/submit/lab13/files/stdin-char-count$ make
+gcc -g -Wall -std=c11 -funsigned-char    stdin-char-count.c   -o stdin-char-count
+alee889@remote00:~/i220b/submit/lab13/files/stdin-char-count$ ./stdin-char-count <stdin-char-count.c
+EOF = -1
+205
+alee889@remote00:~/i220b/submit/lab13/files/stdin-char-count$ wc stdin-char-count.c
+ 12  32 205 stdin-char-count.c
+alee889@remote00:~/i220b/submit/lab13/files/stdin-char-count$ cd fil[K[K[K[K ../file-char-count/
+alee889@remote00:~/i220b/submit/lab13/files/file-char-count$ clear
+[H[2J[3Jalee889@remote00:~/i220b/submit/lab13/files/file-char-count$ nano[K[K[K[Kcatf [K[K file-char-count.c 
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/** Output number of chars in file specified by single command-line
+ *  argument.
+ */
+int
+main(int argc, const char *argv[])
+{
+  if (argc != 2) {
+    fprintf(stderr, "usage: %s FILE_NAME\n", argv[0]);
+    exit(1);
+  }
+  const char *fName = argv[1];
+  FILE *in = fopen(fName, "r");
+  if (!in) {
+    fprintf(stderr, "cannot read %s: %s\n", fName, strerror(errno));
+    exit(1);
+  }
+  int c;
+  int count = 0;
+  while ((c = fgetc(in)) != EOF) count++;
+  printf("%d\n", count);
+  return 0;
+}
+alee889@remote00:~/i220b/submit/lab13/files/file-char-count$ make
+gcc -g -Wall -std=c11    file-char-count.c   -o file-char-count
+alee889@remote00:~/i220b/submit/lab13/files/file-char-count$ ./file-char-count f ile-char-count.c
+566
+alee889@remote00:~/i220b/submit/lab13/files/file-char-count$ wc file-char-count. c
+ 27  81 566 file-char-count.c
+alee889@remote00:~/i220b/submit/lab13/files/file-char-count$ ./file-char-count x xx
+cannot read xxx: No such file or directory
+alee889@remote00:~/i220b/submit/lab13/files/file-char-count$ vak[Klgrind ./file-cha r-count file-char-count.c > vla[K[Kalgrind.[Kfcc.txt
+==30150== Memcheck, a memory error detector
+==30150== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==30150== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==30150== Command: ./file-char-count file-char-count.c
+==30150== 
+==30150== 
+==30150== HEAP SUMMARY:
+==30150==     in use at exit: 552 bytes in 1 blocks
+==30150==   total heap usage: 3 allocs, 2 frees, 16,936 bytes allocated
+==30150== 
+==30150== LEAK SUMMARY:
+==30150==    definitely lost: 0 bytes in 0 blocks
+==30150==    indirectly lost: 0 bytes in 0 blocks
+==30150==      possibly lost: 0 bytes in 0 blocks
+==30150==    still reachable: 552 bytes in 1 blocks
+==30150==         suppressed: 0 bytes in 0 blocks
+==30150== Rerun with --leak-check=full to see details of leaked memory
+==30150== 
+==30150== For counts of detected and suppressed errors, rerun with: -v
+==30150== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+alee889@remote00:~/i220b/submit/lab13/files/file-char-count$ dir
+file-char-count  file-char-count.c  Makefile  valgrindfcc.txt
+alee889@remote00:~/i220b/submit/lab13/files/file-char-count$ cat valgrindfcc.txt 
+566
+alee889@remote00:~/i220b/submit/lab13/files/file-char-count$ nanon fi[K[K[K[K file-char-count.c
+[?1049h[22;0;0t[1;24r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[22;33H(B[0;7m[ Reading File ](B[m[22;32H(B[0;7m[ Read 27 lines ](B[m[H(B[0;7m  GNU nano 3.2                   file-char-count.c                              [1;79H(B[m[23d(B[0;7m^G(B[m Get Help  (B[0;7m^O(B[m Write Out (B[0;7m^W(B[m Where Is  (B[0;7m^K(B[m Cut Text  (B[0;7m^J(B[m Justify   (B[0;7m^C(B[m Cur Pos[24d(B[0;7m^X(B[m Exit[14G(B[0;7m^R(B[m Read File (B[0;7m^\(B[m Replace   (B[0;7m^U(B[m Uncut Text(B[0;7m^T(B[m To Spell  (B[0;7m^_(B[m Go To Line[22d[3d(B[0;1m[36m#include[39m(B[m (B[0;1m[33m<errno.h>[4d[36m#include[39m(B[m (B[0;1m[33m<stdio.h>[5d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[6d[36m#include[39m(B[m (B[0;1m[33m<string.h>[8d[34m/** Output number of chars in file specified by single command-line[9d *  argument.[10d */[11d(B[0m[32mint[12d[39m(B[mmain([32mint[39m(B[m argc, [32mconst[39m(B[m [32mchar[39m(B[m *argv[])[13d{[14d (B[0;1m[33mif[39m(B[m (argc != 2) {[15;5Hfprintf(stderr, (B[0;1m[33m"usage: %s FILE_NAME\n"[39m(B[m, argv[0]);[16;5Hexit(1);[17;3H}[18d[32mconst[39m(B[m [32mchar[39m(B[m *fName = argv[1];[19;3H(B[0;1m[31mFILE[39m(B[m *in = fopen(fName, (B[0;1m[33m"r"[39m(B[m);[20;3H(B[0;1m[33mif[39m(B[m (!in) {[21;5Hfprintf(stderr, (B[0;1m[33m"cannot read %s: %s\n"[39m(B[m, fName, strerror(errno));[3d[?12l[?25h[?25l[4d[?12l[?25h[?25l[5d[?12l[?25h[?25l[6d[?12l[?25h[?25l[7d[?12l[?25h[?25l[8d[?12l[?25h[?25l[9d[?12l[?25h[?25l[10d[?12l[?25h[?25l[11d[?12l[?25h[?25l[12d[?12l[?25h[?25l[13d[?12l[?25h[?25l[14d[?12l[?25h[?25l[15d[?12l[?25h[?25l[16d[?12l[?25h[?25l[17d[?12l[?25h[?25l[18d[?12l[?25h[?25l[19d[?12l[?25h[?25l[20d[?12l[?25h[?25l[21d[?12l[?25h[?25l7[3;21r8[10S[1;24r[12;5Hexit(1);[13;3H}[14d[32mint[39m(B[m c;[15;3H[32mint[39m(B[m count = 0;[16;3H(B[0;1m[33mwhile[39m(B[m ((c = fgetc(in)) != (B[0;1m[31mEOF[39m(B[m) count++;[17;3Hprintf((B[0;1m[33m"%d\n"[39m(B[m, count);[18;3H[35mreturn[39m(B[m 0;[19d}[12d[?12l[?25h[?25l[13d[?12l[?25h[?25l[14d[?12l[?25h[?25l[15d[?12l[?25h[?25l[16d[?12l[?25h[?25l[17d[?12l[?25h[?25l[1;71H(B[0;7mModified(B[m[17;21r[17;1HM[1;24r[18;1H[?12l[?25h[?25l[22d[K[17d[?12l[?25h[?25l[8G[42m[1K [49m(B[m[?12l[?25h[?25l[K[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l w[?12l[?25h[?25lh[?12l[?25h[?25li[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[42m [49m(B[m[K[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l  f[?12l[?25h[?25lc[?12l[?25h[?25ll[?12l[?25h[?25lo[?12l[?25h[?25ls[?12l[?25h[?25le[?12l[?25h[?25l([?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25l)[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l ;[?12l[?25h[?25l[1;79H[1;71H(B[0;7m        (B[m[22;32H(B[0;7m[ Wrote 28 lines ](B[m[17;15H[?12l[?25h[?25l[22d[J[24;80H[?12l[?25h[24;1H[?1049l[23;0;0t[?1l>alee889@remote00:~/i220b/submit/lab13/files/file-char-count$ nano file-char-count.c
+[?1049h[22;0;0t[1;24r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[22;33H(B[0;7m[ Reading File ](B[m[22;32H(B[0;7m[ Read 28 lines ](B[m[H(B[0;7m  GNU nano 3.2                   file-char-count.c                              [1;79H(B[m[23d(B[0;7m^G(B[m Get Help  (B[0;7m^O(B[m Write Out (B[0;7m^W(B[m Where Is  (B[0;7m^K(B[m Cut Text  (B[0;7m^J(B[m Justify   (B[0;7m^C(B[m Cur Pos[24d(B[0;7m^X(B[m Exit[14G(B[0;7m^R(B[m Read File (B[0;7m^\(B[m Replace   (B[0;7m^U(B[m Uncut Text(B[0;7m^T(B[m To Spell  (B[0;7m^_(B[m Go To Line[22d[3d(B[0;1m[36m#include[39m(B[m (B[0;1m[33m<errno.h>[4d[36m#include[39m(B[m (B[0;1m[33m<stdio.h>[5d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[6d[36m#include[39m(B[m (B[0;1m[33m<string.h>[8d[34m/** Output number of chars in file specified by single command-line[9d *  argument.[10d */[11d(B[0m[32mint[12d[39m(B[mmain([32mint[39m(B[m argc, [32mconst[39m(B[m [32mchar[39m(B[m *argv[])[13d{[14d (B[0;1m[33mif[39m(B[m (argc != 2) {[15;5Hfprintf(stderr, (B[0;1m[33m"usage: %s FILE_NAME\n"[39m(B[m, argv[0]);[16;5Hexit(1);[17;3H}[18d[32mconst[39m(B[m [32mchar[39m(B[m *fName = argv[1];[19;3H(B[0;1m[31mFILE[39m(B[m *in = fopen(fName, (B[0;1m[33m"r"[39m(B[m);[20;3H(B[0;1m[33mif[39m(B[m (!in) {[21;5Hfprintf(stderr, (B[0;1m[33m"cannot read %s: %s\n"[39m(B[m, fName, strerror(errno));[3d[?12l[?25h[?25l[4d[?12l[?25h[?25l[5d[?12l[?25h[?25l[6d[?12l[?25h[?25l[7d[?12l[?25h[?25l[8d[?12l[?25h[?25l[9d[?12l[?25h[?25l[10d[?12l[?25h[?25l[11d[?12l[?25h[?25l[12d[?12l[?25h[?25l[13d[?12l[?25h[?25l[14d[?12l[?25h[?25l[15d[?12l[?25h[?25l[16d[?12l[?25h[?25l[17d[?12l[?25h[?25l[18d[?12l[?25h[?25l[19d[?12l[?25h[?25l[20d[?12l[?25h[?25l[21d[?12l[?25h[?25l7[3;21r8[10S[1;24r[12;5Hexit(1);[13;3H}[14d[32mint[39m(B[m c;[15;3H[32mint[39m(B[m count = 0;[16;3H(B[0;1m[33mwhile[39m(B[m ((c = fgetc(in)) != (B[0;1m[31mEOF[39m(B[m) count++;[17;3Hfclose(in) ;[18;3Hprintf((B[0;1m[33m"%d\n"[39m(B[m, count);[19;3H[35mreturn[39m(B[m 0;[20d}[12d[?12l[?25h[?25l[13d[?12l[?25h[?25l[14d[?12l[?25h[?25l[15d[?12l[?25h[?25l[16d[?12l[?25h[?25l[17d[?12l[?25h[?25l[18d[?12l[?25h[?25l[22d[K[19d[?12l[?25h[?25l[20d[?12l[?25h[?25l[21d[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lp[?12l[?25h[?25l[23d[J[24;80H[?12l[?25h[24;1H[?1049l[23;0;0t[?1l>alee889@remote00:~/i220b/submit/lab13/files/file-char-count$ nano file-char-count.c[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake
+gcc -g -Wall -std=c11    file-char-count.c   -o file-char-count
+alee889@remote00:~/i220b/submit/lab13/files/file-char-count$ valgrind ./file-char-count file-char-count.c
+==3165== Memcheck, a memory error detector
+==3165== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3165== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==3165== Command: ./file-char-count file-char-count.c
+==3165== 
+581
+==3165== 
+==3165== HEAP SUMMARY:
+==3165==     in use at exit: 0 bytes in 0 blocks
+==3165==   total heap usage: 3 allocs, 3 frees, 9,768 bytes allocated
+==3165== 
+==3165== All heap blocks were freed -- no leaks are possible
+==3165== 
+==3165== For counts of detected and suppressed errors, rerun with: -v
+==3165== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+alee889@remote00:~/i220b/submit/lab13/files/file-char-count$ cat file-char-count .c
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/** Output number of chars in file specified by single command-line
+ *  argument.
+ */
+int
+main(int argc, const char *argv[])
+{
+  if (argc != 2) {
+    fprintf(stderr, "usage: %s FILE_NAME\n", argv[0]);
+    exit(1);
+  }
+  const char *fName = argv[1];
+  FILE *in = fopen(fName, "r");
+  if (!in) {
+    fprintf(stderr, "cannot read %s: %s\n", fName, strerror(errno));
+    exit(1);
+  }
+  int c;
+  int count = 0;
+  while ((c = fgetc(in)) != EOF) count++;
+  fclose(in) ;
+  printf("%d\n", count);
+  return 0;
+}
+alee889@remote00:~/i220b/submit/lab13/files/file-char-count$ cd ../file-copy/
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ clear
+[H[2J[3Jalee889@remote00:~/i220b/submit/lab13/files/file-copy$ cat file-copy.c 
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+static void
+doCopy(const char *inName, FILE *in, const char *outName, FILE *out)
+{
+  int c;
+  while ((c = fgetc(in)) != EOF) {
+    if (fputc(c, out) == EOF) {
+      fprintf(stderr, "error writing to %s: %s\n", outName, strerror(errno));
+      exit(1);
+    }
+  }
+}
+
+/** Output number of chars in file specified by single command-line
+ *  argument.
+ */
+int
+main(int argc, const char *argv[])
+{
+  if (argc != 3) {
+    fprintf(stderr, "usage: %s SRC_NAME DEST_NAME\n", argv[0]);
+    exit(1);
+  }
+  const char *srcName = argv[1];
+  const char *destName = argv[2];
+  FILE *in = fopen(srcName, "r");
+  if (!in) {
+    fprintf(stderr, "cannot read %s: %s\n", srcName, strerror(errno));
+    exit(1);
+  }
+  FILE *out = fopen(destName, "w");
+  if (!out) {
+    fprintf(stderr, "cannot write %s: %s\n", destName, strerror(errno));
+    exit(1);
+  }
+  doCopy(srcName, in, destName, out);
+  if (fclose(in) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", srcName, strerror(errno));
+    exit(1);
+  }
+  if (fclose(out) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", destName, strerror(errno));
+    exit(1);
+  }
+  return 0;
+}
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ make
+gcc -g -Wall -std=c11    file-copy.c   -o file-copy
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ ./file-copy file.cop[K[K[K[K-copy.c
+usage: ./file-copy SRC_NAME DEST_NAME
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ ./file-copy 
+usage: ./file-copy SRC_NAME DEST_NAME
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ ./file-copy file-copy.c f c.c
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ ls -l file-copy.c t
+ls: cannot access 't': No such file or directory
+-rw-r----- 1 alee889 alee889 1195 Nov 11 23:22 file-copy.c
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ ls -l file-copy.c t[1P[1P[1P[1P[1P[1@.[1@/[1@f[1@i[1@e[1P[1@l[1@e[1@-[1@c[1@o[1@py file-copy.c t [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ ./file-copy file-copy.c t [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6Pls -l
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+-rw-r----- 1 alee889 alee889 1195 Nov 11 23:22 file-copy.c
+-rw-r----- 1 alee889 alee889 1195 Nov 15 16:29 t
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ rm file-copy[K[K[K[K[K[K[K[Kc.c 
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ cmp file-copy-[K.c t
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ file[K[K[K[K./file-copy Makefile t
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ cmp Makefile f[Kt
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ cmpt [K[K file-copy.c Makefile  [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K 
+file-copy.c Makefile differ: byte 1, line 1
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ chmod a-w t
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ ./file-copy file-copy.c t [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kt
+cannot write t: Permission denied
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ [Kalee889@remote00:~/i220b/submit/lab13/files/file-copy$ co[Kmp Makefile t
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ man g[Kfgetc
+[?1049h[22;0;0t[?1h=FGETC(3)                   Linux Programmer's Manual                  FGETC(3)[m
+[m
+[1mNAME[0m[m
+       fgetc, fgets, getc, getchar, ungetc - input of characters and strings[m
+[m
+[1mSYNOPSIS[0m[m
+       [1m#include[0m [1m<stdio.h>[0m[m
+[m
+       [1mint[0m [1mfgetc(FILE[0m [1m*[0m[4mstream[24m[1m);[0m[m
+[m
+       [1mchar[0m [1m*fgets(char[0m [1m*[0m[4ms[24m[1m,[0m [1mint[0m [4msize[24m[1m,[0m [1mFILE[0m [1m*[0m[4mstream[24m[1m);[0m[m
+[m
+       [1mint[0m [1mgetc(FILE[0m [1m*[0m[4mstream[24m[1m);[0m[m
+[m
+       [1mint[0m [1mgetchar(void);[0m[m
+[m
+       [1mint[0m [1mungetc(int[0m [4mc[24m[1m,[0m [1mFILE[0m [1m*[0m[4mstream[24m[1m);[0m[m
+[m
+[1mDESCRIPTION[0m[m
+       [1mfgetc[0m()  reads  the next character from [4mstream[24m and returns it as an [4mun‐[24m[m
+       [4msigned[24m [4mchar[24m cast to an [4mint[24m, or [1mEOF[0m on end of file or error.[m
+[m
+       [1mgetc[0m() is equivalent to [1mfgetc[0m() except that it may be implemented as  a[m
+       macro which evaluates [4mstream[24m more than once.[m
+[7m Manual page fgetc(3) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fgetc(3) line 2 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mgetchar[0m() is equivalent to [1mgetc([0m[4mstdin[24m[1m)[0m.[m
+[7m Manual page fgetc(3) line 3 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fgetc(3) line 4 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mfgets[0m()  reads in at most one less than [4msize[24m characters from [4mstream[24m and[m
+[7m Manual page fgetc(3) line 5 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       stores them into the buffer pointed to by [4ms[24m.  Reading  stops  after  an[m
+[7m Manual page fgetc(3) line 6 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mEOF[0m  or a newline.  If a newline is read, it is stored into the buffer.[m
+[7m Manual page fgetc(3) line 7 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       A terminating null byte ('\0') is stored after the  last  character  in[m
+[7m Manual page fgetc(3) line 8 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       the buffer.[m
+[7m Manual page fgetc(3) line 9 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fgetc(3) line 10 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mungetc[0m()  pushes  [4mc[24m  back to [4mstream[24m, cast to [4munsigned[24m [4mchar[24m, where it is[m
+[7m Manual page fgetc(3) line 11 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       available for subsequent read operations.  Pushed-back characters  will[m
+[7m Manual page fgetc(3) line 12 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       be returned in reverse order; only one pushback is guaranteed.[m
+[7m Manual page fgetc(3) line 13 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fgetc(3) line 14 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Calls  to the functions described here can be mixed with each other and[m
+[7m Manual page fgetc(3) line 15 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       with calls to other input functions from the [4mstdio[24m library for the same[m
+[7m Manual page fgetc(3) line 16 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       input stream.[m
+[7m Manual page fgetc(3) line 17 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fgetc(3) line 18 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       For nonlocking counterparts, see [1munlocked_stdio[0m(3).[m
+[7m Manual page fgetc(3) line 19 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fgetc(3) line 20 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mRETURN[0m [1mVALUE[0m[m
+[7m Manual page fgetc(3) line 21 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mfgetc[0m(),  [1mgetc[0m() and [1mgetchar[0m() return the character read as an [4munsigned[24m[m
+[7m Manual page fgetc(3) line 22 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [4mchar[24m cast to an [4mint[24m or [1mEOF[0m on end of file or error.[m
+[7m Manual page fgetc(3) line 23 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fgetc(3) line 24 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mfgets[0m() returns [4ms[24m on success, and NULL on error or when end of file oc‐[m
+[7m Manual page fgetc(3) line 25 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       curs while no characters have been read.[m
+[7m Manual page fgetc(3) line 26 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fgetc(3) line 27 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mungetc[0m() returns [4mc[24m on success, or [1mEOF[0m on error.[m
+[7m Manual page fgetc(3) line 28 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fgetc(3) line 29 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mATTRIBUTES[0m[m
+[7m Manual page fgetc(3) line 30 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       For  an  explanation  of  the  terms  used  in  this  section,  see [1mat‐[0m[m
+[7m Manual page fgetc(3) line 31 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mtributes[0m(7).[m
+[7m Manual page fgetc(3) line 32 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fgetc(3) line 33 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       ┌──────────────────────────┬───────────────┬─────────┐[m
+[7m Manual page fgetc(3) line 34 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       │[1mInterface[0m                 │ [1mAttribute[0m     │ [1mValue[0m   │[m
+[7m Manual page fgetc(3) line 35 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       ├──────────────────────────┼───────────────┼─────────┤[m
+[7m Manual page fgetc(3) line 36 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       │[1mfgetc[0m(), [1mfgets[0m(), [1mgetc[0m(), │ Thread safety │ MT-Safe │[m
+[7m Manual page fgetc(3) line 37 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       │[1mgetchar[0m(), [1mungetc[0m()       │               │         │[m
+[7m Manual page fgetc(3) line 38 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       └──────────────────────────┴───────────────┴─────────┘[m
+[7m Manual page fgetc(3) line 39 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fgetc(3) line 40 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mCONFORMING[0m [1mTO[0m[m
+[7m Manual page fgetc(3) line 41 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       POSIX.1-2001, POSIX.1-2008, C89, C99.[m
+[7m Manual page fgetc(3) line 42 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fgetc(3) line 43 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       It is not advisable to mix calls to input functions from the [4mstdio[24m  li‐[m
+[7m Manual page fgetc(3) line 44 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       brary  with  low-level calls to [1mread[0m(2) for the file descriptor associ‐[m
+[7m Manual page fgetc(3) line 45 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       ated with the input stream; the results  will  be  undefined  and  very[m
+[7m Manual page fgetc(3) line 46 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       probably not what you want.[m
+[7m Manual page fgetc(3) line 47 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fgetc(3) line 48 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mSEE[0m [1mALSO[0m[m
+[7m Manual page fgetc(3) line 49 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mread[0m(2), [1mwrite[0m(2), [1mferror[0m(3), [1mfgetwc[0m(3), [1mfgetws[0m(3), [1mfopen[0m(3), [1mfread[0m(3),[m
+[7m Manual page fgetc(3) line 50 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mfseek[0m(3),  [1mgetline[0m(3),   [1mgets[0m(3),   [1mgetwchar[0m(3),   [1mputs[0m(3),   [1mscanf[0m(3),[m
+[7m Manual page fgetc(3) line 51 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mungetwc[0m(3), [1munlocked_stdio[0m(3), [1mfeature_test_macros[0m(7)[m
+[7m Manual page fgetc(3) line 52 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fgetc(3) line 53 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mCOLOPHON[0m[m
+[7m Manual page fgetc(3) line 54 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       This  page  is  part of release 4.16 of the Linux [4mman-pages[24m project.  A[m
+[7m Manual page fgetc(3) line 55 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0talee889@remote00:~/i220b/submit/lab13/files/file-copy$ ge[K[Kfget[K[K[K[Kman ferror
+[?1049h[22;0;0t[?1h=FERROR(3)                  Linux Programmer's Manual                 FERROR(3)[m
+[m
+[1mNAME[0m[m
+       clearerr, feof, ferror, fileno - check and reset stream status[m
+[m
+[1mSYNOPSIS[0m[m
+       [1m#include[0m [1m<stdio.h>[0m[m
+[m
+       [1mvoid[0m [1mclearerr(FILE[0m [1m*[0m[4mstream[24m[1m);[0m[m
+[m
+       [1mint[0m [1mfeof(FILE[0m [1m*[0m[4mstream[24m[1m);[0m[m
+[m
+       [1mint[0m [1mferror(FILE[0m [1m*[0m[4mstream[24m[1m);[0m[m
+[m
+       [1mint[0m [1mfileno(FILE[0m [1m*[0m[4mstream[24m[1m);[0m[m
+[m
+   Feature Test Macro Requirements for glibc (see [1mfeature_test_macros[0m(7)):[m
+[m
+       [1mfileno[0m(): _POSIX_C_SOURCE[m
+[m
+[1mDESCRIPTION[0m[m
+       The function [1mclearerr[0m() clears the end-of-file and error indicators for[m
+       the stream pointed to by [4mstream[24m.[m
+[m
+[7m Manual page ferror(3) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       The function [1mfeof[0m() tests the  end-of-file  indicator  for  the  stream[m
+[7m Manual page ferror(3) line 2 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       pointed  to by [4mstream[24m, returning nonzero if it is set.  The end-of-file[m
+[7m Manual page ferror(3) line 3 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       indicator can be cleared only by the function [1mclearerr[0m().[m
+[7m Manual page ferror(3) line 4 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ferror(3) line 5 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       The function [1mferror[0m() tests the error indicator for the stream  pointed[m
+[7m Manual page ferror(3) line 6 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       to  by [4mstream[24m, returning nonzero if it is set.  The error indicator can[m
+[7m Manual page ferror(3) line 7 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       be reset only by the [1mclearerr[0m() function.[m
+[7m Manual page ferror(3) line 8 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ferror(3) line 9 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       The function [1mfileno[0m() examines the argument [4mstream[24m and returns its  in‐[m
+[7m Manual page ferror(3) line 10 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       teger file descriptor.[m
+[7m Manual page ferror(3) line 11 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ferror(3) line 12 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       For nonlocking counterparts, see [1munlocked_stdio[0m(3).[m
+[7m Manual page ferror(3) line 13 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ferror(3) line 14 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mERRORS[0m[m
+[7m Manual page ferror(3) line 15 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       These  functions  should  not fail and do not set the external variable[m
+[7m Manual page ferror(3) line 16 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [4merrno[24m.  (However, in case [1mfileno[0m() detects that its argument is  not  a[m
+[7m Manual page ferror(3) line 17 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       valid stream, it must return -1 and set [4merrno[24m to [1mEBADF[0m.)[m
+[7m Manual page ferror(3) line 18 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ferror(3) line 19 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mATTRIBUTES[0m[m
+[7m Manual page ferror(3) line 20 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       For  an  explanation  of  the  terms  used  in  this  section,  see [1mat‐[0m[m
+[7m Manual page ferror(3) line 21 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mtributes[0m(7).[m
+[7m Manual page ferror(3) line 22 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ferror(3) line 23 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       ┌────────────────────┬───────────────┬─────────┐[m
+[7m Manual page ferror(3) line 24 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       │[1mInterface[0m           │ [1mAttribute[0m     │ [1mValue[0m   │[m
+[7m Manual page ferror(3) line 25 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       ├────────────────────┼───────────────┼─────────┤[m
+[7m Manual page ferror(3) line 26 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       │[1mclearerr[0m(), [1mfeof[0m(), │ Thread safety │ MT-Safe │[m
+[7m Manual page ferror(3) line 27 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       │[1mferror[0m(), [1mfileno[0m()  │               │         │[m
+[7m Manual page ferror(3) line 28 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       └────────────────────┴───────────────┴─────────┘[m
+[7m Manual page ferror(3) line 29 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mCONFORMING[0m [1mTO[0m[m
+[7m Manual page ferror(3) line 30 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       The functions [1mclearerr[0m(), [1mfeof[0m(), and [1mferror[0m()  conform  to  C89,  C99,[m
+[7m Manual page ferror(3) line 31 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       POSIX.1-2001, and POSIX.1-2008.[m
+[7m Manual page ferror(3) line 32 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ferror(3) line 33 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       The function [1mfileno[0m() conforms to POSIX.1-2001 and POSIX.1-2008.[m
+[7m Manual page ferror(3) line 34 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ferror(3) line 35 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mSEE[0m [1mALSO[0m[m
+[7m Manual page ferror(3) line 36 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mopen[0m(2), [1mfdopen[0m(3), [1mstdio[0m(3), [1munlocked_stdio[0m(3)[m
+[7m Manual page ferror(3) line 37 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ferror(3) line 38 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mCOLOPHON[0m[m
+[7m Manual page ferror(3) line 39 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       This  page  is  part of release 4.16 of the Linux [4mman-pages[24m project.  A[m
+[7m Manual page ferror(3) line 40 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       description of the project, information about reporting bugs,  and  the[m
+[7m Manual page ferror(3) line 41 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       latest     version     of     this    page,    can    be    found    at[m
+[7m Manual page ferror(3) line 42 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       https://www.kernel.org/doc/man-pages/.[m
+[7m Manual page ferror(3) line 43 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page ferror(3) line 44 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                                  2017-09-15                         FERROR(3)[m
+[7m Manual page ferror(3) line 45 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page ferror(3) line 45/68 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page ferror(3) line 45/68 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page ferror(3) line 45/68 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page ferror(3) line 45/68 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page ferror(3) line 45/68 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page ferror(3) line 45/68 (END) (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0talee889@remote00:~/i220b/submit/lab13/files/file-copy$ 
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ make
+gcc -g -Wall -std=c11    file-copy.c   -o file-copy
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ ./file-copy Makefile t
+cannot write t: Permission denied
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ rm t
+rm: remove write-protected regular file 't'? yes  
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ rm t[18@./file-copy Makefile[C[C
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ chmod a-w t
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ ./file-copy file-copy.c t [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kt
+cannot write t: Permission denied
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ wc -;[Kl file-copy.c Makefile 
+  53 file-copy.c
+  10 Makefile
+  63 total
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ cmp Makefile t
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ wc -l Makeu[Kfile t
+ 10 Makefile
+ 10 t
+ 20 total
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ rm -f t
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ ./file [K-copy -[Kfile-copy.c t [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kt
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ ./file-copy Makeu[Kfile t
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ cat t
+CC = gcc
+CFLAGS = -g -Wall -std=c11
+
+TARGETS = file-copy
+
+$(TARGETS):
+
+
+clean:
+		rm -f $(TARGETS) *.o *~
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ wc -l file-copy [K.c Makeu[Kfil e
+  53 file-copy.c
+  10 Makefile
+  63 total
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ wc -l t
+10 t
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ rm 0[K-f t
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ dir
+file-copy  file-copy.c	Makefile
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ ./fi[K[K[K[Kmake
+make: 'file-copy' is up to date.
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ ./file-copy filecopy[K[K[K[K-copy.c t [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kt
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ ./file-copy Makefile t
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ cat
+t
+t
+^C
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ cat t
+CC = gcc
+CFLAGS = -g -Wall -std=c11
+
+TARGETS = file-copy
+
+$(TARGETS):
+
+
+clean:
+		rm -f $(TARGETS) *.o *~
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ make
+make: 'file-copy' is up to date.
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ nano [K[K[K[K[Kcat [K file-copy.c
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+static void
+doCopy(const char *inName, FILE *in, const char *outName, FILE *out)
+{
+  int c;
+  while ((c = fgetc(in)) != EOF) {
+    if (fputc(c, out) == EOF) {
+      fprintf(stderr, "error writing to %s: %s\n", outName, strerror(errno));
+      exit(1);
+    }
+    else if( ferror(in) != 0 ) {
+	fprintf( stderr, "error writing to %s: %s\n", outName, strerror( errno )) ;
+    }
+  }
+}
+
+/** Output number of chars in file specified by single command-line
+ *  argument.
+ */
+int
+main(int argc, const char *argv[])
+{
+  if (argc != 3) {
+    fprintf(stderr, "usage: %s SRC_NAME DEST_NAME\n", argv[0]);
+    exit(1);
+  }
+  const char *srcName = argv[1];
+  const char *destName = argv[2];
+  FILE *in = fopen(srcName, "r");
+  if (!in) {
+    fprintf(stderr, "cannot read %s: %s\n", srcName, strerror(errno));
+    exit(1);
+  }
+  FILE *out = fopen(destName, "a");
+  if (!out) {
+    fprintf(stderr, "cannot write %s: %s\n", destName, strerror(errno));
+    exit(1);
+  }
+  doCopy(srcName, in, destName, out);
+  if (fclose(in) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", srcName, strerror(errno));
+    exit(1);
+  }
+  if (fclose(out) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", destName, strerror(errno));
+    exit(1);
+  }
+  return 0;
+}
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ make
+gcc -g -Wall -std=c11    file-copy.c   -o file-copy
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ rm-[K[Km -f t
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ w[K./file-copy file-copy.c t [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kt
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ ./file-copy file-copy.c t [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P t
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P t[1P t[1P t[1P t[1P t[1P t[1P t[1P t[1P t[1P tM ta tk te tf ti tl te t
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ cat t
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+static void
+doCopy(const char *inName, FILE *in, const char *outName, FILE *out)
+{
+  int c;
+  while ((c = fgetc(in)) != EOF) {
+    if (fputc(c, out) == EOF) {
+      fprintf(stderr, "error writing to %s: %s\n", outName, strerror(errno));
+      exit(1);
+    }
+    else if( ferror(in) != 0 ) {
+	fprintf( stderr, "error writing to %s: %s\n", outName, strerror( errno )) ;
+    }
+  }
+}
+
+/** Output number of chars in file specified by single command-line
+ *  argument.
+ */
+int
+main(int argc, const char *argv[])
+{
+  if (argc != 3) {
+    fprintf(stderr, "usage: %s SRC_NAME DEST_NAME\n", argv[0]);
+    exit(1);
+  }
+  const char *srcName = argv[1];
+  const char *destName = argv[2];
+  FILE *in = fopen(srcName, "r");
+  if (!in) {
+    fprintf(stderr, "cannot read %s: %s\n", srcName, strerror(errno));
+    exit(1);
+  }
+  FILE *out = fopen(destName, "a");
+  if (!out) {
+    fprintf(stderr, "cannot write %s: %s\n", destName, strerror(errno));
+    exit(1);
+  }
+  doCopy(srcName, in, destName, out);
+  if (fclose(in) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", srcName, strerror(errno));
+    exit(1);
+  }
+  if (fclose(out) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", destName, strerror(errno));
+    exit(1);
+  }
+  return 0;
+}
+CC = gcc
+CFLAGS = -g -Wall -std=c11
+
+TARGETS = file-copy
+
+$(TARGETS):
+
+
+clean:
+		rm -f $(TARGETS) *.o *~
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ wc -l file-copy.c Makefil e t
+  53 file-copy.c
+  10 Makefile
+  63 t
+ 126 total
+alee889@remote00:~/i220b/submit/lab13/files/file-copy$ cd ../no-buffer-copy/
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ di[K[Kclear
+[H[2J[3Jalee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ dir
+Makefile  no-buffer-copy.c
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ catt no-buffer-copy.c [K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K no-buffer-copy.c 
+#include <errno.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+static void
+doCopy(const char *inName, FILE *in, const char *outName, FILE *out)
+{
+  int c;
+  while ((c = fgetc(in)) != EOF) {
+    if (fputc(c, out) == EOF) {
+      fprintf(stderr, "error writing to %s: %s\n", outName, strerror(errno));
+      exit(1);
+    }
+  }
+}
+
+/** Output number of chars in file specified by single command-line
+ *  argument.
+ */
+int
+main(int argc, const char *argv[])
+{
+  if (argc != 3 && argc != 4) {
+    fprintf(stderr, "usage: %s SRC_NAME DEST_NAME [IS_BUFFERED]\n", argv[0]);
+    exit(1);
+  }
+  const bool isBuffered = argc == 4 && atoi(argv[3]) == 1;
+  const int bufMode = (isBuffered) ? _IOFBF : _IONBF;
+  const char *srcName = argv[1];
+  const char *destName = argv[2];
+  FILE *in = fopen(srcName, "r");
+  if (!in) {
+    fprintf(stderr, "cannot read %s: %s\n", srcName, strerror(errno));
+    exit(1);
+  }
+  if (setvbuf(in, NULL, bufMode, 0) != 0) {
+    fprintf(stderr, "cannot set %d buffering for  %s: %s\n", isBuffered,
+            srcName, strerror(errno));
+    exit(1);
+  }
+  FILE *out = fopen(destName, "w");
+  if (!out) {
+    fprintf(stderr, "cannot write %s: %s\n", destName, strerror(errno));
+    exit(1);
+  }
+  if (setvbuf(out, NULL, bufMode, 0) != 0) {
+    fprintf(stderr, "cannot set %d buffering for  %s: %s\n", isBuffered,
+            destName, strerror(errno));
+    exit(1);
+  }
+  doCopy(srcName, in, destName, out);
+  if (fclose(in) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", srcName, strerror(errno));
+    exit(1);
+  }
+  if (fclose(out) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", destName, strerror(errno));
+    exit(1);
+  }
+  return 0;
+}
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ tie[Kme ./no-buffer-copy.c [K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kmake
+gcc -g -Wall -std=c11    no-buffer-copy.c   -o no-buffer-copy
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ time ./no-buffer-copy 'which gcc' /dev/null 1
+cannot read which gcc: No such file or directory
+
+real	0m0.003s
+user	0m0.001s
+sys	0m0.000s
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ time ./no-buffer-copy 'which gcc' /dev/null 1[K0
+cannot read which gcc: No such file or directory
+
+real	0m0.003s
+user	0m0.002s
+sys	0m0.000s
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$  time ./no-buffer-copy 'which gcc' /dev/null 1
+cannot read which gcc: No such file or directory
+
+real    0m0.003s
+user    0m0.001s
+sys     0m0.000s
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ time ./no-buffer-copy 'which gcc' /dev/null 0
+cannot read which gcc: No such file or directory
+
+real    0m0.003s
+user    0m0.002s
+sys     0m0.000s
+cannot read which gcc: No such file or directory
+
+real	0m0.003s
+user	0m0.001s
+sys	0m0.000s
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ cannot read which gcc: No such file or directory
+bash: cannot: command not found
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ 
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ real    0m0.003s
+bash: real: command not found
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ user    0m0.001s
+bash: user: command not found
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ sys     0m0.000s
+bash: sys: command not found
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ time ./no-buffer-copy 'which gcc' /dev/null 0
+bash: alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$: No such file or directory
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ cannot read which gcc: No such file or directory
+bash: cannot: command not found
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ 
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ real    0m0.003s
+bash: real: command not found
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ user    0m0.002s
+bash: user: command not found
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ sys     0m0.000s
+bash: sys: command not found
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ sys     0m0.000suser    0m0.002sreal    0m0.003scannot read which gcc: No such file or directory[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Calee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ time ./no-buffer-copy 'which gcc' /dev/null 0[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Psys     0m0.000s
+[K
+[K[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cuser    0m0.001ssys     0m0.000suser    0m0.001sreal    0m0.003scannot read which gcc: No such file or directory[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C time ./no-buffer-cop[2Py 'which gcc' /dev/null 1[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctime ./no-buffer-copy[1P 'which gcc' /dev/null 0
+cannot read which gcc: No such file or directory
+
+real	0m0.003s
+user	0m0.001s
+sys	0m0.000s
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ time ./no-buffer-copy 'which gcc' /dev/null 0[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Psys     0m0.000s
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cuser    0m0.002sreal    0m0.003scannot read which gcc: No such file or directory[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Calee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ time ./no-buffer-copy 'which gcc' /dev/null 0[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Psys     0m0.000s
+[K
+[K[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cuser    0m0.001sreal    0m0.003scannot read which gcc: No such file or directory[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C time ./no-buffer-cop[2Py 'which gcc' /dev/null 1[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctime ./no-buffer-copy[1P 'which gcc' /dev/null 01[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctime ./no-buffer-copy 'which gcc' /dev/null 101
+cannot read which gcc: No such file or directory
+
+real	0m0.003s
+user	0m0.001s
+sys	0m0.000s
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ time ./no-buffer-copy 'which gcc' /dev/null 10[C[1P[1@`[C[C[C[C[C[C[C[C[C[C[1P[1@`
+
+real	0m1.807s
+user	0m0.924s
+sys	0m0.878s
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ time ./no-buffer-copy `which gcc` /dev/null 0[C[C[K1
+
+real	0m0.015s
+user	0m0.007s
+sys	0m0.006s
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ time ./no-buffer-copy `which gcc` /dev/null 0
+
+real    0m1.807s
+user    0m0.924s
+sys     0m0.878s
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ time ./no-buffer-copy `which gcc` /dev/null 1
+
+real    0m0.015s
+user    0m0.007s
+sys     0m0.006s
+
+real	0m1.815s
+user	0m1.045s
+sys	0m0.767s
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ 
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ real    0m1.807s
+bash: real: command not found
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ user    0m0.924s
+bash: user: command not found
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ sys     0m0.878s
+bash: sys: command not found
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ time ./no-buffer-copy `which gcc` /dev/null 1
+bash: alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$: No such file or directory
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ 
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ real    0m0.015s
+bash: real: command not found
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ user    0m0.007s
+bash: user: command not found
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ sys     0m0.006s
+bash: sys: command not found
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ cd ../rec-io/
+alee889@remote00:~/i220b/submit/lab13/files/rec-io$ clear
+[H[2J[3Jalee889@remote00:~/i220b/submit/lab13/files/rec-io$ cat gen-rand-points.c 
+#include <errno.h>
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+#include "point2.h"
+
+static void __attribute__((noreturn))
+usage(const char *progName)
+{
+  fprintf(stderr, "usage: %s N_POINTS OUT_FILE\n", progName);
+  exit(1);
+}
+
+static int
+randCoord(void)
+{
+  enum { MAX = 1000 }; //exclusive
+  //statistically unsound; see
+  //<https://stackoverflow.com/questions/4195958/how-do-i-scale-down-numbers-from-rand>
+  return rand() % MAX;
+}
+
+int
+main(int argc, const char *argv[])
+{
+  if (argc != 3) usage(argv[0]);
+  int nPoints = atoi(argv[1]);
+  if (nPoints <= 0) usage(argv[0]);
+  const char *outName = argv[2];
+  FILE *out = fopen(outName, "w");
+  if (!out) {
+    fprintf(stderr, "cannot write %s: %s\n", outName, strerror(errno));
+    exit(1);
+  }
+  double sum = 0.0;
+  for (int i = 0; i < nPoints; i++) {
+    Point2 point2 = { .x = randCoord(), .y = randCoord(), };
+    if (fwrite(&point2, sizeof(Point2), 1, out) != 1) {
+      fprintf(stderr, "cannot write Point2(%d, %d) to %s: %s\n",
+              point2.x, point2.y, outName, strerror(errno));
+      exit(1);
+    }
+    double mag = magnitudePoint2(&point2);
+    sum += mag;
+  }
+  fprintf(stderr, "average magnitude = %g\n", sum/nPoints);
+  if (fclose(out) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", outName, strerror(errno));
+    exit(1);
+  }
+  return 0;
+}
+alee889@remote00:~/i220b/submit/lab13/files/rec-io$ cat gen-rand-points.c 
+#include <errno.h>
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+#include "point2.h"
+
+static void __attribute__((noreturn))
+usage(const char *progName)
+{
+  fprintf(stderr, "usage: %s N_POINTS OUT_FILE\n", progName);
+  exit(1);
+}
+
+static int
+randCoord(void)
+{
+  enum { MAX = 1000 }; //exclusive
+  //statistically unsound; see
+  //<https://stackoverflow.com/questions/4195958/how-do-i-scale-down-numbers-from-rand>
+  return rand() % MAX;
+}
+
+int
+main(int argc, const char *argv[])
+{
+  if (argc != 3) usage(argv[0]);
+  int nPoints = atoi(argv[1]);
+  if (nPoints <= 0) usage(argv[0]);
+  const char *outName = argv[2];
+  FILE *out = fopen(outName, "w");
+  if (!out) {
+    fprintf(stderr, "cannot write %s: %s\n", outName, strerror(errno));
+    exit(1);
+  }
+  double sum = 0.0;
+  for (int i = 0; i < nPoints; i++) {
+    Point2 point2 = { .x = randCoord(), .y = randCoord(), };
+    if (fwrite(&point2, sizeof(Point2), 1, out) != 1) {
+      fprintf(stderr, "cannot write Point2(%d, %d) to %s: %s\n",
+              point2.x, point2.y, outName, strerror(errno));
+      exit(1);
+    }
+    double mag = magnitudePoint2(&point2);
+    sum += mag;
+  }
+  fprintf(stderr, "average magnitude = %g\n", sum/nPoints);
+  if (fclose(out) != 0) {
+    fprintf(stderr, "cannot close %s: %s\n", outName, strerror(errno));
+    exit(1);
+  }
+  return 0;
+}
+alee889@remote00:~/i220b/submit/lab13/files/rec-io$ make gen-rand-points.c [K[K[K
+gcc -g -Wall -std=c11   -c -o gen-rand-points.o gen-rand-points.c
+gcc   gen-rand-points.o  -lm -o gen-rand-points
+alee889@remote00:~/i220b/submit/lab13/files/rec-io$ ./gen-rand-points 100 points .dat
+average magnitude = 752.156
+alee889@remote00:~/i220b/submit/lab13/files/rec-io$ cat d[Kpoint.[Ks.dat 
+  v  	  �    O  �  �  �  �  j     �  ;   �  �    �  �   �  �   p  7  �      ^  {   C   �   �  "     :   E   �   �  �     *   �   u  �  �      �   D  ;  r  �    [   �  �  i  ^  �   �    1  �  T   G  P  �  N  �  9  Y  |     F  !  .  o  �  l  +   �  W   (    �     H  �  �  �  �  �  <   �  p  �     �   J  ^       :  �  z  �  Y  a   �  =  �  �  �  -      �  a  �  �  k  �  �     u   a     �  �  �  �  7  X  �  a  J  �  2  �  �   p    g  �  =  �       p  �  �  T  �     �  j  �   N  �  �  +  {  �  �  �   I  ^  �   �  "   �  |   �  �  X  �  �  �   m  [  �  �  '  �  �     �  �  y   Z  �     �   �     2  �  �      �    alee889@remote00:~/i220b/submit/lab13/files/rec-io$ 
+alee889@remote00:~/i220b/submit/lab13/files/rec-io$ man fwrite
+[?1049h[22;0;0t[?1h=FREAD(3)                   Linux Programmer's Manual                  FREAD(3)[m
+[m
+[1mNAME[0m[m
+       fread, fwrite - binary stream input/output[m
+[m
+[1mSYNOPSIS[0m[m
+       [1m#include[0m [1m<stdio.h>[0m[m
+[m
+       [1msize_t[0m [1mfread(void[0m [1m*[0m[4mptr[24m[1m,[0m [1msize_t[0m [4msize[24m[1m,[0m [1msize_t[0m [4mnmemb[24m[1m,[0m [1mFILE[0m [1m*[0m[4mstream[24m[1m);[0m[m
+[m
+       [1msize_t[0m [1mfwrite(const[0m [1mvoid[0m [1m*[0m[4mptr[24m[1m,[0m [1msize_t[0m [4msize[24m[1m,[0m [1msize_t[0m [4mnmemb[24m[1m,[0m[m
+                     [1mFILE[0m [1m*[0m[4mstream[24m[1m);[0m[m
+[m
+[1mDESCRIPTION[0m[m
+       The  function  [1mfread[0m() reads [4mnmemb[24m items of data, each [4msize[24m bytes long,[m
+       from the stream pointed to by [4mstream[24m,  storing  them  at  the  location[m
+       given by [4mptr[24m.[m
+[m
+       The function [1mfwrite[0m() writes [4mnmemb[24m items of data, each [4msize[24m bytes long,[m
+       to the stream pointed to by [4mstream[24m, obtaining them  from  the  location[m
+       given by [4mptr[24m.[m
+[m
+       For nonlocking counterparts, see [1munlocked_stdio[0m(3).[m
+[m
+[7m Manual page fwrite(3) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mRETURN[0m [1mVALUE[0m[m
+[7m Manual page fwrite(3) line 2 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       On  success,  [1mfread[0m()  and  [1mfwrite[0m() return the number of items read or[m
+[7m Manual page fwrite(3) line 3 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       written.  This number equals the number of bytes transferred only  when[m
+[7m Manual page fwrite(3) line 4 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [4msize[24m  is 1.  If an error occurs, or the end of the file is reached, the[m
+[7m Manual page fwrite(3) line 5 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       return value is a short item count (or zero).[m
+[7m Manual page fwrite(3) line 6 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fwrite(3) line 7 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mfread[0m() does not distinguish between end-of-file and error, and callers[m
+[7m Manual page fwrite(3) line 8 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       must use [1mfeof[0m(3) and [1mferror[0m(3) to determine which occurred.[m
+[7m Manual page fwrite(3) line 9 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fwrite(3) line 10 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mATTRIBUTES[0m[m
+[7m Manual page fwrite(3) line 11 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       For  an  explanation  of  the  terms  used  in  this  section,  see [1mat‐[0m[m
+[7m Manual page fwrite(3) line 12 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mtributes[0m(7).[m
+[7m Manual page fwrite(3) line 13 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fwrite(3) line 14 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       ┌──────────────────┬───────────────┬─────────┐[m
+[7m Manual page fwrite(3) line 15 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       │[1mInterface[0m         │ [1mAttribute[0m     │ [1mValue[0m   │[m
+[7m Manual page fwrite(3) line 16 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       ├──────────────────┼───────────────┼─────────┤[m
+[7m Manual page fwrite(3) line 17 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       │[1mfread[0m(), [1mfwrite[0m() │ Thread safety │ MT-Safe │[m
+[7m Manual page fwrite(3) line 18 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       └──────────────────┴───────────────┴─────────┘[m
+[7m Manual page fwrite(3) line 19 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mCONFORMING[0m [1mTO[0m[m
+[7m Manual page fwrite(3) line 20 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       POSIX.1-2001, POSIX.1-2008, C89.[m
+[7m Manual page fwrite(3) line 21 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fwrite(3) line 22 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mSEE[0m [1mALSO[0m[m
+[7m Manual page fwrite(3) line 23 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1mread[0m(2), [1mwrite[0m(2), [1mfeof[0m(3), [1mferror[0m(3), [1munlocked_stdio[0m(3)[m
+[7m Manual page fwrite(3) line 24 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fwrite(3) line 25 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mCOLOPHON[0m[m
+[7m Manual page fwrite(3) line 26 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       This page is part of release 4.16 of the Linux  [4mman-pages[24m  project.   A[m
+[7m Manual page fwrite(3) line 27 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       description  of  the project, information about reporting bugs, and the[m
+[7m Manual page fwrite(3) line 28 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       latest    version    of    this    page,    can     be     found     at[m
+[7m Manual page fwrite(3) line 29 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       https://www.kernel.org/doc/man-pages/.[m
+[7m Manual page fwrite(3) line 30 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page fwrite(3) line 31 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[KGNU                               2015-07-23                          FREAD(3)[m
+[7m Manual page fwrite(3) line 32 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page fwrite(3) line 32/55 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page fwrite(3) line 32/55 (END) (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[K[7m Manual page fwrite(3) line 32/55 (END) (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0talee889@remote00:~/i220b/submit/lab13/files/rec-io$ make stat-points.c [K[K[K
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+gcc -g -Wall -std=c11   -c -o dyn-array.o dyn-array.c
+gcc   stat-points.o dyn-array.o  -lm -o stat-points
+alee889@remote00:~/i220b/submit/lab13/files/rec-io$ ./stat-points points.dat 
+min = 43.4166
+average = 752.156
+median = 773.59
+max = 1306.49
+alee889@remote00:~/i220b/submit/lab13/files/rec-io$ cat dyn-array.h
+#ifndef DYN_ARRAY_H_
+#define DYN_ARRAY_H_
+
+#include <stddef.h>
+
+//set up as an ADT
+typedef struct DynArray DynArray;
+
+/** return newly allocated dynamic array for elements of size elementSize */
+DynArray *newDynArray(size_t elementSize);
+
+/** free all resources used by dynArray */
+void freeDynArray(DynArray *dynArray);
+
+/** Return &dynArray[i].  Element i must exist. */
+void *getElementDynArray(const DynArray *dynArray, int i);
+
+/** Set dynArray[i] to *element.  Element i must exist.  Return
+ * pointer to set element.
+ */
+void *setElementDynArray(DynArray *dynArray, int i, const void *element);
+
+/** Add element to end of dynArray.  Return pointer to newly
+ *  added element.
+ */
+void *addElementDynArray(DynArray *dynArray, const void *element);
+
+/** Return # of elements stored in dynArray */
+const size_t nElementsDynArray(const DynArray *dynArray);
+
+/** Sort dynArray by provided comparison function */
+void sortDynArray(DynArray *dynArray,
+                  int (*cmp)(const void *element1, const void *element2));
+
+#endif //ifndef DYN_ARRAY_H_
+alee889@remote00:~/i220b/submit/lab13/files/rec-io$ cat dyn-array.c
+#include <errno.h>
+#include <assert.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+#include "dyn-array.h"
+
+struct DynArray {
+  size_t elementSize;  /** size of a base element */
+  size_t index;        /** index of next free element */
+  size_t size;         /** max number of elements for current elements[] */
+  char *elements;      /** storage for elements */
+};
+
+/** return newly allocated dynamic array for elements of size elementSize */
+DynArray *
+newDynArray(size_t elementSize)
+{
+  DynArray *dynArray = calloc(1, sizeof(DynArray));
+  if (!dynArray) {
+    fprintf(stderr, "cannot alloc DynArray: %s\n", strerror(errno));
+    exit(1);
+  }
+  dynArray->elementSize = elementSize;
+  return dynArray;
+}
+
+/** free all resources used by dynArray */
+void
+freeDynArray(DynArray *dynArray)
+{
+  free(dynArray->elements);
+  free(dynArray);
+}
+
+
+/** Return &dynArray[i].  Element i must exist.  */
+void *
+getElementDynArray(const DynArray *dynArray, int i)
+{
+  assert(i < dynArray->index);
+  return dynArray->elements + i*dynArray->elementSize;
+}
+
+/** Set dynArray[i] to *element.  Element i must exist.  Return
+ * pointer to set element.
+ */
+void *
+setElementDynArray(DynArray *dynArray, int i, const void *element)
+{
+  assert(i < dynArray->index);
+  memcpy(dynArray->elements + i*dynArray->elementSize,
+         element, dynArray->elementSize);
+  return dynArray->elements + i*dynArray->elementSize;
+}
+
+
+/** Add element to end of dynArray.  Return pointer to newly
+ *  added element.
+ */
+void *
+addElementDynArray(DynArray *dynArray, const void *element)
+{
+  enum { INIT_SIZE = 4 };
+  if (dynArray->index >= dynArray->size) {
+    const size_t size = (dynArray->size > 0) ? dynArray->size*2 : INIT_SIZE;
+    dynArray->elements =
+      realloc(dynArray->elements, size*dynArray->elementSize);
+    if (!dynArray->elements) {
+      fprintf(stderr, "dynArray realloc() failed: %s\n", strerror(errno));
+      exit(1);
+    }
+    dynArray->size = size;
+  }
+  assert(dynArray->index < dynArray->size);
+  dynArray->index++;
+  return setElementDynArray(dynArray, dynArray->index - 1, element);
+}
+
+/** Return # of elements stored in dynArray */
+const size_t
+nElementsDynArray(const DynArray *dynArray)
+{
+  return dynArray->index;
+}
+
+/** Sort dynArray by provided comparison function */
+void
+sortDynArray(DynArray *dynArray,
+             int (*cmp)(const void *element1, const void *element2))
+{
+  qsort(dynArray->elements, dynArray->index, dynArray->elementSize, cmp);
+}
+alee889@remote00:~/i220b/submit/lab13/files/rec-io$ valgrind ./stat-points point s.dat
+==21329== Memcheck, a memory error detector
+==21329== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==21329== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==21329== Command: ./stat-points points.dat
+==21329== 
+min = 43.4166
+average = 752.156
+median = 773.59
+max = 1306.49
+==21329== 
+==21329== HEAP SUMMARY:
+==21329==     in use at exit: 0 bytes in 0 blocks
+==21329==   total heap usage: 10 allocs, 10 frees, 11,816 bytes allocated
+==21329== 
+==21329== All heap blocks were freed -- no leaks are possible
+==21329== 
+==21329== For counts of detected and suppressed errors, rerun with: -v
+==21329== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+alee889@remote00:~/i220b/submit/lab13/files/rec-io$ valgrind ./stat-points points.dat[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Pcat dyn-array.c
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Chcvalgrind ./stat-points points.dat[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake
+gcc -g -Wall -std=c11   -c -o stat-points.o stat-points.c
+gcc   stat-points.o dyn-array.o  -lm -o stat-points
+alee889@remote00:~/i220b/submit/lab13/files/rec-io$ make stat-points.[K
+make: 'stat-points' is up to date.
+alee889@remote00:~/i220b/submit/lab13/files/rec-io$ make stat-points[Kvalgrind ./stat-points points.dat
+==415== Memcheck, a memory error detector
+==415== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==415== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==415== Command: ./stat-points points.dat
+==415== 
+min = 43.4166
+average = 752.156
+median = 773.59
+max = 1306.49
+==415== 
+==415== HEAP SUMMARY:
+==415==     in use at exit: 0 bytes in 0 blocks
+==415==   total heap usage: 10 allocs, 10 frees, 11,816 bytes allocated
+==415== 
+==415== All heap blocks were freed -- no leaks are possible
+==415== 
+==415== For counts of detected and suppressed errors, rerun with: -v
+==415== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+alee889@remote00:~/i220b/submit/lab13/files/rec-io$ cd ..
+alee889@remote00:~/i220b/submit/lab13/files$ cd ,,[K[K..
+alee889@remote00:~/i220b/submit/lab13$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31m./[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+alee889@remote00:~/i220b/submit/lab13$ git add .
+alee889@remote00:~/i220b/submit/lab13$ git commit -am "submitted lab13"
+[master 0d44bf5] submitted lab13
+ Committer: Alison Lee <alee889@cs.binghamton.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 28 files changed, 2263 insertions(+)
+ create mode 100755 submit/lab13/Makefile
+ create mode 100644 submit/lab13/files/file-char-count/.gitignore
+ create mode 100644 submit/lab13/files/file-char-count/Makefile
+ create mode 100644 submit/lab13/files/file-char-count/file-char-count.c
+ create mode 100644 submit/lab13/files/file-char-count/valgrindfcc.txt
+ create mode 100644 submit/lab13/files/file-copy/.gitignore
+ create mode 100644 submit/lab13/files/file-copy/Makefile
+ create mode 100644 submit/lab13/files/file-copy/file-copy.c
+ create mode 100644 submit/lab13/files/file-copy/t
+ create mode 100644 submit/lab13/files/no-buffer-copy/.gitignore
+ create mode 100644 submit/lab13/files/no-buffer-copy/Makefile
+ create mode 100644 submit/lab13/files/no-buffer-copy/no-buffer-copy.c
+ create mode 100644 submit/lab13/files/rec-io/.gitignore
+ create mode 100644 submit/lab13/files/rec-io/Makefile
+ create mode 100644 submit/lab13/files/rec-io/dyn-array.c
+ create mode 100644 submit/lab13/files/rec-io/dyn-array.h
+ create mode 100644 submit/lab13/files/rec-io/gen-rand-points.c
+ create mode 100644 submit/lab13/files/rec-io/point2.h
+ create mode 100644 submit/lab13/files/rec-io/points.dat
+ create mode 100644 submit/lab13/files/rec-io/stat-points.c
+ create mode 100644 submit/lab13/files/stdin-char-count/.gitignore
+ create mode 100644 submit/lab13/files/stdin-char-count/Makefile
+ create mode 100644 submit/lab13/files/stdin-char-count/stdin-char-count.c
+ create mode 100644 submit/lab13/lab13.html
+ create mode 100644 submit/lab13/lab13.log
+ create mode 100644 submit/lab13/lab13.pdf
+ create mode 100644 submit/lab13/lab13.umt
+ create mode 100644 submit/lab13/lab13_output.txt
+alee889@remote00:~/i220b/submit/lab13$ git push
+Enumerating objects: 40, done.
+Counting objects:   2% (1/40)   Counting objects:   5% (2/40)   Counting objects:   7% (3/40)   Counting objects:  10% (4/40)   Counting objects:  12% (5/40)   Counting objects:  15% (6/40)   Counting objects:  17% (7/40)   Counting objects:  20% (8/40)   Counting objects:  22% (9/40)   Counting objects:  25% (10/40)   Counting objects:  27% (11/40)   Counting objects:  30% (12/40)   Counting objects:  32% (13/40)   Counting objects:  35% (14/40)   Counting objects:  37% (15/40)   Counting objects:  40% (16/40)   Counting objects:  42% (17

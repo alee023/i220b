@@ -1,0 +1,35 @@
+>> EXERCISE 1:
+
+./stdin-char-count <stdin-char-count.c
+----> 	EOF = -1
+wc stdin-char-count.c
+---->	12 31 205 stdin-char-count.c
+
+After change to signed char:
+./stdin-char-count <stdin-char-count.c
+----> 	EOF = -1
+	205
+wc stdin-char-count.c
+---->	12 32 205 stdin-char-count.c
+
+
+>> EXERCISE 2:
+
+The source of the leak was the file being opened but never closed.
+
+
+>> EXERCISE 5 (BUFFERING):
+
+time ./no-buffer-copy `which gcc` /dev/null 0
+
+real    0m1.807s
+user    0m0.924s
+sys     0m0.878s
+alee889@remote00:~/i220b/submit/lab13/files/no-buffer-copy$ time ./no-buffer-copy `which gcc` /dev/null 1
+
+real    0m0.015s
+user    0m0.007s
+sys     0m0.006s
+
+It ran 8x faster with the optional cammand line argument.
+
