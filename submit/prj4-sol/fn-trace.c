@@ -84,8 +84,8 @@ FnsData* fn_trace( void *addr, FnsData* fnsData ) {
 	
 	unsigned char* current = addr ;
 	unsigned int fnLen = 0 ;	
-	fnsData->instrs[ index ].nInCalls = 1 ;
-	fnsData->instrs[ index ].nOutCalls = 0 ;
+	fnsData->instrs[ retIndex ].nInCalls = 1 ;
+	fnsData->instrs[ retIndex ].nOutCalls = 0 ;
 	
 	// if not pointing to opcode for return instr
 	while( !is_ret( *current )) { 
@@ -93,8 +93,7 @@ FnsData* fn_trace( void *addr, FnsData* fnsData ) {
 		fnLen += get_op_length( current ) ;
 		
 		if( is_call( opCode )) {
-			fnsData->instrs[ index ].nOutCalls++ ;
-			nOut++ ;
+			fnsData->instrs[ retIndex ].nOutCalls++ ;
 			void* address = ( void* )current + 1 + current + get_op_length( current ) ;
 			
 			int ind = isInFnsData( address, fnsData ) ; 
