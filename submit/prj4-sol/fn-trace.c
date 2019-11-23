@@ -94,7 +94,7 @@ FnsData* fn_trace( void *addr, FnsData* fnsData ) {
 		
 		if( is_call( opCode )) {
 			fnsData->instrs[ retIndex ].nOutCalls++ ;
-			void* address = ( void* )current + 1 + current + get_op_length( current ) ;
+			void* address = ( int* )(( void* )current + 1 ) + current + get_op_length( current ) ;
 			
 			int ind = isInFnsData( address, fnsData ) ; 
 			if( ind != -1 ) { 
