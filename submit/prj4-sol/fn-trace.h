@@ -1,7 +1,7 @@
 #ifndef FN_TRACE_H_
 #define FN_TRACE_H_
 //.1
-
+ 
 /** Information associated with a function. */
 typedef struct {
   void *address;        /** start address of function */
