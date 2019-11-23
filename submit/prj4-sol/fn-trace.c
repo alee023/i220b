@@ -23,7 +23,7 @@ static inline bool is_ret(unsigned op) {
     op == RET_FAR_OP || op == RET_FAR_WITH_POP_OP;
 }
 
-typedef struct { 
+typedef struct FnsData { 
 	int index ;
 	int size ;
 	// dynamically grown array of FnInfos
