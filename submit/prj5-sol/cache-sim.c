@@ -66,8 +66,8 @@ CacheResult
 cache_sim_result(CacheSim *cache, MemAddr addr)
 {
 	CacheStatus status ;
-	MemAddr newAddr = addr >> cache->params.nLineBits ;
-	newAddr <<= cache-params.nLineBits ;
+	MemAddr newAddr = addr >> cache->param.nLineBits ;
+	newAddr <<= cache->param.nLineBits ;
 	
 	int nLines = cache->param.nLinesPerSet ;
 	int set = (((( 1 << cache->param.nSetBits ) - 1 ) << cache->param.nLineBits ) & addr ) >> cache->param.nLineBits ;
@@ -91,7 +91,7 @@ cache_sim_result(CacheSim *cache, MemAddr addr)
 	}
 	
 	MemAddr temp ;
-	int rep = cache->params.replacement ;
+	int rep = cache->param.replacement ;
 	int index ;
 	
 	if( rep == LRU_R ) {
@@ -119,7 +119,7 @@ cache_sim_result(CacheSim *cache, MemAddr addr)
 			}
 		}
 		
-		temp = cache->blocks[ set ][ index ].adress ;
+		temp = cache->blocks[ set ][ index ].address ;
 		cache-> blocks[ set ][ index ].address = newAddr ;
 	}
 	else {
