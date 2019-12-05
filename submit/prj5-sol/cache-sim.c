@@ -119,7 +119,7 @@ cache_sim_result(CacheSim *cache, MemAddr addr)
 			}
 		}
 		
-		temp = cache->blocks[ set ][ index ].address ;
+		temp = cache->blocks[ set ][ index ].address ; 
 		cache-> blocks[ set ][ index ].address = newAddr ;
 	}
 	else {
