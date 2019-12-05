@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <math.h>
 
-
+typedef struct Block Block ;
 struct Block {
 	MemAddr address ;
 	long index ; 
@@ -36,7 +36,7 @@ new_cache_sim(const CacheParams *params)
 	CacheSim * newSim = malloc( sizeof( param ) * sizeof( struct CacheSimImpl )) ;
 	newSim->params = param ;
 	int numSets = 1 << params->nSetBits ; 
-	newSim->blocks = malloc( numSet * sizeof( struct Block * ) + 1 ) ;
+	newSim->blocks = malloc( numSets * sizeof( struct Block * ) + 1 ) ;
 	
 	for( int i = 0; i < numSets; i++ ) {
 		newSim->blocks[ i ] = malloc( params->nLinesPerSet * sizeof( struct Block )) ;
