@@ -16,7 +16,7 @@ struct Block {
 
 struct CacheSimImpl {
 	Block** blocks ;
-	CacheParams params ;
+	CacheParams param ;
 } ;
 
 /** Create and return a new cache-simulation structure for a
@@ -34,7 +34,7 @@ new_cache_sim(const CacheParams *params)
 	param.replacement = params->replacement ;
 	
 	CacheSim * newSim = malloc( sizeof( param ) * sizeof( struct CacheSimImpl )) ;
-	newSim->params = param ;
+	newSim->param = param ;
 	int numSets = 1 << params->nSetBits ; 
 	newSim->blocks = malloc( numSets * sizeof( struct Block * ) + 1 ) ;
 	
@@ -66,11 +66,11 @@ CacheResult
 cache_sim_result(CacheSim *cache, MemAddr addr)
 {
 	CacheStatus status ;
-	MemAddr newAddr = addr >> cache->param.nLineBits ;
-	newAddr <<= cache-param.nLineBits ;
+	MemAddr newAddr = addr >> cache->params.nLineBits ;
+	newAddr <<= cache-params.nLineBits ;
 	
 	int nLines = cache->param.nLinesPerSet ;
-	int set = (((( 1 << cache->param.nSetBits ) - 1 ) << cache.param.nLineBits ) & addr ) >> cache->param.nLineBits ;
+	int set = (((( 1 << cache->param.nSetBits ) - 1 ) << cache->param.nLineBits ) & addr ) >> cache->param.nLineBits ;
 	
 	for( int i = 0; i < nLines ; i++ ) {
 		cache->blocks[ set ][ i ].index++ ;
@@ -91,7 +91,7 @@ cache_sim_result(CacheSim *cache, MemAddr addr)
 	}
 	
 	MemAddr temp ;
-	int rep = cache->param.replacement ;
+	int rep = cache->params.replacement ;
 	int index ;
 	
 	if( rep == LRU_R ) {
@@ -119,7 +119,7 @@ cache_sim_result(CacheSim *cache, MemAddr addr)
 			}
 		}
 		
-		temp = cache->blocks[ set ][ i ].index ;
+		temp = cache->blocks[ set ][ index ].adress ;
 		cache-> blocks[ set ][ index ].address = newAddr ;
 	}
 	else {
